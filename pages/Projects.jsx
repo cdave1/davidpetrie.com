@@ -5,12 +5,19 @@ import Helmet from 'react-helmet'
 import Gallery from 'react-grid-gallery';
 import { config } from 'config'
 import { Container } from 'react-responsive-grid'
-import Projects from './Projects.jsx'
 
 var galleries = [
   {
-      title: "2017: Algorithmic Design Engine",
+      title: "Algorithmic Design Engine",
+      description: "A project that allows designers to design things using algorithms.",
       images: [
+          {
+            src: prefixLink('/images/ae/AE00012.png'),
+            thumbnail: prefixLink('/images/ae/thumb_AE00012.png'),
+            thumbnailWidth: 400,
+            thumbnailHeight: 266,
+            caption: "Algorithmic Design Engine"
+          },
           {
             src: prefixLink('/images/ae/AE00011.png'),
             thumbnail: prefixLink('/images/ae/thumb_AE00011.png'),
@@ -26,24 +33,6 @@ var galleries = [
             caption: "Algorithmic Design Engine"
           },
           {
-            src: prefixLink('/images/ae/AE00008.png'),
-            thumbnail: prefixLink('/images/ae/thumb_AE00008.png'),
-            thumbnailWidth: 400,
-            thumbnailHeight: 199,
-          },
-          {
-            src: prefixLink('/images/ae/AE00005.png'),
-            thumbnail: prefixLink('/images/ae/thumb_AE00005.png'),
-            thumbnailWidth: 400,
-            thumbnailHeight: 206,
-          },
-          {
-            src: prefixLink('/images/ae/AE00003.png'),
-            thumbnail: prefixLink('/images/ae/thumb_AE00003.png'),
-            thumbnailWidth: 400,
-            thumbnailHeight: 188,
-          },
-          {
             src: prefixLink('/images/ae/AE00007.png'),
             thumbnail: prefixLink('/images/ae/thumb_AE00007.png'),
             thumbnailWidth: 400,
@@ -54,69 +43,89 @@ var galleries = [
             thumbnail: prefixLink('/images/ae/thumb_AE00009.png'),
             thumbnailWidth: 400,
             thumbnailHeight: 400,
-          }
+          },
+          {
+            src: prefixLink('/images/ae/AE00004.png'),
+            thumbnail: prefixLink('/images/ae/thumb_AE00004.png'),
+            thumbnailWidth: 400,
+            thumbnailHeight: 206,
+          },
+          {
+            src: prefixLink('/images/ae/AE00003.png'),
+            thumbnail: prefixLink('/images/ae/thumb_AE00003.png'),
+            thumbnailWidth: 400,
+            thumbnailHeight: 188,
+          },
+          {
+            src: prefixLink('/images/ae/AE00008.png'),
+            thumbnail: prefixLink('/images/ae/thumb_AE00008.png'),
+            thumbnailWidth: 400,
+            thumbnailHeight: 199,
+          },
       ]
   },
   {
-      title: "2016: Vast",
+      title: "Vast",
+      description: "A VR app to help people design their own VR and AR experiences.",
       images: [
           {
             src: prefixLink('/images/VR/Vast00014.png'),
             thumbnail: prefixLink('/images/VR/thumb_Vast00014.png'),
-            thumbnailWidth: 200,
-            thumbnailHeight: 113,
+            thumbnailWidth: 400,
+            thumbnailHeight: 225,
             caption: "Algorithmic Design Engine"
           },
           {
             src: prefixLink('/images/VR/Vast00013.png'),
             thumbnail: prefixLink('/images/VR/thumb_Vast00013.png'),
-            thumbnailWidth: 200,
-            thumbnailHeight: 113,
+            thumbnailWidth: 400,
+            thumbnailHeight: 225,
             caption: "Algorithmic Design Engine"
           },
           {
             src: prefixLink('/images/VR/Vast00012.png'),
             thumbnail: prefixLink('/images/VR/thumb_Vast00012.png'),
-            thumbnailWidth: 200,
-            thumbnailHeight: 113,
+            thumbnailWidth: 400,
+            thumbnailHeight: 225,
             caption: "Algorithmic Design Engine"
           },
           {
             src: prefixLink('/images/VR/Vast00011.png'),
             thumbnail: prefixLink('/images/VR/thumb_Vast00011.png'),
-            thumbnailWidth: 200,
-            thumbnailHeight: 113,
+            thumbnailWidth: 400,
+            thumbnailHeight: 225,
           },
           {
             src: prefixLink('/images/VR/Vast00006.png'),
             thumbnail: prefixLink('/images/VR/thumb_Vast00006.png'),
-            thumbnailWidth: 200,
-            thumbnailHeight: 113,
+            thumbnailWidth: 400,
+            thumbnailHeight: 225,
           },
           {
             src: prefixLink('/images/VR/Vast00010.png'),
             thumbnail: prefixLink('/images/VR/thumb_Vast00010.png'),
-            thumbnailWidth: 200,
-            thumbnailHeight: 113,
-          },
-          {
-            src: prefixLink('/images/VR/Vast00002.png'),
-            thumbnail: prefixLink('/images/VR/thumb_Vast00002.png'),
-            thumbnailWidth: 200,
-            thumbnailHeight: 112,
-            caption: "Early development screenshot"
+            thumbnailWidth: 400,
+            thumbnailHeight: 225,
           },
           {
             src: prefixLink('/images/VR/Vast00003.png'),
             thumbnail: prefixLink('/images/VR/thumb_Vast00003.png'),
-            thumbnailWidth: 200,
-            thumbnailHeight: 112,
+            thumbnailWidth: 400,
+            thumbnailHeight: 224,
+            caption: "Early development screenshot"
+          },
+          {
+            src: prefixLink('/images/VR/Vast00001.png'),
+            thumbnail: prefixLink('/images/VR/thumb_Vast00001.png'),
+            thumbnailWidth: 400,
+            thumbnailHeight: 250,
             caption: "Early development screenshot"
           }
       ]
   },
   {
-      title: "2015: Ocean",
+      title: "Ocean",
+      description: "A small handheld general purpose computer, with complete OS and remote management tools.",
       images: [
           {
             src: prefixLink('/images/Ocean/OceanHW00006.png'),
@@ -181,6 +190,7 @@ var galleries = [
   },
   {
       title: "HDK",
+      description: "A game engine for developing 2.5d physics games.",
       images: [
           {
             src: prefixLink('/images/HDK/HDK00001.png'),
@@ -204,44 +214,15 @@ var galleries = [
   }
 ];
 
-
-exports.data = {
-  title: 'Recent Work'
-};
-
-
-export default class Index extends React.Component {
+export default class Projects extends React.Component {
   constructor () {
     super()
-
-    
-
-    //this.state = { images: images } 
   }
 
 
   render () {
     return (
       <div>
-        <Helmet
-          title={config.siteTitle}
-          meta={[
-            {"name": "description", "content": "David Petrie"},
-            {"name": "keywords", "content": "sample, something"},
-          ]}
-        />
-
-        <Projects />
-
-
-
-      </div>
-    )
-  }
-}
-
-/*
-
 
         {galleries.map((gallery, index) => {
             var cl = (index % 2) == 0 ? "style3" : "style2";
@@ -254,19 +235,19 @@ export default class Index extends React.Component {
 
             return (
               <div>
-              <header className="style1"><p>{gallery.title}</p></header>
-
+              <header className="style1"><h2>{gallery.title}</h2><p>{gallery.description}</p></header>
+              
                 <Container>
                   
                   <div style={{
                     display: "block",
-                    backgroundColor: "#fff",
+                    backgroundColor: "#eee",
                     minHeight: "1px",
                     width: "100%",
                     border: "1px solid #ddd",
                     overflow: "auto"}}>
                 <Gallery 
-                        rowHeight={150}
+                        rowHeight={160}
                           enableImageSelection={false}
                           backdropClosesModal={true}
                           images={images}
@@ -277,6 +258,16 @@ export default class Index extends React.Component {
 
             )
         })}
+
+
+
+      </div>
+    )
+  }
+}
+
+/*
+
 <Container>
 <Gallery 
           enableImageSelection={false}

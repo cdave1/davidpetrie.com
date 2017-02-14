@@ -344,7 +344,12 @@ var books = {
 };
 
 
-export default class ReactComponent extends React.Component {
+exports.data = {
+  title: 'Reading List'
+};
+
+
+export default class Reading extends React.Component {
   constructor () {
     super()
 
@@ -388,4 +393,3 @@ export default class ReactComponent extends React.Component {
     )
   }
 }
-

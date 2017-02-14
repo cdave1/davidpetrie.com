@@ -62,26 +62,15 @@ module.exports = React.createClass({
             const page = this.props.routes[this.props.routes.length - 1].page;
 
             var content = (
-                <div />
-            );
-            if (page.data && page.data.title) {
-                content = (
-                    <div className="wrapper style3">
-                        <div className="title">{page.data.title}</div>
-                        <div id="main" className="container">
-                            <div id="content">
-                                {this.props.children}
-                            </div>
+                <div className="wrapper style2">
+                    <div className="title">{page.data.title}</div>
+                    <div id="main" className="container">
+                        <div id="content">
+                            {this.props.children}
                         </div>
                     </div>
-                );
-            } else {
-                content = (
-                    <div>
-                    {this.props.children}
-                    </div>
-                );
-            }
+                </div>
+            );
 
             return (
                 <div id="page-wrapper">
@@ -90,6 +79,7 @@ module.exports = React.createClass({
 
                             <div id="logo">
                                 <h1><a href="index.html">David Petrie</a></h1>
+                                <p>I'm an entrepreneur and software engineer from New Zealand</p>
                             </div>
 
                             <nav id="nav">
@@ -99,7 +89,8 @@ module.exports = React.createClass({
                                     <li><a href="/about/">About</a></li>
                                     <li><a href="/projects/">Projects</a></li>
                                     <li><a href="/reading/">Reading</a></li>
-                                    <li><a href="/contact/">Contact</a></li>
+                                    <li><a href="https://github.com/cdave1">Github</a></li>
+                                    <li><a href="https://twitter.com/davidcpetrie">Twitter</a></li>
                                 </ul>
                             </nav>
 
@@ -109,92 +100,16 @@ module.exports = React.createClass({
                     {content}
 
                     <div id="footer-wrapper" className="wrapper">
-                        <div className="title">The Rest Of It</div>
+                        <div className="title">Contact</div>
                         <div id="footer" class="container">
                             <header className="style1">
-                                <h2>Ipsum sapien elementum portitor?</h2>
+                                <h2>Social Media</h2>
                                 <p>
-                                    Sed turpis tortor, tincidunt sed ornare in metus porttitor mollis nunc in aliquet.<br />
-                                    Nam pharetra laoreet imperdiet volutpat etiam consequat feugiat.
-							</p>
+                                    Twitter: <a href="https://twitter.com/davidcpetrie">@davidcpetrie</a><br />
+                                    Github: <a href="https://github.com/cdave1">github.com/cdave1</a><br />
+                                    Facebook: <a href="https://www.facebook.com/david.petrie.nz">facebook.com/david.petrie.nz</a>
+                                </p>
                             </header>
-                            <hr />
-                            <div className="row 150%">
-                                <div className="6u 12u(mobile)">
-                                    <section>
-                                        <form method="post" action="#">
-                                            <div className="row 50%">
-                                                <div className="6u 12u(mobile)">
-                                                    <input type="text" name="name" id="contact-name" placeholder="Name" />
-                                                </div>
-                                                <div className="6u 12u(mobile)">
-                                                    <input type="text" name="email" id="contact-email" placeholder="Email" />
-                                                </div>
-                                            </div>
-                                            <div className="row 50%">
-                                                <div className="12u">
-                                                    <textarea name="message" id="contact-message" placeholder="Message" rows="4"></textarea>
-                                                </div>
-                                            </div>
-                                            <div className="row">
-                                                <div className="12u">
-                                                    <ul className="actions">
-                                                        <li><input type="submit" className="style1" value="Send" /></li>
-                                                        <li><input type="reset" class="style2" value="Reset" /></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </section>
-
-                                </div>
-                                <div className="6u 12u(mobile)">
-                                    <section className="feature-list small">
-                                        <div className="row">
-                                            <div className="6u 12u(mobile)">
-                                                <section>
-                                                    <h3 className="icon fa-home">Mailing Address</h3>
-                                                    <p>
-                                                        Untitled Corporation<br />
-                                                        1234 Somewhere Rd #987<br />
-                                                        Nashville, TN 00000-0000
-													</p>
-                                                </section>
-                                            </div>
-                                            <div className="6u 12u(mobile)">
-                                                <section>
-                                                    <h3 className="icon fa-comment">Social</h3>
-                                                    <p>
-                                                        <a href="#">@untitled-corp</a><br />
-                                                        <a href="#">linkedin.com/untitled</a><br />
-                                                        <a href="#">facebook.com/untitled</a>
-                                                    </p>
-                                                </section>
-                                            </div>
-                                        </div>
-                                        <div className="row">
-                                            <div className="6u 12u(mobile)">
-                                                <section>
-                                                    <h3 className="icon fa-envelope">Email</h3>
-                                                    <p>
-                                                        <a href="#">info@untitled.tld</a>
-                                                    </p>
-                                                </section>
-                                            </div>
-                                            <div className="6u 12u(mobile)">
-                                                <section>
-                                                    <h3 className="icon fa-phone">Phone</h3>
-                                                    <p>
-                                                        (000) 555-0000
-													</p>
-                                                </section>
-                                            </div>
-                                        </div>
-                                    </section>
-
-                                </div>
-                            </div>
-                            <hr />
                         </div>
                     </div>
                 </div>
