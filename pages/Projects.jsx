@@ -195,20 +195,28 @@ var galleries = [
           {
             src: prefixLink('/images/HDK/HDK00001.png'),
             thumbnail: prefixLink('/images/HDK/HDK00001.png'),
+            thumbnailWidth: 400,
+            thumbnailHeight: 214,
             caption: "Algorithmic Design Engine"
           },
           {
             src: prefixLink('/images/HDK/HDK00002.png'),
             thumbnail: prefixLink('/images/HDK/HDK00002.png'),
+            thumbnailWidth: 400,
+            thumbnailHeight: 214,
             caption: "Algorithmic Design Engine"
           },
           {
             src: prefixLink('/images/HDK/HDK00003.png'),
             thumbnail: prefixLink('/images/HDK/HDK00003.png'),
+            thumbnailWidth: 400,
+            thumbnailHeight: 214
           },
           {
             src: prefixLink('/images/HDK/HDK00004.png'),
             thumbnail: prefixLink('/images/HDK/HDK00004.png'),
+            thumbnailWidth: 400,
+            thumbnailHeight: 214
           }
       ]
   }
@@ -234,7 +242,7 @@ export default class Projects extends React.Component {
             })
 
             return (
-              <div>
+              <div key={index}>
               <header className="style1"><h2>{gallery.title}</h2><p>{gallery.description}</p></header>
               
                 <Container>

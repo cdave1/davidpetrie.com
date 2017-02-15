@@ -9,32 +9,81 @@ var books = {
         {
             "title": "Dune",
             "author": "Frank Herbert",
-            "link": "https://www.amazon.com/Dune-Sequence-Frank-Herbert-ebook/dp/B004KA9UXO/ref=sr_1_1?s=books&ie=UTF8&qid=1486861477&sr=1-1&keywords=Dune"
+            "link": "https://www.amazon.com/Dune-Sequence-Frank-Herbert-ebook/dp/B004KA9UXO"
         },
         {
             "title": "(REREAD) Hyperion",
             "author": "Dan Simmons",
-            "link": "https://www.amazon.com/Hyperion-Cantos-Dan-Simmons-ebook/dp/B0043M6780/ref=sr_1_1?s=books&ie=UTF8&qid=1486861498&sr=1-1&keywords=Hyperion"
+            "link": "https://www.amazon.com/Hyperion-Cantos-Dan-Simmons/dp/0553283685",
+            "notes": "I didn't mean to start re-reading Hyperion again, but the Priest's Tale is so good it just sucked me right in to the story again."
         },
         {
             "title": "Through the Eye of a Needle: Wealth, the Fall of Rome, and the Making of Christianity in the West, 350-550 AD (Audiobook)",
             "author": "Peter Brown",
-            "link": "https://www.amazon.com/Through-Eye-Needle-Christianity-350-550-ebook/dp/B009EYPOCC/ref=sr_1_5?s=books&ie=UTF8&qid=1486861523&sr=1-5&keywords=eye+of+a+needle"
+            "link": "https://www.amazon.com/Through-Eye-Needle-Christianity-350-550-ebook/dp/B009EYPOCC",
+            "notes": "Really loving this so far."
         },
         {
             "title": "The Origins of Political Order (Audiobook)",
             "author": "Francis Fukuyama",
-            "link": "https://www.amazon.com/Origins-Political-Order-Prehuman-Revolution/dp/0374533229/ref=sr_1_1?s=books&ie=UTF8&qid=1486861537&sr=1-1&keywords=origins+of+political+order"
+            "link": "https://www.amazon.com/Origins-Political-Order-Prehuman-Revolution/dp/0374533229"
         },
         {
             "title": "The Time of Contempt",
             "author": "Andrzej Sapkowski",
-            "link": "https://www.amazon.com/Time-Contempt-Witcher-Andrzej-Sapkowski-ebook/dp/B00BJ5ADLQ/ref=sr_1_3?s=books&ie=UTF8&qid=1486861552&sr=1-3&keywords=Time+of+contempt"
+            "link": "https://www.amazon.com/Time-Contempt-Witcher-Andrzej-Sapkowski-ebook/dp/B00BJ5ADLQ"
         },
         {
             "title": "(REREAD) Anna Karenina",
             "author": "Leo Tolstoy (P&V)",
-            "link": ""
+            "notes": "Can't find a link to this specific translation."
+        }
+    ],
+    "Upcoming" : [
+        {
+            "title": "Age of Discovery",
+            "author": "Ian Golden and Chris Kutarna",
+            "link": "https://www.amazon.com/Age-Discovery-Navigating-Rewards-Renaissance/dp/1250085098"
+        },
+        {
+            "title": "Peace",
+            "author": "Gene Wolfe",
+            "link": "https://www.amazon.com/Peace-Gene-Wolfe/dp/0312890338"
+        },
+        {
+            "title": "The Social Conquest of Earth",
+            "author": "Edward O. Wilson",
+            "link": "https://www.amazon.com/Social-Conquest-Earth-Edward-Wilson/dp/0871403633"
+        },
+        {
+            "title": "Remainder of Andrzej Sapkowski Books",
+            "author": "Andrzej Sapkowski",
+            "link": "https://www.amazon.com/Lady-Lake-Witcher-Andrzej-Sapkowski/dp/031627383X"
+        },
+        {
+            "title": "Cancer as a Metabolic Disease",
+            "author": "Thomas Seyfried",
+            "link": "https://www.amazon.com/Cancer-Metabolic-Disease-Management-Prevention/dp/0470584920"
+        },
+        {
+            "title": "The Righteous Mind",
+            "author": "Jonathan Haidt",
+            "link": "https://www.amazon.com/Righteous-Mind-Divided-Politics-Religion-ebook/dp/B0076O2VMI/ref=sr_1_1?s=books&ie=UTF8&qid=1487188952&sr=1-1&keywords=The+righteous+mind"
+        },
+        {
+            "title": "Against a Dark Background",
+            "author": "Iain M. Banks",
+            "link": "https://www.amazon.com/Against-Dark-Background-Iain-Banks-ebook/dp/B002TXZSSK"
+        },
+        {
+            "title": "The Decline and Fall of California: From Decadence to Destruction",
+            "author": "Victor Davis Hanson",
+            "link": "https://www.amazon.com/Decline-Fall-California-Destruction-Collection-ebook/dp/B018Q83YNM"
+        },
+        {
+            "title": "Towards the Flame: Empire, War and the End of Tsarist Russia",
+            "author": "Dominic Lieven",
+            "link": "https://www.amazon.com/Towards-Flame-Empire-Tsarist-Russia-ebook/dp/B00P1VOCVG"
         }
     ],
     "2017": [
@@ -73,7 +122,8 @@ var books = {
         {
             "title": "The Fifth Head of Cerberus: Three Novellas",
             "author": "Gene Wolfe",
-            "link": "https://www.amazon.com/gp/product/0312890206/ref=oh_aui_detailpage_o05_s00?ie=UTF8&psc=1"
+            "link": "https://www.amazon.com/gp/product/0312890206/ref=oh_aui_detailpage_o05_s00?ie=UTF8&psc=1",
+            "notes": "Requires a re-read to fully appreciate."
         },
         {
             "title": "Operating Manual for Spaceship Earth",
@@ -83,7 +133,8 @@ var books = {
         {
             "title": "The Futurological Congress: From the Memoirs of Ijon Tichy",
             "author": "Stanislaw Lem",
-            "link": "https://www.amazon.com/gp/product/0156340402/ref=od_aui_detailpages01?ie=UTF8&psc=1"
+            "link": "https://www.amazon.com/gp/product/0156340402/ref=od_aui_detailpages01?ie=UTF8&psc=1",
+            "notes": "Quite simply one of the funniest books I've ever read."
         },
         {
             "title": "Mortal Engines",
@@ -118,27 +169,32 @@ var books = {
         {
             "title": "Machine Learning: A Probabilistic Perspective (Adaptive Computation and Machine Learning series)",
             "author": "Kevin P. Murphy",
-            "link": "https://www.amazon.com/Machine-Learning-Probabilistic-Perspective-Computation/dp/0262018020/ref=sr_1_1?s=books&ie=UTF8&qid=1486861011&sr=1-1"
+            "link": "https://www.amazon.com/Machine-Learning-Probabilistic-Perspective-Computation/dp/0262018020/ref=sr_1_1?s=books&ie=UTF8&qid=1486861011&sr=1-1",
+            "notes": "(Reference)"
         },
         {
             "title": "Physically Based Rendering, Second Edition: From Theory To Implementation",
             "author": "Matt Pharr",
-            "link": "https://www.amazon.com/Physically-Based-Rendering-Second-Implementation/dp/0123750792/ref=sr_1_1?s=books&ie=UTF8&qid=1486861049&sr=1-1"
+            "link": "https://www.amazon.com/Physically-Based-Rendering-Second-Implementation/dp/0123750792/ref=sr_1_1?s=books&ie=UTF8&qid=1486861049&sr=1-1",
+            "notes": "(Reference)"
         },
         {
             "title": "The Princeton Companion to Applied Mathematics",
             "author": "Nicholas J. Higham and Mark R. Dennis",
-            "link": ""
+            "link": "https://www.amazon.com/Princeton-Companion-Applied-Mathematics/dp/0691150397",
+            "notes": "(Reference)"
         },
         {
             "title": "3D Math Primer for Graphics and Game Development, 2nd Edition",
             "author": "Fletcher Dunn",
-            "link": ""
+            "link": "https://www.amazon.com/Math-Primer-Graphics-Game-Development/dp/1568817231",
+            "notes": "(Reference)"
         },
         {
             "title": "Pattern Recognition and Machine Learning (Information Science and Statistics)",
             "author": "Christopher Bishop",
-            "link": ""
+            "link": "https://www.amazon.com/Pattern-Recognition-Learning-Information-Statistics/dp/0387310738",
+            "notes": "(Reference)"
         },
         {
             "title": "(REREAD) Zero to One: Notes on Start Ups, or How to Build the Future",
@@ -149,21 +205,6 @@ var books = {
             "title": "The First Tycoon",
             "author": "T.J. Stiles",
             "link": "https://www.amazon.com/gp/product/B0026UNZD6/ref=oh_aui_d_detailpage_o04_?ie=UTF8&psc=1"
-        },
-        {
-            "title": "Gordon Ramsay's Ultimate Cookery Course",
-            "author": "Gordon Ramsay",
-            "link": "https://www.amazon.com/gp/product/B008MSOMNI/ref=oh_aui_d_detailpage_o01_?ie=UTF8&psc=1"
-        },
-        {
-            "title": "Gordon Ramsay's Great British Pub Food",
-            "author": "Gordon Ramsay",
-            "link": "https://www.amazon.com/gp/product/B003UN707A/ref=oh_aui_d_detailpage_o02_?ie=UTF8&psc=1"
-        },
-        {
-            "title": "Gordon Ramsay's Ultimate Home Cooking",
-            "author": "Gordon Ramsay",
-            "link": "https://www.amazon.com/gp/product/B00CIVLX2S/ref=oh_aui_d_detailpage_o03_?ie=UTF8&psc=1"
         },
         {
             "title": "A Canticle For Leibowitz (S.F. MASTERWORKS)",
@@ -216,129 +257,149 @@ var books = {
             "link": "https://www.amazon.com/That-Sugar-Book-Damon-Gameau-ebook/dp/B00YRC396E/ref=sr_1_3?ie=UTF8&qid=1486851581&sr=8-3&keywords=that+sugar+book"
         },
         {
-            "title": "River Cottage Light & Easy: Healthy Recipes for Every Day",
-            "author": "Hugh Fearnly-Whitingstall",
-            "link": "https://www.amazon.com/River-Cottage-Light-Easy-Healthy/dp/1408853531/ref=sr_1_6?ie=UTF8&qid=1486851611&sr=8-6&keywords=hugh+fearnley-whittingstall"
-        },
-        {
-            "title": "Three Moments of An Explosion - China Mieville",
+            "title": "Three Moments of An Explosion",
             "author": "China Mieville",
-            "link": ""
+            "link": "https://www.amazon.com/Three-Moments-Explosion-China-Mi%C3%A9ville/dp/1101884789"
         },
         {
             "title": "Beyond the Aquila Rift",
             "author": "Alastair Reynolds",
-            "link": ""
+            "link": "https://www.amazon.com/Beyond-Aquila-Rift-Alastair-Reynolds-ebook/dp/B019CSNPTI"
         },
         {
             "title": "The Three Body Problem",
             "author": "Cixin Liu",
-            "link": ""
+            "link": "https://www.amazon.com/Three-Body-Problem-Cixin-Liu/dp/0765382032"
         },
         {
             "title": "(REREAD) Hyperion",
             "author": "Dan Simmons",
-            "link": ""
+            "link": "https://www.amazon.com/Hyperion-Cantos-Dan-Simmons/dp/0553283685"
         },
         {
             "title": "(REREAD) The Fall of Hyperion",
             "author": "Dan Simmons",
-            "link": ""
+            "link": "https://www.amazon.com/Fall-Hyperion-Dan-Simmons/dp/0553288202"
         },
         {
             "title": "Altered Carbon",
             "author": "Richard Morgan",
-            "link": ""
+            "link": "https://www.amazon.com/Altered-Carbon-Takeshi-Kovacs-Richard-ebook/dp/B002U3CBZM"
         },
         {
             "title": "Abyss Beyond Dreams",
             "author": "Peter F. Hamilton",
-            "link": ""
+            "link": "https://www.amazon.com/Abyss-Beyond-Dreams-Commonwealth-Chronicle/dp/0345547217"
         },
         {
             "title": "Solaris",
             "author": "Stanislaw Lem",
-            "link": ""
+            "link": "https://www.amazon.com/Solaris-Stanislaw-Lem/dp/0156027607"
         },
         {
             "title": "The Inevitable",
             "author": "Kevin Kelly",
-            "link": ""
+            "link": "https://www.amazon.com/Inevitable-Understanding-Technological-Forces-Future/dp/0525428089"
         },
         {
             "title": "(REREAD) The Hard Thing About Hard Things",
             "author": "Ben Horowitz",
-            "link": ""
+            "link": "https://www.amazon.com/Hard-Thing-About-Things-Building-ebook/dp/B00DQ845EA"
         },
         {
             "title": "House of Suns",
             "author": "Alastair Reynolds",
-            "link": ""
+            "link": "https://www.amazon.com/House-Suns-GOLLANCZ-Alastair-Reynolds-ebook/dp/B0049MPHY4"
         },
         {
             "title": "(REREAD) The Big Sleep",
             "author": "Raymond Chandler",
-            "link": ""
+            "link": "https://www.amazon.com/Big-Sleep-Raymond-Chandler/dp/B002C0XSSW"
         },
         {
             "title": "The Defense of Gallipoli: A General Staff Study",
             "author": "George S. Patton Jr",
-            "link": ""
+            "link": "http://www.goodreads.com/book/show/5972479-the-defense-of-gallipoli",
+            "notes": "Doesn't appear to be available on Amazon any more."
         },
         {
-            "title": "Elon Musk",
+            "title": "Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future",
             "author": "Ashley Vance",
-            "link": ""
+            "link": "https://www.amazon.com/Elon-Musk-SpaceX-Fantastic-Future/dp/0062301233"
         },
         {
             "title": "What Technology Wants",
             "author": "Kevin Kelly",
-            "link": ""
+            "link": "https://www.amazon.com/What-Technology-Wants-Kevin-Kelly/dp/0143120174"
         },
         {
             "title": "Hydrogen Sonata",
             "author": "Iain M. Banks",
-            "link": ""
+            "link": "https://www.amazon.com/Hydrogen-Sonata-Culture-Novel-ebook/dp/B008K5T5AI"
         },
         {
             "title": "(REREAD) Revelation Space",
             "author": "Alastair Reynolds",
-            "link": ""
+            "link": "https://www.amazon.com/Revelation-Space-Alastair-Reynolds-ebook/dp/B0049MPHZI"
         },
         {
             "title": "Rise of the Robots: Technology and the Threat of a Jobless Future",
             "author": "Martin Ford",
-            "link": ""
+            "link": "https://www.amazon.com/Rise-Robots-Technology-Threat-Unemployment-ebook/dp/B0147D1WIO"
         },
         {
             "title": "Superintelligence",
             "author": "Nick Bostrom",
-            "link": ""
+            "link": "https://www.amazon.com/Superintelligence-Dangers-Strategies-Nick-Bostrom/dp/0198739834"
         },
         {
             "title": "Lying",
             "author": "Sam Harris",
-            "link": ""
+            "link": "https://www.amazon.com/Lying-Sam-Harris-ebook/dp/B00G1SRB6Q"
         },
         {
             "title": "Tools of Titans",
             "author": "Tim Feriss",
-            "link": ""
+            "link": "https://www.amazon.com/Tools-Titans-Billionaires-World-Class-Performers-ebook/dp/B01LF32ZNU"
         },
         {
             "title": "Hitch-22: A Memoir (AUDIOBOOK)",
-            "author": "Christoper Hitchens",
-            "link": ""
+            "author": "Christopher Hitchens",
+            "link": "https://www.amazon.com/Hitch-22-Memoir-Christopher-Hitchens/dp/044654034X"
         },
         {
             "title": "Foundation (AUDIOBOOK)",
             "author": "Isaac Asimov",
-            "link": ""
+            "link": "https://www.amazon.com/Foundation-Isaac-Asimov/dp/0553293354"
         },
         {
             "title": "The Count of Monte Cristo (AUDIOBOOK)",
             "author": "Alexandre Dumas",
-            "link": ""
+            "link": "http://www.audible.com.au/pd/Classics/The-Count-of-Monte-Cristo-Audiobook/B00FMDSM7I"
+        },
+        {
+            "title": "Gordon Ramsay's Ultimate Cookery Course",
+            "author": "Gordon Ramsay",
+            "link": "https://www.amazon.com/gp/product/B008MSOMNI/ref=oh_aui_d_detailpage_o01_?ie=UTF8&psc=1",
+            "notes": "Made a lot of recipes from this book.  I just think Ramsay is a cut above the rest."
+        },
+        {
+            "title": "Gordon Ramsay's Great British Pub Food",
+            "author": "Gordon Ramsay",
+            "link": "https://www.amazon.com/gp/product/B003UN707A/ref=oh_aui_d_detailpage_o02_?ie=UTF8&psc=1",
+            "notes": "Good winter recipes, but the eBook was ruined by extremely poor formatting."
+        },
+        {
+            "title": "Gordon Ramsay's Ultimate Home Cooking",
+            "author": "Gordon Ramsay",
+            "link": "https://www.amazon.com/gp/product/B00CIVLX2S/ref=oh_aui_d_detailpage_o03_?ie=UTF8&psc=1",
+            "notes": "One of the best recipe books out there."
+        },
+        {
+            "title": "River Cottage Light & Easy: Healthy Recipes for Every Day",
+            "author": "Hugh Fearnly-Whitingstall",
+            "link": "https://www.amazon.com/River-Cottage-Light-Easy-Healthy/dp/1408853531/ref=sr_1_6?ie=UTF8&qid=1486851611&sr=8-6&keywords=hugh+fearnley-whittingstall",
+            "notes": "Very simple recipes that often blow people away."
         }
     ]
 };
@@ -362,10 +423,20 @@ export default class Reading extends React.Component {
 
 
     bookLink(item, index) {
+        var notes = "";
+        if (item.notes) {
+            notes = (
+                <span>
+                {item.notes}
+                <br />
+                </span>
+            );
+        }
         return ( 
             <div>
                 <strong>{index + 1}. {item.link && item.link.length > 0 ? <a href={item.link}>{item.title}</a> : item.title}</strong><br />
                 by <strong>{item.author}</strong><br />
+                {notes}
                 <br />
             </div>
         )
@@ -377,15 +448,21 @@ export default class Reading extends React.Component {
         <Helmet
           title={`${config.siteTitle} | React.js components`} 
         />
-        <div className="style1"><p>Currently Reading:</p></div>
+        <header className="style1"><h2>Currently Reading:</h2></header>
 
         {books['Current'].map((item, index) => { return this.bookLink(item, index) })}
 
-        <header className="style1"><p>Read 2017:</p></header>
+        <header className="style1"><h2>Upcoming:</h2></header>
+
+        {books['Upcoming'].map((item, index) => { return this.bookLink(item, index) })}
+
+        <header className="style1"><h2>Read in 2017:</h2><p>Not including Kindle samples, or partly finished books</p></header>
 
         {books['2017'].map((item, index) => { return this.bookLink(item, index) })}
 
-        <header className="style1"><p>Read 2016:</p></header>
+        <header className="style1"><h2>Read in 2016:</h2><p>Not including Kindle samples, or partly finished books</p></header>
+
+
 
         {books['2016'].map((item, index) => { return this.bookLink(item, index) })}
 
