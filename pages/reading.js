@@ -6,17 +6,7 @@ import { prefixLink } from 'gatsby-helpers'
 
 var books = {
     "Current" : [
-        {
-            "title": "Dune",
-            "author": "Frank Herbert",
-            "link": "https://www.amazon.com/Dune-Sequence-Frank-Herbert-ebook/dp/B004KA9UXO"
-        },
-        {
-            "title": "(REREAD) Hyperion",
-            "author": "Dan Simmons",
-            "link": "https://www.amazon.com/Hyperion-Cantos-Dan-Simmons/dp/0553283685",
-            "notes": "I didn't mean to start re-reading Hyperion again, but the Priest's Tale is so good it just sucked me right in to the story again."
-        },
+        
         {
             "title": "Through the Eye of a Needle: Wealth, the Fall of Rome, and the Making of Christianity in the West, 350-550 AD (Audiobook)",
             "author": "Peter Brown",
@@ -24,19 +14,9 @@ var books = {
             "notes": "Really loving this so far."
         },
         {
-            "title": "The Origins of Political Order (Audiobook)",
-            "author": "Francis Fukuyama",
-            "link": "https://www.amazon.com/Origins-Political-Order-Prehuman-Revolution/dp/0374533229"
-        },
-        {
-            "title": "The Time of Contempt",
-            "author": "Andrzej Sapkowski",
-            "link": "https://www.amazon.com/Time-Contempt-Witcher-Andrzej-Sapkowski-ebook/dp/B00BJ5ADLQ"
-        },
-        {
-            "title": "(REREAD) Anna Karenina",
-            "author": "Leo Tolstoy (P&V)",
-            "notes": "Can't find a link to this specific translation."
+            "title": "Peace",
+            "author": "Gene Wolfe",
+            "link": "https://www.amazon.com/Peace-Gene-Wolfe/dp/0312890338"
         }
     ],
     "Upcoming" : [
@@ -46,19 +26,9 @@ var books = {
             "link": "https://www.amazon.com/Age-Discovery-Navigating-Rewards-Renaissance/dp/1250085098"
         },
         {
-            "title": "Peace",
-            "author": "Gene Wolfe",
-            "link": "https://www.amazon.com/Peace-Gene-Wolfe/dp/0312890338"
-        },
-        {
             "title": "The Social Conquest of Earth",
             "author": "Edward O. Wilson",
             "link": "https://www.amazon.com/Social-Conquest-Earth-Edward-Wilson/dp/0871403633"
-        },
-        {
-            "title": "Remainder of Andrzej Sapkowski Books",
-            "author": "Andrzej Sapkowski",
-            "link": "https://www.amazon.com/Lady-Lake-Witcher-Andrzej-Sapkowski/dp/031627383X"
         },
         {
             "title": "Cancer as a Metabolic Disease",
@@ -71,16 +41,6 @@ var books = {
             "link": "https://www.amazon.com/Righteous-Mind-Divided-Politics-Religion-ebook/dp/B0076O2VMI/ref=sr_1_1?s=books&ie=UTF8&qid=1487188952&sr=1-1&keywords=The+righteous+mind"
         },
         {
-            "title": "Against a Dark Background",
-            "author": "Iain M. Banks",
-            "link": "https://www.amazon.com/Against-Dark-Background-Iain-Banks-ebook/dp/B002TXZSSK"
-        },
-        {
-            "title": "The Decline and Fall of California: From Decadence to Destruction",
-            "author": "Victor Davis Hanson",
-            "link": "https://www.amazon.com/Decline-Fall-California-Destruction-Collection-ebook/dp/B018Q83YNM"
-        },
-        {
             "title": "Towards the Flame: Empire, War and the End of Tsarist Russia",
             "author": "Dominic Lieven",
             "link": "https://www.amazon.com/Towards-Flame-Empire-Tsarist-Russia-ebook/dp/B00P1VOCVG"
@@ -88,14 +48,64 @@ var books = {
     ],
     "2017": [
         {
+            "title": "The Origins of Political Order (Audiobook)",
+            "author": "Francis Fukuyama",
+            "link": "https://www.amazon.com/Origins-Political-Order-Prehuman-Revolution/dp/0374533229"
+        },
+        {
+            "title": "Deep Work",
+            "author": "Cal Newport",
+            "link": ""
+        },
+        {
+            "title": "The Three Body Problem",
+            "author": "Cixin Liu",
+            "link": "https://www.amazon.com/Three-Body-Problem-Cixin-Liu/dp/0765382032"
+        },
+        {
+            "title": "(REREAD) Fall of Hyperion",
+            "author": "Dan Simmons",
+        },
+        {
+            "title": "The Lady of The Lake",
+            "author": "Andrzej Sapkowski",
+            "link": "https://www.amazon.com/Lady-Lake-Andrzej-Sapkowski-ebook/dp/B01M4GH0GS"
+        },
+        {
+            "title": "The Tower of the Swallow",
+            "author": "Andrzej Sapkowski",
+            "link": "https://www.amazon.com/Tower-Swallow-Andrzej-Sapkowski-ebook/dp/B019CSNPV6"
+        },
+        {
+            "title": "Baptism of Fire",
+            "author": "Andrzej Sapkowski",
+            "link": "https://www.amazon.com/Baptism-Fire-Witcher-Andrzej-Sapkowski-ebook/dp/B00GFHFRSM"
+        },
+        {
+            "title": "(REREAD) Hyperion",
+            "author": "Dan Simmons",
+            "link": "https://www.amazon.com/Hyperion-Cantos-Dan-Simmons/dp/0553283685",
+            "notes": "I didn't mean to start re-reading Hyperion again, but the Priest's Tale is so good it just sucked me right in to the story again."
+        },
+        {
+            "title": "Time of Contempt",
+            "author": "Andrzej Sapkowski",
+            "link": "https://www.amazon.com/Time-Contempt-Witcher-Andrzej-Sapkowski-ebook/dp/B00BJ5ADLQ"
+        },
+        {
+            "title": "Dune",
+            "author": "Frank Herbert",
+            "link": "https://www.amazon.com/Dune-Sequence-Frank-Herbert-ebook/dp/B004KA9UXO"
+        },
+        {
             "title": "Grit: The Power of Passion and Perseverance",
             "author": "Angela Duckworth",
             "link": "https://www.amazon.com/Grit-Passion-Perseverance-Angela-Duckworth-ebook/dp/B019CGY2ZG/ref=sr_1_1?s=books&ie=UTF8&qid=1486861641&sr=1-1&keywords=Grit"
         },
         {
-            "title": "The Last Wish",
+            "title": "Blood of Elves",
             "author": "Andrzej Sapkowski",
-            "link": "https://www.amazon.com/Last-Wish-Andrzej-Sapkowski-ebook/dp/B0043M6712/ref=sr_1_1?s=books&ie=UTF8&qid=1486861653&sr=1-1"
+            "link": "https://www.amazon.com/Blood-Elves-Witcher-Andrzej-Sapkowski-ebook/dp/B0043M66Z4/ref=sr_1_1?s=books&ie=UTF8&qid=1486861665&sr=1-1"
         },
         {
             "title": "Sword of Destiny",
@@ -103,9 +113,9 @@ var books = {
             "link": "https://www.amazon.com/Sword-Destiny-Andrzej-Sapkowski-ebook/dp/B00U68KUE2/ref=sr_1_3?s=books&ie=UTF8&qid=1486861653&sr=1-3"
         },
         {
-            "title": "Blood of Elves",
+            "title": "The Last Wish",
             "author": "Andrzej Sapkowski",
-            "link": "https://www.amazon.com/Blood-Elves-Witcher-Andrzej-Sapkowski-ebook/dp/B0043M66Z4/ref=sr_1_1?s=books&ie=UTF8&qid=1486861665&sr=1-1"
+            "link": "https://www.amazon.com/Last-Wish-Andrzej-Sapkowski-ebook/dp/B0043M6712/ref=sr_1_1?s=books&ie=UTF8&qid=1486861653&sr=1-1"
         }
     ],
     "2016": [
@@ -265,11 +275,6 @@ var books = {
             "title": "Beyond the Aquila Rift",
             "author": "Alastair Reynolds",
             "link": "https://www.amazon.com/Beyond-Aquila-Rift-Alastair-Reynolds-ebook/dp/B019CSNPTI"
-        },
-        {
-            "title": "The Three Body Problem",
-            "author": "Cixin Liu",
-            "link": "https://www.amazon.com/Three-Body-Problem-Cixin-Liu/dp/0765382032"
         },
         {
             "title": "(REREAD) Hyperion",
