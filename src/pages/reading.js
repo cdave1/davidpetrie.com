@@ -1,8 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { config } from 'config'
 import Gallery from 'react-grid-gallery';
-import { prefixLink } from 'gatsby-helpers'
+import Wrapper from '../components/Wrapper';
 
 var books = {
     "Current" : [
@@ -447,31 +446,25 @@ export default class Reading extends React.Component {
         )
     }
    
-  render () {
-    return (
-      <div>
-        <Helmet
-          title={`${config.siteTitle} | React.js components`} 
-        />
-        <header className="style1"><h2>Currently Reading:</h2></header>
+    render () {
+        return (
+            <Wrapper title="Reading List">
+                <header className="style1"><h2>Currently Reading:</h2></header>
 
-        {books['Current'].map((item, index) => { return this.bookLink(item, index) })}
+                {books['Current'].map((item, index) => { return this.bookLink(item, index) })}
 
-        <header className="style1"><h2>Upcoming:</h2></header>
+                <header className="style1"><h2>Upcoming:</h2></header>
 
-        {books['Upcoming'].map((item, index) => { return this.bookLink(item, index) })}
+                {books['Upcoming'].map((item, index) => { return this.bookLink(item, index) })}
 
-        <header className="style1"><h2>Read in 2017:</h2><p>Not including Kindle samples, or partly finished books</p></header>
+                <header className="style1"><h2>Read in 2017:</h2><p>Not including Kindle samples, or partly finished books</p></header>
 
-        {books['2017'].map((item, index) => { return this.bookLink(item, index) })}
+                {books['2017'].map((item, index) => { return this.bookLink(item, index) })}
 
-        <header className="style1"><h2>Read in 2016:</h2><p>Not including Kindle samples, or partly finished books</p></header>
+                <header className="style1"><h2>Read in 2016:</h2><p>Not including Kindle samples, or partly finished books</p></header>
 
-
-
-        {books['2016'].map((item, index) => { return this.bookLink(item, index) })}
-
-      </div>
-    )
+                {books['2016'].map((item, index) => { return this.bookLink(item, index) })}
+            </Wrapper>
+        )
   }
 }

@@ -1,8 +1,8 @@
-<!--
+---
 layout: page
 tab-name: about
 title: About Me
--->
+---
 
 
 								<article class="box post">
