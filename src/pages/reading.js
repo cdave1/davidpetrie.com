@@ -5,12 +5,26 @@ import Wrapper from '../components/Wrapper';
 
 var books = {
     "Current" : [
-        
+        {
+            title: "Adults In The Room: My Battle With Europe’s Deep Establishment",
+            author: "Yanis Varoufakis",
+            link: "https://www.amazon.com/Adults-Room-Battle-Europes-Establishment-ebook/dp/B01ICK4IWK"
+        },
+        {
+            title: "Behave: The Biology of Humans at Our Best and Worst",
+            author: "Robert M Sapolsky",
+            link: "https://www.amazon.com/Behave-Biology-Humans-Best-Worst-ebook/dp/B01A7YX4TW"
+        },
         {
             "title": "Through the Eye of a Needle: Wealth, the Fall of Rome, and the Making of Christianity in the West, 350-550 AD (Audiobook)",
             "author": "Peter Brown",
             "link": "https://www.amazon.com/Through-Eye-Needle-Christianity-350-550-ebook/dp/B009EYPOCC",
             "notes": "Really loving this so far."
+        },
+        {
+            title: "Collected Poems 1909-1962",
+            author: "T.S. Eliot",
+            link: "https://www.amazon.com/Collected-Poems-1909-1962-T-S-Eliot-ebook/dp/B004H1TC3O"
         },
         {
             "title": "Peace",
@@ -20,9 +34,9 @@ var books = {
     ],
     "Upcoming" : [
         {
-            "title": "Age of Discovery",
-            "author": "Ian Golden and Chris Kutarna",
-            "link": "https://www.amazon.com/Age-Discovery-Navigating-Rewards-Renaissance/dp/1250085098"
+            "title": "Fifty Orwell Essays",
+            author: "George Orwell",
+            "link": "https://www.amazon.com/Fifty-Orwell-Essays-George/dp/1849026475",
         },
         {
             "title": "The Social Conquest of Earth",
@@ -46,6 +60,37 @@ var books = {
         }
     ],
     "2017": [
+
+        {
+            "title": "Second Foundation",
+            "author": "Isaac Asimov",
+            "link": "https://en.wikipedia.org/wiki/Second_Foundation"
+        },
+        {
+            "title": "Foundation and Empire",
+            "author": "Isaac Asimov",
+            "link": "https://en.wikipedia.org/wiki/Foundation_and_Empire"
+        },
+        {
+            "title": "Foundation",
+            "author": "Isaac Asimov",
+            "link": "https://en.wikipedia.org/wiki/Foundation_(Asimov_novel)"
+        },
+        {
+            "title": "The Waste Land",
+            "author": "T.S. Eliot",
+            "link": "https://en.wikipedia.org/wiki/The_Waste_Land"
+        },
+        {
+            "title": "Inversions",
+            "author": "Iain M. Banks",
+            "link": "https://www.amazon.com/gp/product/B002TXZR8G/ref=series_rw_dp_sw"
+        },
+        {
+            "title": "Look to Windward",
+            "author": "Iain M. Banks",
+            "link": "https://www.amazon.com/Look-Windward-Culture-Iain-Banks-ebook/dp/B003MQM7A0"
+        },
         {
             "title": "The Origins of Political Order (Audiobook)",
             "author": "Francis Fukuyama",
@@ -54,7 +99,7 @@ var books = {
         {
             "title": "Deep Work",
             "author": "Cal Newport",
-            "link": ""
+            "link": "https://www.amazon.com/Deep-Work-Focused-Success-Distracted-ebook/dp/B013UWFM52"
         },
         {
             "title": "The Three Body Problem",
@@ -457,11 +502,11 @@ export default class Reading extends React.Component {
 
                 {books['Upcoming'].map((item, index) => { return this.bookLink(item, index) })}
 
-                <header className="style1"><h2>Read in 2017:</h2><p>Not including Kindle samples, or partly finished books</p></header>
+                <header className="style1"><h2>Read in 2017:</h2></header>
 
                 {books['2017'].map((item, index) => { return this.bookLink(item, index) })}
 
-                <header className="style1"><h2>Read in 2016:</h2><p>Not including Kindle samples, or partly finished books</p></header>
+                <header className="style1"><h2>Read in 2016:</h2></header>
 
                 {books['2016'].map((item, index) => { return this.bookLink(item, index) })}
             </Wrapper>
