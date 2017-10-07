@@ -6,14 +6,14 @@ import Wrapper from '../components/Wrapper';
 var books = {
     "Current" : [
         {
+            title: "Tesla: Inventor of the Electrical Age",
+            author: "W. Bernard Carlson",
+            link: "https://www.amazon.com/Tesla-Inventor-Electrical-Bernard-Carlson-ebook/dp/B00CHRQ1C0"
+        },
+        {
             title: "Adults In The Room: My Battle With Europe’s Deep Establishment",
             author: "Yanis Varoufakis",
             link: "https://www.amazon.com/Adults-Room-Battle-Europes-Establishment-ebook/dp/B01ICK4IWK"
-        },
-        {
-            title: "Behave: The Biology of Humans at Our Best and Worst",
-            author: "Robert M Sapolsky",
-            link: "https://www.amazon.com/Behave-Biology-Humans-Best-Worst-ebook/dp/B01A7YX4TW"
         },
         {
             "title": "Through the Eye of a Needle: Wealth, the Fall of Rome, and the Making of Christianity in the West, 350-550 AD (Audiobook)",
@@ -33,11 +33,7 @@ var books = {
         }
     ],
     "Upcoming" : [
-        {
-            "title": "Fifty Orwell Essays",
-            author: "George Orwell",
-            "link": "https://www.amazon.com/Fifty-Orwell-Essays-George/dp/1849026475",
-        },
+        
         {
             "title": "The Social Conquest of Earth",
             "author": "Edward O. Wilson",
@@ -60,7 +56,26 @@ var books = {
         }
     ],
     "2017": [
-
+        {
+            title: "Behave: The Biology of Humans at Our Best and Worst",
+            author: "Robert M Sapolsky",
+            link: "https://www.amazon.com/Behave-Biology-Humans-Best-Worst-ebook/dp/B01A7YX4TW"
+        },
+        {
+            "title": "Fifty Orwell Essays",
+            author: "George Orwell",
+            "link": "https://www.amazon.com/Fifty-Orwell-Essays-George/dp/1849026475",
+        },
+        {
+            "title": "Kurt Vonnegut: The Last Interview: And Other Conversations",
+            "author": "Kurt Vonnegut",
+            "link": "https://www.amazon.com/Kurt-Vonnegut-Interview-Other-Conversations/dp/1612190901"
+        },
+        {
+            "title": "The State of the Art",
+            "author": "Iain M. Banks",
+            "link": "https://en.wikipedia.org/wiki/The_State_of_the_Art"
+        },
         {
             "title": "Second Foundation",
             "author": "Isaac Asimov",
