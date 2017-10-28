@@ -16,12 +16,6 @@ var books = {
             link: "https://www.amazon.com/Adults-Room-Battle-Europes-Establishment-ebook/dp/B01ICK4IWK"
         },
         {
-            "title": "Through the Eye of a Needle: Wealth, the Fall of Rome, and the Making of Christianity in the West, 350-550 AD (Audiobook)",
-            "author": "Peter Brown",
-            "link": "https://www.amazon.com/Through-Eye-Needle-Christianity-350-550-ebook/dp/B009EYPOCC",
-            "notes": "Really loving this so far."
-        },
-        {
             title: "Collected Poems 1909-1962",
             author: "T.S. Eliot",
             link: "https://www.amazon.com/Collected-Poems-1909-1962-T-S-Eliot-ebook/dp/B004H1TC3O"
@@ -56,6 +50,12 @@ var books = {
         }
     ],
     "2017": [
+        {
+            "title": "Through the Eye of a Needle: Wealth, the Fall of Rome, and the Making of Christianity in the West, 350-550 AD (Audiobook)",
+            "author": "Peter Brown",
+            "link": "https://www.amazon.com/Through-Eye-Needle-Christianity-350-550-ebook/dp/B009EYPOCC",
+            "notes": "One of the most extraordinary books I've read about this period of history."
+        },
         {
             title: "Behave: The Biology of Humans at Our Best and Worst",
             author: "Robert M Sapolsky",

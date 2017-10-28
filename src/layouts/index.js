@@ -1,7 +1,4 @@
 import React from 'react'
-import { Container } from 'react-responsive-grid'
-import { Link } from 'react-router'
-import Headroom from 'react-headroom'
 import '../css/assets/css/main.css'
 
 module.exports = React.createClass({ 
