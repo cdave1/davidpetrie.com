@@ -8,6 +8,7 @@ var galleries = [
   {
       title: "Algorithmic Design Engine",
       description: "A project that allows designers to design things using algorithms.",
+      url: 'https://dreamgine.co',
       images: [
           {
             src: '/images/ae/AE00012.png',
@@ -123,7 +124,8 @@ var galleries = [
   },
   {
       title: "Ocean",
-      description: "A small handheld general purpose computer, with complete OS and remote management tools.",
+      description: "A small handheld general purpose computer, with complete OS and remote management tools",
+      url: 'https://getocean.now.sh/',
       images: [
           {
             src: '/images/Ocean/OceanHW00006.png',
@@ -241,7 +243,9 @@ export default class Projects extends React.Component {
 
             return (
               <div key={index}>
-              <header className="style1"><h2>{gallery.title}</h2><p>{gallery.description}</p></header>
+              <header className="style1"><h2>{gallery.title}</h2><p>{gallery.description}</p>
+                {gallery.url && <p><a href={gallery.url}>{gallery.url}</a></p>}
+              </header>
               
                 <Container>
                   
