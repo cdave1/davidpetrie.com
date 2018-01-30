@@ -2,13 +2,15 @@ import React from 'react'
 import { Link } from 'react-router'
 import Helmet from 'react-helmet'
 import Gallery from 'react-grid-gallery';
-import { Container } from 'react-responsive-grid'
+
+
+import { Container } from 'semantic-ui-react'
 
 var galleries = [
   {
       title: "Algorithmic Design Engine",
       description: "A project that allows designers to design things using algorithms.",
-      url: 'https://dreamgine.co',
+      url: 'https://dreamengine.co',
       images: [
           {
             src: '/images/ae/AE00012.png',

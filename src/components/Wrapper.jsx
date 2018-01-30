@@ -1,19 +1,19 @@
 import React from 'react'
+import { Container } from 'semantic-ui-react'
+import SiteHeader from './Header';
+import SiteFooter from './Footer';
 
-export default class Wrapper extends React.Component {
+export default class PageWrapper extends React.Component {
     constructor () {
         super()
     }
 
     render () {
         return (
-            <div className="wrapper style2">
-                <div className="title">{this.props.title}</div>
-                <div id="main" className="container">
-                    <div id="content">
-                        {this.props.children}
-                    </div>
-                </div>
+            <div>
+                <SiteHeader />
+                <Container>{this.props.children}</Container>
+                <SiteFooter />
             </div>
         )
     }

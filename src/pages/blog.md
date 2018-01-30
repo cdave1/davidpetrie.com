@@ -1,12 +1,7 @@
 ---
-layout: page
-tab-name: blog
+path: "/blog/my-first-post"
+date: "2017-11-07"
 title: Blog
 ---
 
-<article class="box post">
-<p>
-Coming soon...
-</p>
-
-</article>
+# Coming soon...

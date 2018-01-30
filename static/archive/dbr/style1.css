@@ -1,0 +1,18 @@
+/* CSS - by Infocore Software Ltd., for The Daily Business Review (www.daily-business-review.com) */
+
+a:link 			{ color: d83333; text-decoration: none; font-weight: bold }
+a:visited 		{ color: c0c0c0; text-decoration: none }
+a:hover			{ color: f83333; text-decoration: underline }
+a.section		{ color: c0c0c0; text-decoration: none; font-weight: bold; font-size: 10px }
+
+.headlines		{ { font-family: arial; font-size: 13px }
+.whites			{ font-family: verdana,arial,helvetica; font-size: 11px; color: ffffff }
+.title			{ font-size: 30pt; color: ffffff }
+.top			{ font-family: verdana,arial,helvetica; font-size: 9px; color: 000000 }
+.high			{ font-family: verdana; font-size: 10px; color: dddddd }
+.side			{ font-family: verdana,arial,helvetica; font-size: 8pt; font-weight: bold }
+.wheading		{ font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-weight: bold; font-size: 10pt; color: ffffff }
+.sheading		{ font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-weight: bold; font-size: 12pt }
+.main			{ font-family: verdana; font-size: 11px }
+.bottom			{ font-family: verdana,arial,helvetica; font-size: 8pt; color: c7c7c7 }
+

@@ -11,14 +11,16 @@ export default class Index extends React.Component {
     constructor () {
         super()
         this.state = {
-            title: "hello"
+            title: ""
         };
     }
 
     render () {
         return (
             <Wrapper title="Recent Work">
-              <Projects />
+                <div>
+                    <Projects />
+                </div>
             </Wrapper>
         )
     }

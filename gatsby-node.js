@@ -1,47 +1,33 @@
-// In your gatsby-node.js
-const path = require('path')
+const _ = require("lodash")
+const Promise = require("bluebird")
+const path = require("path")
+const select = require(`unist-util-select`)
+const fs = require(`fs-extra`)
 
-exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
-  const { createNodeField } = boundActionCreators
-  let slug
-  if (node.internal.type === `MarkdownRemark`) {
-    const fileNode = getNode(node.parent)
-    const parsedFilePath = path.parse(fileNode.relativePath)
-    if (parsedFilePath.name !== `index` && parsedFilePath.dir !== ``) {
-      slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`
-    } else if (parsedFilePath.dir === ``) {
-      slug = `/${parsedFilePath.name}/`
-    } else {
-      slug = `/${parsedFilePath.dir}/`
-    }
-
-    // Add slug as a field on the node.
-    createNodeField({ node, name: `slug`, value: slug })
-  }
-}
-
+// NOTE: copied and pasted from https://github.com/noahg/gatsby-starter-blog-no-styles/tree/master/src/pages
+// I have no idea why it is so damn complex to convert markdown to react in the
+// latest version of gatbsy when it was so easy and seamless in previous versions.
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators
 
   return new Promise((resolve, reject) => {
     const pages = []
-    const blogPost = path.resolve("src/templates/blog-post.js")
-    // Query for all markdown "nodes" and for the slug we previously created.
+    const defaultTemplate = path.resolve("./src/templates/default.js")
     resolve(
       graphql(
         `
-        {
-          allMarkdownRemark {
-            edges {
-              node {
-                fields {
-                  slug
-                }
+      {
+        allMarkdownRemark(limit: 1000) {
+          edges {
+            node {
+              frontmatter {
+                path
               }
             }
           }
         }
-      `
+      }
+    `
       ).then(result => {
         if (result.errors) {
           console.log(result.errors)
@@ -49,17 +35,15 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
 
         // Create blog posts pages.
-        result.data.allMarkdownRemark.edges.forEach(edge => {
+        _.each(result.data.allMarkdownRemark.edges, edge => {
           createPage({
-            path: edge.node.fields.slug, // required
-            component: blogPost,
+            path: edge.node.frontmatter.path,
+            component: defaultTemplate,
             context: {
-              slug: edge.node.fields.slug,
+              path: edge.node.frontmatter.path,
             },
           })
         })
-
-        return
       })
     )
   })

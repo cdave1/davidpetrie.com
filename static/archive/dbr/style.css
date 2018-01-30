@@ -1,0 +1,10 @@
+/* CSS */
+
+
+@import url(style.css)
+a.huh			{ color: ba3333; text-decoration: none; font-weight: bold }
+a:link 			{ font-family="verdana, arial"; font-size: 10px; color: dddddd; text-decoration: none }
+a:visited 		{ font-family="verdana, arial"; font-size: 10px; color: dddddd; text-decoration: none }
+a:hover			{ font-family="verdana, arial"; font-size: 10px; color: dddddd; text-decoration: underline }
+
+span.top 		{ font-family="verdana, arial"; font-size: 10px; color: ffffff} 

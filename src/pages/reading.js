@@ -1,14 +1,75 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import Gallery from 'react-grid-gallery';
-import Wrapper from '../components/Wrapper';
+
+import { Header, Divider } from 'semantic-ui-react'
+import PageWrapper from '../components/Wrapper';
 
 var books = {
     "Current" : [
         {
+            "title": "Presuasion",
+            "author": "Robert Cialdini",
+            "link": "https://www.amazon.com/Pre-Suasion-Revolutionary-Way-Influence-Persuade-ebook/dp/B01A6DJD7Q"
+        },
+        {
+            "title": "The First Tycoon: The Epic Life of Cornelius Vanderbilt",
+            "author": "T. J. Stiles",
+            "link": "https://www.amazon.com/Tycoon-Cornelius-Vanderbilt-Stiles-Hardcover/dp/B00DWWAO2C",
+            "notes": "Previously abandoned, picking up again."
+        }
+    ],
+    "Upcoming" : [
+        {
+            "title": "Scum of the Earth",
+            "author": "Arthur Koestler",
+            "link": "https://www.amazon.com/Scum-Earth-Arthur-Koestler-ebook/dp/B009ZH6VC0"
+        },
+        {
+            "title": "Brave New World",
+            "author": "Aldous Huxley",
+            "link": "https://www.amazon.com/Brave-New-World-Aldous-Huxley-ebook/dp/B0748M1VKH",
+            "notes": "Intro by Margeret Atwood"
+        },
+        {
+            "title": "Life on the Edge: The Coming Age of Quantum Biology",
+            "author": "Johnjoe McFadden, Jim Al-Khalili",
+            "link": "https://www.amazon.com/Life-Edge-Coming-Quantum-Biology/dp/0307986829"
+        },
+        {
+            "title": "The Rise of Western Christendom: Triumph and Diversity, A.D. 200-1000 3rd Edition",
+            "author": "Peter Brown",
+            "link": "https://www.amazon.com/Rise-Western-Christendom-Diversity-D/dp/1118301269"
+        }
+    ],
+    "2018": [
+        {
+            title: "Shoe Dog",
+            author: "Phil Knight",
+            link: "https://www.amazon.com/Shoe-Dog-Memoir-Creator-NIKE-ebook/dp/B0182L0D0K"
+        },
+        {
+            title: "Tribe of Mentors",
+            author: "Tim Ferriss et al",
+            link: "https://www.amazon.com/Tribe-Mentors-Short-Advice-World-ebook/dp/B075M48QKK",
+            notes: "Nice easy start to the year."
+        }
+    ],
+    "2017": [
+        {
+            title: "The Invincible",
+            author: "Stanislaw Lem",
+            link: "https://www.goodreads.com/book/show/21458868-the-invincible",
+            notes: "An excellent read in spite of the translation."
+        },
+        {
             title: "Tesla: Inventor of the Electrical Age",
             author: "W. Bernard Carlson",
             link: "https://www.amazon.com/Tesla-Inventor-Electrical-Bernard-Carlson-ebook/dp/B00CHRQ1C0"
+        },
+        {
+            title: "Perennial Seller: The Art of Making and Marketing Work that Lasts",
+            author: "Ryan Holiday",
+            link: "https://www.amazon.com/Perennial-Seller-Making-Marketing-Lasts/dp/0143109014"
         },
         {
             title: "Adults In The Room: My Battle With Europe’s Deep Establishment",
@@ -21,35 +82,10 @@ var books = {
             link: "https://www.amazon.com/Collected-Poems-1909-1962-T-S-Eliot-ebook/dp/B004H1TC3O"
         },
         {
-            "title": "Peace",
-            "author": "Gene Wolfe",
-            "link": "https://www.amazon.com/Peace-Gene-Wolfe/dp/0312890338"
-        }
-    ],
-    "Upcoming" : [
-        
-        {
-            "title": "The Social Conquest of Earth",
-            "author": "Edward O. Wilson",
-            "link": "https://www.amazon.com/Social-Conquest-Earth-Edward-Wilson/dp/0871403633"
+            title: "Traction",
+            author: "Gabriel Weinberg and Justin Mares",
+            link: "https://www.amazon.com/Traction-Startup-Achieve-Explosive-Customer-ebook/dp/B00ZE96ZWY"
         },
-        {
-            "title": "Cancer as a Metabolic Disease",
-            "author": "Thomas Seyfried",
-            "link": "https://www.amazon.com/Cancer-Metabolic-Disease-Management-Prevention/dp/0470584920"
-        },
-        {
-            "title": "The Righteous Mind",
-            "author": "Jonathan Haidt",
-            "link": "https://www.amazon.com/Righteous-Mind-Divided-Politics-Religion-ebook/dp/B0076O2VMI/ref=sr_1_1?s=books&ie=UTF8&qid=1487188952&sr=1-1&keywords=The+righteous+mind"
-        },
-        {
-            "title": "Towards the Flame: Empire, War and the End of Tsarist Russia",
-            "author": "Dominic Lieven",
-            "link": "https://www.amazon.com/Towards-Flame-Empire-Tsarist-Russia-ebook/dp/B00P1VOCVG"
-        }
-    ],
-    "2017": [
         {
             "title": "Through the Eye of a Needle: Wealth, the Fall of Rome, and the Making of Christianity in the West, 350-550 AD (Audiobook)",
             "author": "Peter Brown",
@@ -99,7 +135,8 @@ var books = {
         {
             "title": "Inversions",
             "author": "Iain M. Banks",
-            "link": "https://www.amazon.com/gp/product/B002TXZR8G/ref=series_rw_dp_sw"
+            "link": "https://www.amazon.com/gp/product/B002TXZR8G/ref=series_rw_dp_sw",
+            "notes": "This was the first Culture novel I read, so this is technically a re-read."
         },
         {
             "title": "Look to Windward",
@@ -124,6 +161,7 @@ var books = {
         {
             "title": "(REREAD) Fall of Hyperion",
             "author": "Dan Simmons",
+            "notes": "I think I'm done with Hyperion now."
         },
         {
             "title": "The Lady of The Lake",
@@ -154,7 +192,8 @@ var books = {
         {
             "title": "Dune",
             "author": "Frank Herbert",
-            "link": "https://www.amazon.com/Dune-Sequence-Frank-Herbert-ebook/dp/B004KA9UXO"
+            "link": "https://www.amazon.com/Dune-Sequence-Frank-Herbert-ebook/dp/B004KA9UXO",
+            "notes": "First time reading this. It lived up to expectations but I don't feel inclined to read the other books in the series."
         },
         {
             "title": "Grit: The Power of Passion and Perseverance",
@@ -269,11 +308,6 @@ var books = {
             "title": "(REREAD) Zero to One: Notes on Start Ups, or How to Build the Future",
             "author": "Peter Thiel and Blake Masters",
             "link": "https://www.amazon.com/gp/product/B00KHX0II4/ref=oh_aui_d_detailpage_o00_?ie=UTF8&psc=1"
-        },
-        {
-            "title": "The First Tycoon",
-            "author": "T.J. Stiles",
-            "link": "https://www.amazon.com/gp/product/B0026UNZD6/ref=oh_aui_d_detailpage_o04_?ie=UTF8&psc=1"
         },
         {
             "title": "A Canticle For Leibowitz (S.F. MASTERWORKS)",
@@ -492,15 +526,13 @@ export default class Reading extends React.Component {
             notes = (
                 <span>
                 {item.notes}
-                <br />
                 </span>
             );
         }
         return ( 
             <div>
-                <strong>{index + 1}. {item.link && item.link.length > 0 ? <a href={item.link}>{item.title}</a> : item.title}</strong><br />
-                by <strong>{item.author}</strong><br />
-                {notes}
+                <Header size="small" as="h4">{index + 1}. {item.link && item.link.length > 0 ? <a href={item.link}>{item.title}</a> : item.title} by {item.author}</Header>
+                <p>{notes}</p>
                 <br />
             </div>
         )
@@ -508,23 +540,38 @@ export default class Reading extends React.Component {
    
     render () {
         return (
-            <Wrapper title="Reading List">
-                <header className="style1"><h2>Currently Reading:</h2></header>
+            <PageWrapper title="Reading List">
+            <div className="blogText">
+                <Header>2018 Reading List</Header>
 
+                <p>My goal for 2018 is to get back to my cadence of roughly one book per week. I have a backlog of books by Vaclav Smil and Carlotta Perez that I want to get through.  After that, I want to read more history and less fiction.  I'm looking forward to reading more of Peter Brown's work: the period of late antiquity is just so damn interesting.</p>
+
+                <Header>Currently Reading:</Header>
                 {books['Current'].map((item, index) => { return this.bookLink(item, index) })}
 
-                <header className="style1"><h2>Upcoming:</h2></header>
+                <Header>Upcoming:</Header>
 
                 {books['Upcoming'].map((item, index) => { return this.bookLink(item, index) })}
 
-                <header className="style1"><h2>Read in 2017:</h2></header>
+                <Header>Finished:</Header>
+
+                {books['2018'].map((item, index) => { return this.bookLink(item, index) })}
+
+                <Divider />
+
+                <Header>2017 Reading List</Header>
+
+                <p>Peter Brown's <a href="https://www.amazon.com/Through-Eye-Needle-Christianity-350-550-ebook/dp/B009EYPOCC">"Through the Eye of a Needle"</a> was the highlight of 2017.  However, both the quality and quantity of my reading dipped in 2017 as work took precedence over everything else.   I was a lot more ruthless about abandoning books this year, too, with about 20 or 30 books being abandoned before I could bother finishing, not counting Kindle samples.  I feel like I've run out of interesting science fiction to read, apart from one or two of Stanislaw Lem's novels.  I don't follow SF fandoms so I not up to date with newer authors.</p>
 
                 {books['2017'].map((item, index) => { return this.bookLink(item, index) })}
 
-                <header className="style1"><h2>Read in 2016:</h2></header>
+                <Divider />
+
+                <Header>2016 Reading List</Header>
 
                 {books['2016'].map((item, index) => { return this.bookLink(item, index) })}
-            </Wrapper>
+            </div>
+            </PageWrapper>
         )
   }
 }

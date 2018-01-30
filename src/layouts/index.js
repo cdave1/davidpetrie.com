@@ -1,50 +1,34 @@
 import React from 'react'
-import '../css/assets/css/main.css'
+import PropTypes from 'prop-types'
+import Link from 'gatsby-link'
+import Helmet from 'react-helmet'
+import SiteHeader from '../Components/Header';
+import SiteFooter from '../Components/Footer';
+import { Container } from 'semantic-ui-react';
 
-module.exports = React.createClass({ 
-    render() {
-        return (
-            <div id="page-wrapper">
-                <div id="header-wrapper" className="wrapper">
-                    <div id="header">
+const TemplateWrapper = ({ children }) =>
+    <div>
+        <Helmet
+            title="Dream Engine - Make Bots That Can Design Things"
+            meta={[
+                { name: 'description', content: 'Sample' },
+                { name: 'keywords', content: 'sample, something' },
+            ]}
+        >
+            
+            <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Nunito+Sans:400,700,900' />
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css" /> 
+            <link rel='stylesheet' href={__PATH_PREFIX__ + '/main.css'} />
+            
+            
+        </Helmet>
+        <div>
+        {children()}
+        </div>
+    </div>
 
-                        <div id="logo">
-                            <h1><a href="index.html">David Petrie</a></h1>
-                            <p>I'm an entrepreneur and software engineer from New Zealand</p>
-                        </div>
+TemplateWrapper.propTypes = {
+    children: PropTypes.func,
+}
 
-                        <nav id="nav">
-                            <ul>
-                                <li className="current"><a href="/">Home</a></li>
-                                <li><a href="/blog/">Blog</a></li>
-                                <li><a href="/about/">About</a></li>
-                                <li><a href="/projects/">Projects</a></li>
-                                <li><a href="/reading/">Reading</a></li>
-                                <li><a href="https://github.com/cdave1">Github</a></li>
-                                <li><a href="https://twitter.com/davidcpetrie">Twitter</a></li>
-                            </ul>
-                        </nav>
-
-                    </div>
-                </div>
-
-                {this.props.children()}
-
-                <div id="footer-wrapper" className="wrapper">
-                    <div className="title">Contact</div>
-                    <div id="footer" class="container">
-                        <header className="style1">
-                            <h2>Social Media</h2>
-                            <p>
-                                Twitter: <a href="https://twitter.com/davidcpetrie">@davidcpetrie</a><br />
-                                Github: <a href="https://github.com/cdave1">github.com/cdave1</a><br />
-                                Facebook: <a href="https://www.facebook.com/david.petrie.nz">facebook.com/david.petrie.nz</a>
-                            </p>
-                        </header>
-                    </div>
-                </div>
-            </div>
-        )
-
-    },
-})
+export default TemplateWrapper
