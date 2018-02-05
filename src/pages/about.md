@@ -8,13 +8,13 @@ title: About Me
 
 I live and work in Wellington, New Zealand.
 
-I currently work on DreamEngine, a product that allows people to automatically access and use advanced technical skills.  My general hypothesis is that we're on the cusp of having the ability to build highly advanced software automation tools that are far more powerful than the tools we're currently used to.  These new tools will massively increase the productivity of the average person.
+I currently work on DreamEngine, a product that allows people to automatically access and use advanced technical skills.  My general hypothesis is that we're on the cusp of being able to build highly advanced software automation tools that are far more powerful than the tools we're currently used to.  These new tools will massively increase the productivity of the average person.
 
 # Career Highlights
 
 In descending chronological order:
 
-* I worked on a VR app called [Vast](http://www.vastvr.com), a tool for crafting 3D objects and environments directly in VR.
+* I worked on a VR app called [Vast](http://www.vastvr.com), a tool for crafting 3D objects and environments directly in VR. 
 
 * From 2013 to 2016 I spent most of my time in the San Francisco Bay Area, California, USA.  I worked at [iCracked](https://www.icracked.com), leading a small team of elite programmers and engineers to create [Ocean](https://getocean.now.sh/), a hardware product.
 

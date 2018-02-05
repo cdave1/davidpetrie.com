@@ -1,7 +1,7 @@
 import React from 'react'
 import Gallery from 'react-grid-gallery';
 
-import { Header, Divider } from 'semantic-ui-react'
+import { Header, Divider, Segment } from 'semantic-ui-react'
 import PageWrapper from '../components/Wrapper';
 
 var books = {
@@ -90,7 +90,7 @@ var books = {
             "title": "Through the Eye of a Needle: Wealth, the Fall of Rome, and the Making of Christianity in the West, 350-550 AD (Audiobook)",
             "author": "Peter Brown",
             "link": "https://www.amazon.com/Through-Eye-Needle-Christianity-350-550-ebook/dp/B009EYPOCC",
-            "notes": "One of the most extraordinary books I've read about this period of history."
+            "notes": "One of the most extraordinary books I've read about this period of late antiquity."
         },
         {
             title: "Behave: The Biology of Humans at Our Best and Worst",
@@ -130,13 +130,14 @@ var books = {
         {
             "title": "The Waste Land",
             "author": "T.S. Eliot",
-            "link": "https://en.wikipedia.org/wiki/The_Waste_Land"
+            "link": "https://en.wikipedia.org/wiki/The_Waste_Land",
+            "notes": "I can't find a link to the actual edition I read, but most of it was analysis of the poem itself."
         },
         {
             "title": "Inversions",
             "author": "Iain M. Banks",
             "link": "https://www.amazon.com/gp/product/B002TXZR8G/ref=series_rw_dp_sw",
-            "notes": "This was the first Culture novel I read, so this is technically a re-read."
+            "notes": "This was the first Culture novel I ever read, so this is technically a re-read."
         },
         {
             "title": "Look to Windward",
@@ -278,31 +279,27 @@ var books = {
             "title": "Machine Learning: A Probabilistic Perspective (Adaptive Computation and Machine Learning series)",
             "author": "Kevin P. Murphy",
             "link": "https://www.amazon.com/Machine-Learning-Probabilistic-Perspective-Computation/dp/0262018020/ref=sr_1_1?s=books&ie=UTF8&qid=1486861011&sr=1-1",
-            "notes": "(Reference)"
+            "notes": "I didn't read this cover-to-cover exactly."
         },
         {
             "title": "Physically Based Rendering, Second Edition: From Theory To Implementation",
             "author": "Matt Pharr",
-            "link": "https://www.amazon.com/Physically-Based-Rendering-Second-Implementation/dp/0123750792/ref=sr_1_1?s=books&ie=UTF8&qid=1486861049&sr=1-1",
-            "notes": "(Reference)"
+            "link": "https://www.amazon.com/Physically-Based-Rendering-Second-Implementation/dp/0123750792/ref=sr_1_1?s=books&ie=UTF8&qid=1486861049&sr=1-1"
         },
         {
             "title": "The Princeton Companion to Applied Mathematics",
             "author": "Nicholas J. Higham and Mark R. Dennis",
-            "link": "https://www.amazon.com/Princeton-Companion-Applied-Mathematics/dp/0691150397",
-            "notes": "(Reference)"
+            "link": "https://www.amazon.com/Princeton-Companion-Applied-Mathematics/dp/0691150397"
         },
         {
             "title": "3D Math Primer for Graphics and Game Development, 2nd Edition",
             "author": "Fletcher Dunn",
-            "link": "https://www.amazon.com/Math-Primer-Graphics-Game-Development/dp/1568817231",
-            "notes": "(Reference)"
+            "link": "https://www.amazon.com/Math-Primer-Graphics-Game-Development/dp/1568817231"
         },
         {
             "title": "Pattern Recognition and Machine Learning (Information Science and Statistics)",
             "author": "Christopher Bishop",
-            "link": "https://www.amazon.com/Pattern-Recognition-Learning-Information-Statistics/dp/0387310738",
-            "notes": "(Reference)"
+            "link": "https://www.amazon.com/Pattern-Recognition-Learning-Information-Statistics/dp/0387310738"
         },
         {
             "title": "(REREAD) Zero to One: Notes on Start Ups, or How to Build the Future",
@@ -509,19 +506,12 @@ exports.data = {
 
 
 export default class Reading extends React.Component {
-  constructor () {
-    super()
-
-    
-
-    //this.state = { images: images }
-    this.title = "Hello"
-    
-  }
-
+    constructor () {
+        super()
+    }
 
     bookLink(item, index) {
-        var notes = "";
+        var notes = null;
         if (item.notes) {
             notes = (
                 <span>
@@ -530,11 +520,14 @@ export default class Reading extends React.Component {
             );
         }
         return ( 
-            <div>
-                <Header size="small" as="h4">{index + 1}. {item.link && item.link.length > 0 ? <a href={item.link}>{item.title}</a> : item.title} by {item.author}</Header>
-                <p>{notes}</p>
-                <br />
-            </div>
+            <Segment basic>
+                <Header size="small" as="h4">
+                    {index + 1}. {item.link && item.link.length > 0 ? <a href={item.link}>{item.title}</a> : item.title} by {item.author}
+                </Header>
+                {notes && <p>
+                    {notes}
+                </p>}
+            </Segment>
         )
     }
    
@@ -546,30 +539,40 @@ export default class Reading extends React.Component {
 
                 <p>My goal for 2018 is to get back to my cadence of roughly one book per week. I have a backlog of books by Vaclav Smil and Carlotta Perez that I want to get through.  After that, I want to read more history and less fiction.  I'm looking forward to reading more of Peter Brown's work: the period of late antiquity is just so damn interesting.</p>
 
-                <Header>Currently Reading:</Header>
-                {books['Current'].map((item, index) => { return this.bookLink(item, index) })}
+                <Segment color="orange">
+                    <Header>Currently Reading:</Header>
+                    {books['Current'].map((item, index) => { return this.bookLink(item, index) })}
+                </Segment>
+                
+                <Segment color="yellow">
+                    <Header>Upcoming:</Header>
 
-                <Header>Upcoming:</Header>
+                    {books['Upcoming'].map((item, index) => { return this.bookLink(item, index) })}
+                </Segment>
+                
+                <Segment color="green">
+                    <Header>Finished:</Header>
 
-                {books['Upcoming'].map((item, index) => { return this.bookLink(item, index) })}
-
-                <Header>Finished:</Header>
-
-                {books['2018'].map((item, index) => { return this.bookLink(item, index) })}
+                    {books['2018'].map((item, index) => { return this.bookLink(item, index) })}
+                </Segment>
 
                 <Divider />
 
                 <Header>2017 Reading List</Header>
 
-                <p>Peter Brown's <a href="https://www.amazon.com/Through-Eye-Needle-Christianity-350-550-ebook/dp/B009EYPOCC">"Through the Eye of a Needle"</a> was the highlight of 2017.  However, both the quality and quantity of my reading dipped in 2017 as work took precedence over everything else.   I was a lot more ruthless about abandoning books this year, too, with about 20 or 30 books being abandoned before I could bother finishing, not counting Kindle samples.  I feel like I've run out of interesting science fiction to read, apart from one or two of Stanislaw Lem's novels.  I don't follow SF fandoms so I not up to date with newer authors.</p>
-
-                {books['2017'].map((item, index) => { return this.bookLink(item, index) })}
+                <p>Peter Brown's <a href="https://www.amazon.com/Through-Eye-Needle-Christianity-350-550-ebook/dp/B009EYPOCC">"Through the Eye of a Needle"</a> was the highlight of 2017.  However, both the quality and quantity of my reading dipped in 2017 as work took precedence over everything else.   I was a lot more ruthless about abandoning books this year, too, with about 20-30 books being abandoned before I could bother finishing, not counting Kindle samples.  I feel like I've run out of interesting science fiction, apart from one or two of Stanislaw Lem's novels.  I don't follow SF fandoms so I'm not up to date with newer authors.</p>
+                
+                <Segment>
+                    {books['2017'].map((item, index) => { return this.bookLink(item, index) })}
+                </Segment>
 
                 <Divider />
 
                 <Header>2016 Reading List</Header>
 
-                {books['2016'].map((item, index) => { return this.bookLink(item, index) })}
+                <Segment>
+                    {books['2016'].map((item, index) => { return this.bookLink(item, index) })}
+                </Segment>
             </div>
             </PageWrapper>
         )
