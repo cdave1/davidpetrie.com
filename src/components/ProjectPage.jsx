@@ -94,7 +94,7 @@ export default class ProjectPage extends React.Component {
                         <List relaxed>
                         {links.map((link, i) => 
                             <List.Item href={link.url}>
-                                <List.Icon name={link.icon} size='large' verticalAlign='top' />
+                                <List.Icon name={link.icon} size='large' verticalAlign='middle' />
                                 <List.Content>
                                     {link.url}
                                 </List.Content>
