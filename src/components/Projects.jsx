@@ -35,10 +35,10 @@ export default class Projects extends React.Component {
 
                     var images = project.images.slice(0, 5).map(image => {
                         return {
-                            "src": "/images/" + image.thumbnails.default.path,
-                            "thumbnail": "/images/" + image.thumbnails.default.path,
-                            "thumbnailWidth": image.thumbnails.default.size.w,
-                            "thumbnailHeight": image.thumbnails.default.size.h,
+                            "src": "/images/" + image.file.path,
+                            "thumbnail": "/images/" + image.thumbnails.croppedSmall.path,
+                            "thumbnailWidth": image.thumbnails.croppedSmall.size.w,
+                            "thumbnailHeight": image.thumbnails.croppedSmall.size.h,
                             "caption": image.caption
                         };
                     });
