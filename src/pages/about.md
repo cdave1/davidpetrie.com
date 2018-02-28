@@ -52,3 +52,6 @@ In descending chronological order:
 
 # Press
 
+# This Website
+
+This website is written using React and Markdown and built with [GatsbyJS](https://www.gatsbyjs.org).  The public github repository is [available here](https://github.com/cdave1/davidpetrie.com).

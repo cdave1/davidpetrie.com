@@ -63,7 +63,6 @@ export default class ProjectPreview extends React.Component {
                         <Table columns={3} basic compact="very" style={{margin: '0px', padding: '0px', border: '0', borderStyle: 'hidden', borderCollapse: 'collapse', borderBottom: '1px solid #fff'}}>
                         <Table.Row>
                         {projects.map((project, index) => {
-                            console.log(projects);
                             var images = project.images.map(image => {
                                 return {
                                     "src": "/images/" + image.file.path,
