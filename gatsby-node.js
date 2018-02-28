@@ -48,7 +48,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             path: edge.node.frontmatter.path,
             component: defaultTemplate,
             context: {
-              path: edge.node.frontmatter.path,
+              //path: edge.node.frontmatter.path,
             },
           })
         })
@@ -59,8 +59,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             path: "/project/" + sanitize(project.title),
             component: projectTemplate,
             context: {
-              project: project,
-              path: sanitize(project.title),
+              project: project
             },
           })
         });
