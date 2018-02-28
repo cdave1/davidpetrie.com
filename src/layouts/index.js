@@ -1,15 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
+
 import Helmet from 'react-helmet'
 import SiteHeader from '../Components/Header';
 import SiteFooter from '../Components/Footer';
 import { Container } from 'semantic-ui-react';
 
+//
+
 const TemplateWrapper = ({ children }) =>
     <div>
         <Helmet
-            title="Dream Engine - Make Bots That Can Design Things"
+            title="David Petrie - New Zealand based Software Engineer"
             meta={[
                 { name: 'description', content: 'Sample' },
                 { name: 'keywords', content: 'sample, something' },

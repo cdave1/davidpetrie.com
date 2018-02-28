@@ -28,7 +28,7 @@ var books = {
             "title": "Brave New World",
             "author": "Aldous Huxley",
             "link": "https://www.amazon.com/Brave-New-World-Aldous-Huxley-ebook/dp/B0748M1VKH",
-            "notes": "Intro by Margeret Atwood"
+            "notes": "Last read in high school.  This edition has a great intro by Margeret Atwood."
         },
         {
             "title": "Life on the Edge: The Coming Age of Quantum Biology",
@@ -51,7 +51,7 @@ var books = {
             title: "Tribe of Mentors",
             author: "Tim Ferriss et al",
             link: "https://www.amazon.com/Tribe-Mentors-Short-Advice-World-ebook/dp/B075M48QKK",
-            notes: "Nice easy start to the year."
+            notes: "A good dose of insight-porn to start the year."
         }
     ],
     "2017": [
@@ -79,7 +79,8 @@ var books = {
         {
             title: "Collected Poems 1909-1962",
             author: "T.S. Eliot",
-            link: "https://www.amazon.com/Collected-Poems-1909-1962-T-S-Eliot-ebook/dp/B004H1TC3O"
+            link: "https://www.amazon.com/Collected-Poems-1909-1962-T-S-Eliot-ebook/dp/B004H1TC3O",
+            "notes": "The first poetry I've read in a long time."
         },
         {
             title: "Traction",
@@ -131,13 +132,13 @@ var books = {
             "title": "The Waste Land",
             "author": "T.S. Eliot",
             "link": "https://en.wikipedia.org/wiki/The_Waste_Land",
-            "notes": "I can't find a link to the actual edition I read, but most of it was analysis of the poem itself."
+            "notes": "I can't find a link to the actual edition, but it was mostly analysis of the poem.  The poem itself you can read in less than an hour."
         },
         {
             "title": "Inversions",
             "author": "Iain M. Banks",
             "link": "https://www.amazon.com/gp/product/B002TXZR8G/ref=series_rw_dp_sw",
-            "notes": "This was the first Culture novel I ever read, so this is technically a re-read."
+            "notes": "This was the first Culture novel I ever read. Technically a re-read."
         },
         {
             "title": "Look to Windward",
@@ -167,7 +168,8 @@ var books = {
         {
             "title": "The Lady of The Lake",
             "author": "Andrzej Sapkowski",
-            "link": "https://www.amazon.com/Lady-Lake-Andrzej-Sapkowski-ebook/dp/B01M4GH0GS"
+            "link": "https://www.amazon.com/Lady-Lake-Andrzej-Sapkowski-ebook/dp/B01M4GH0GS",
+            "notes": "Conclusion of the Witcher series."
         },
         {
             "title": "The Tower of the Swallow",
@@ -183,7 +185,7 @@ var books = {
             "title": "(REREAD) Hyperion",
             "author": "Dan Simmons",
             "link": "https://www.amazon.com/Hyperion-Cantos-Dan-Simmons/dp/0553283685",
-            "notes": "I didn't mean to start re-reading Hyperion again, but the Priest's Tale is so good it just sucked me right in to the story again."
+            "notes": "I didn't mean to start re-reading Hyperion again, but the Priest's Tale just sucked me right in to the story again. Comfort food."
         },
         {
             "title": "Time of Contempt",
@@ -194,7 +196,7 @@ var books = {
             "title": "Dune",
             "author": "Frank Herbert",
             "link": "https://www.amazon.com/Dune-Sequence-Frank-Herbert-ebook/dp/B004KA9UXO",
-            "notes": "First time reading this. It lived up to expectations but I don't feel inclined to read the other books in the series."
+            "notes": "First time reading this. It lived up to expectations to entertain, but I don't feel inclined to read the other books in the series."
         },
         {
             "title": "Grit: The Power of Passion and Perseverance",
@@ -535,32 +537,36 @@ export default class Reading extends React.Component {
         return (
             <PageWrapper title="Reading List">
             <div className="blogText">
-                <Header>2018 Reading List</Header>
+                <h1>2018 Reading List</h1>
 
-                <p>My goal for 2018 is to get back to my cadence of roughly one book per week. I have a backlog of books by Vaclav Smil and Carlotta Perez that I want to get through.  After that, I want to read more history and less fiction.  I'm looking forward to reading more of Peter Brown's work: the period of late antiquity is just so damn interesting.</p>
+                <p>My goal for 2018 is to get back to my cadence of roughly one book per week. I have a backlog of books by Vaclav Smil and Carlotta Perez that I've been ignoring from 2015. After that, I want to read more history and less fiction.  I'm looking forward to reading more of Peter Brown's work: the period of late antiquity is just so damn interesting.</p>
 
                 <Segment color="orange">
-                    <Header>Currently Reading:</Header>
+                    <h1>Currently Reading:</h1>
                     {books['Current'].map((item, index) => { return this.bookLink(item, index) })}
                 </Segment>
                 
                 <Segment color="yellow">
-                    <Header>Upcoming:</Header>
+                    <h1>Upcoming:</h1>
 
                     {books['Upcoming'].map((item, index) => { return this.bookLink(item, index) })}
                 </Segment>
                 
                 <Segment color="green">
-                    <Header>Finished:</Header>
+                    <h1>Finished:</h1>
 
                     {books['2018'].map((item, index) => { return this.bookLink(item, index) })}
                 </Segment>
 
                 <Divider />
 
-                <Header>2017 Reading List</Header>
+                <h1>2017 Reading List</h1>
 
-                <p>Peter Brown's <a href="https://www.amazon.com/Through-Eye-Needle-Christianity-350-550-ebook/dp/B009EYPOCC">"Through the Eye of a Needle"</a> was the highlight of 2017.  However, both the quality and quantity of my reading dipped in 2017 as work took precedence over everything else.   I was a lot more ruthless about abandoning books this year, too, with about 20-30 books being abandoned before I could bother finishing, not counting Kindle samples.  I feel like I've run out of interesting science fiction, apart from one or two of Stanislaw Lem's novels.  I don't follow SF fandoms so I'm not up to date with newer authors.</p>
+                <p>My reading list for 2017 is spartan in comparison to 2016, and looks downright cheap and nasty compared to <a href="https://www.waggish.org/2017/david-auerbachs-books-of-the-year-2017/">David Auerbach's</a>. Auerbach is the reader we should all aspire to be.</p>
+                
+                <p>Both the quality and quantity of my reading dipped in 2017 as work took precedence over everything else.  For whatever reason, I was also more ruthless about abandoning books that didn't click.  A good example of an abandoned book is <a href="https://www.goodreads.com/book/show/16240761-the-son">The Son</a> by Philipp Meyer, for which I got 15% through before I moved on to something else.  I guess I abandoned 20-30 books this year in a similar fashion, not counting Kindle samples.</p>
+
+                <p>Peter Brown's <a href="https://www.amazon.com/Through-Eye-Needle-Christianity-350-550-ebook/dp/B009EYPOCC">"Through the Eye of a Needle"</a> was the undisputed highlight of 2017 for me.  However, I think I might be done with science fiction -- for now.  I was a latecomer to the genre several years ago, but I really feel like I've read all of the genre's "greatest hits" by now.  I don't follow SF fandoms so I'm not up to date with newer authors.</p>
                 
                 <Segment>
                     {books['2017'].map((item, index) => { return this.bookLink(item, index) })}
@@ -568,7 +574,7 @@ export default class Reading extends React.Component {
 
                 <Divider />
 
-                <Header>2016 Reading List</Header>
+                <h1>2016 Reading List</h1>
 
                 <Segment>
                     {books['2016'].map((item, index) => { return this.bookLink(item, index) })}

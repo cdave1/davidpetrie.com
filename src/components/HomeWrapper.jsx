@@ -3,7 +3,7 @@ import { Container } from 'semantic-ui-react'
 import SiteHeader from './Header';
 import SiteFooter from './Footer';
 
-export default class PageWrapper extends React.Component {
+export default class HomeWrapper extends React.Component {
     constructor () {
         super()
     }
@@ -11,13 +11,9 @@ export default class PageWrapper extends React.Component {
     render () {
         return (
             <div>
-            <Container fluid>
                 <SiteHeader />
-                <Container>
-                    {this.props.children}
-                </Container>
+                <Container fluid>{this.props.children}</Container>
                 <SiteFooter />
-            </Container>
             </div>
         )
     }

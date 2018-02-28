@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "David Petrie Homepage",
+  "description": "David Petrie",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "David Petrie <me@davidpetrie.com>",
   "dependencies": {
     "gatsby": "^1.9.158",
     "gatsby-link": "^1.6.34",
@@ -11,6 +11,9 @@
     "gatsby-transformer-remark": "^1.7.30",
     "react-grid-gallery": "^0.4.8",
     "react-helmet": "^5.2.0",
+    "react-markdown": "^3.2.0",
+    "react-photo-gallery": "^6.0.22",
+    "react-twitter-widgets": "^1.7.1",
     "semantic-ui-react": "^0.77.2"
   },
   "devDependencies": {

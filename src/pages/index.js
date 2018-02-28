@@ -1,7 +1,10 @@
 import React from 'react'
-import Wrapper from '../components/Wrapper';
-import Projects from '../components/Projects.jsx'
+import HomeWrapper from '../components/HomeWrapper';
+import ProjectPreview from '../components/ProjectPreview.jsx'
+import ProjectTable from '../components/ProjectTable.jsx'
+const ReactMarkdown = require('react-markdown');
 
+import { Timeline } from 'react-twitter-widgets';
 import { Container } from 'semantic-ui-react'
 import { Step, Grid, Menu, Segment, Header, Image, Icon, Divider, Checkbox } from 'semantic-ui-react'
 
@@ -9,6 +12,18 @@ exports.data = {
   title: 'Recent Work'
 };
 
+const introText = `
+# Welcome!
+
+I'm David Petrie, founder of [Dream Engine](/project/dream_engine).  I'm interested in all things startups and technology, and I've co-founded companies both in New Zealand and Silicon Valley.  I'm also an alumni of Y Combinator.
+
+* [My Bio](/about/)
+
+* I might be [available for hire](/consulting/)
+
+* Books I'm [currently reading](/reading/)
+
+`;
 
 export default class Index extends React.Component {
     constructor () {
@@ -17,19 +32,18 @@ export default class Index extends React.Component {
             title: ""
         };
     }
+    /*
+
+                <div className="blogText">
+                    <ReactMarkdown source={introText} />
+                </div>
+    */
 
     render () {
         return (
-            <Wrapper title="Recent Work">
-                <Grid columns="equal">
-                    <Grid.Column>
-                    </Grid.Column>
-
-                    <Grid.Column>
-                        <Projects />
-                    </Grid.Column>
-                </Grid>
-            </Wrapper>
+            <HomeWrapper title="David Petrie">
+                <ProjectTable />
+            </HomeWrapper>
         )
     }
 }

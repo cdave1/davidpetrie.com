@@ -8,7 +8,19 @@ title: About Me
 
 I live and work in Wellington, New Zealand.
 
-I currently work on DreamEngine, a product that allows people to automatically access and use advanced technical skills.  My general hypothesis is that we're on the cusp of being able to build highly advanced software automation tools that are far more powerful than the tools we're currently used to.  These new tools will massively increase the productivity of the average person.
+I am founder of DreamEngine, a product that allows people to automatically access and use advanced technical skills.  My general hypothesis is that we're on the cusp of being able to build highly advanced software automation tools that are far more powerful than the tools we're currently used to.  These new tools will massively increase the productivity of the average person.
+
+# Contact
+
+* [Email](mailto:me@davidpetrie.com)
+
+* [Twitter](https://twitter.com/davidcpetrie)
+
+* [Github](https://github.com/cdave1)
+
+* [Medium](https://medium.com/@david.petrie)
+
+* [Facebook](https://facebook.com/david.petrie.nz)
 
 # Career Highlights
 
@@ -37,3 +49,6 @@ In descending chronological order:
 * To fund my beer and gadget expenses at University I started a webdesign studio, as well as a tutoring company called [UniTutor](/archive/unitutor/main30.gif).
 
 * In my first year of university, right after the dotcom crash in 2000, I started a website called "Daily Business Review".  It was like ["Arts and Letters Daily"](http://www.aldaily.com), but for tech news.  For whatever reason, it attracted a lot of cease-and-desist letters. [Here's an archive!](/archive/dbr/index.html)
+
+# Press
+
