@@ -34,3 +34,5 @@ public/
 yarn-error.log
 static/images/
 /raw_images/
+
+/semantic/

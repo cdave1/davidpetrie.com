@@ -1,5 +1,5 @@
 {
-  "name": "David Petrie Homepage",
+  "name": "aaa",
   "description": "David Petrie",
   "version": "1.0.0",
   "author": "David Petrie <me@davidpetrie.com>",
@@ -26,6 +26,5 @@
   ],
   "license": "MIT",
   "main": "n/a",
-  "scripts": {
-  }
+  "scripts": {}
 }
