@@ -78,12 +78,12 @@ export default class Projects extends React.Component {
                                 </Segment>
 
                                 <Segment padded>
-                                    <List horizontal>
+                                    <List horizontal relaxed>
                                     {links.map((link, i) => 
                                         <List.Item href={link.url}>
-                                        <List.Icon name={link.icon} />
+                                        <List.Icon verticalAlign='top' name={link.icon} />
                                         <List.Content>
-                                            <List.Header as='a'>{link.text || link.url}</List.Header>
+                                            {link.text || link.url}
                                         </List.Content>
                                         </List.Item>                          
                                     )}
@@ -91,13 +91,15 @@ export default class Projects extends React.Component {
                                 </Segment>
 
                                 <Segment padded>
-                                    {project.readme && <p>
-                                        <ReactMarkdown source={project.readme} />
-                                    </p>}
+                                    {project.readme ? 
+                                        <div>
+                                            <ReactMarkdown source={project.readme} />
+                                        </div> : null
+                                    }
                                     <div style={{
                                         display: "block",
                                         width: "100%",
-                                        overflow: "auto"}}>
+                                        overflow: "auto", paddingTop: '1.0em'}}>
                                         <Gallery
                                             maxRows={1}
                                             enableImageSelection={false}

@@ -54,6 +54,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         })
       }).then(() => {
         projectData.projects.map((project, index) => {
+          console.log("Create page for ", project.title)
           createPage({
             path: "/project/" + sanitize(project.title),
             component: projectTemplate,
