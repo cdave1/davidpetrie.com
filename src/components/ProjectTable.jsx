@@ -98,7 +98,7 @@ export default class ProjectPreview extends React.Component {
                                     }
                                     `}
                                 </style>
-                                <Container href={"/project/" + sanitize(project.title)}>
+                                <Container fluid href={"/project/" + sanitize(project.title)}>
                                     <div className='bgImg'>
                                         <Segment basic textAlign="left" style={{position: 'absolute', padding: '30px', bottom: 0, width: '100%', color: 'white'}}>
                                             <h1 style={{fontSize: '2.0em', lineHeight: '1.5em', padding: '0px', margin: '0px', fontWeight: '900', color: 'white', textShadow: '2px 2px 1px #000'}}>
