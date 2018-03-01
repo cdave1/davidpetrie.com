@@ -78,7 +78,7 @@ export default class Projects extends React.Component {
                                 </Segment>
 
                                 <Segment padded>
-                                    <List horizontal relaxed>
+                                    <List horizontal stackable>
                                     {links.map((link, i) => 
                                         <List.Item href={link.url}>
                                         <List.Icon verticalAlign='top' name={link.icon} />

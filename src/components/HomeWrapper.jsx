@@ -12,7 +12,9 @@ export default class HomeWrapper extends React.Component {
         return (
             <div>
                 <SiteHeader />
-                <Container fluid>{this.props.children}</Container>
+                <div>
+                    {this.props.children}
+                </div>
                 <SiteFooter />
             </div>
         )

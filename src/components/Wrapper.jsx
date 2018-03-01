@@ -11,13 +11,11 @@ export default class PageWrapper extends React.Component {
     render () {
         return (
             <div>
-            <Container fluid>
                 <SiteHeader />
                 <Container>
                     {this.props.children}
                 </Container>
                 <SiteFooter />
-            </Container>
             </div>
         )
     }

@@ -60,8 +60,8 @@ export default class ProjectPreview extends React.Component {
                 
                 {projectSplits.map((projects, projectIndex) => {
                     return (
-                        <Table columns={3} basic compact="very" style={{margin: '0px', padding: '0px', border: '0', borderStyle: 'hidden', borderCollapse: 'collapse', borderBottom: '1px solid #fff'}}>
-                        <Table.Row>
+                        <Table columns={3} basic cellPadding={0} compact="very" stackable style={{margin: '0px', padding: '0px', border: '0', borderStyle: 'hidden', borderCollapse: 'collapse', borderBottom: '1px solid #fff'}}>
+                        <Table.Row style={{margin: '0px', padding: '0px'}}>
                         {projects.map((project, index) => {
                             var images = project.images.map(image => {
                                 return {
@@ -81,15 +81,24 @@ export default class ProjectPreview extends React.Component {
                             var width = (projectIndex % 2 == 1) ? (index == 0 ? "one" : "two") : (index == 0 ? "two" : "one");
 
                             return (
-                                <Table.Cell width={width} style={{backgroundImage: "url(" + headerImage.src + ")", 
+                                <Table.Cell id={`what${projectIndex}_${index}_label`} width={width} style={{backgroundImage: "url(" + headerImage.src + ")", 
                                 backgroundColor: '#000',
                                 backgroundRepeat: 'no-repeat', 
                                 backgroundPosition: 'center', 
                                 backgroundSize: 'cover', 
                                 border: '1px solid #fff',
+                                height: '400px',
                                 margin: '0px', 
                                 padding: '0px'}}>
-                                <Container fluid  href={"/project/" + sanitize(project.title)}>
+
+                                <style>
+                                    {`
+                                    #what${projectIndex}_${index}_label {
+                                        padding: 0px !important;
+                                    }
+                                    `}
+                                </style>
+                                <div href={"/project/" + sanitize(project.title)}>
                                     <div className='bgImg'>
                                         <Segment basic textAlign="left" style={{position: 'absolute', padding: '30px', bottom: 0, width: '100%', color: 'white'}}>
                                             <h1 style={{fontSize: '2.0em', lineHeight: '1.5em', padding: '0px', margin: '0px', fontWeight: '900', color: 'white', textShadow: '2px 2px 1px #000'}}>
@@ -104,7 +113,7 @@ export default class ProjectPreview extends React.Component {
                                             {project.tags && project.tags.map((tag) => <Label basic color='blue'>{tag}</Label>)}
                                         </Segment>
                                     </div>
-                                </Container>
+                                </div>
                                 </Table.Cell>
                             )
                         }

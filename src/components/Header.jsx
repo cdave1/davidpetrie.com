@@ -17,10 +17,10 @@ class SiteHeader extends React.Component {
 
     render() {
         return (
-            <div style={{'backgroundColor': '#3a3335', 'padding': '20px'}}>
+            <div style={{'backgroundColor': '#3a3335', 'padding-top': '15px', 'padding-bottom': '15px'}}>
             <Container fluid>
                 <Container>
-                    <Menu inverted secondary>
+                    <Menu inverted secondary stackable>
                         <Menu.Item href='/'><Image centered height='40px' src={logo} /></Menu.Item>
                         <Menu.Menu inverted secondary position='right'>
                             <Menu.Item name='About' href='/about/' />
