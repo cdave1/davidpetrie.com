@@ -8,23 +8,6 @@ import { Timeline } from 'react-twitter-widgets';
 import { Container } from 'semantic-ui-react'
 import { Step, Grid, Menu, Segment, Header, Image, Icon, Divider, Checkbox } from 'semantic-ui-react'
 
-exports.data = {
-  title: 'Recent Work'
-};
-
-const introText = `
-# Welcome!
-
-I'm David Petrie, founder of [Dream Engine](/project/dream_engine).  I'm interested in all things startups and technology, and I've co-founded companies both in New Zealand and Silicon Valley.  I'm also an alumni of Y Combinator.
-
-* [My Bio](/about/)
-
-* I might be [available for hire](/consulting/)
-
-* Books I'm [currently reading](/reading/)
-
-`;
-
 export default class Index extends React.Component {
     constructor () {
         super()
@@ -32,16 +15,15 @@ export default class Index extends React.Component {
             title: ""
         };
     }
-    /*
-
-                <div className="blogText">
-                    <ReactMarkdown source={introText} />
-                </div>
-    */
 
     render () {
         return (
             <HomeWrapper title="David Petrie">
+                <Container className="introHeader">
+                    <h1>
+                    Hi there! I'm founder of <a href="https://dreamengine.co">Dream Engine</a>. This is my personal site, where you can find more information <a href="/about">about me</a> and my <a href="/projects">various projects</a>...
+                    </h1>
+                </Container>
                 <ProjectTable />
             </HomeWrapper>
         )

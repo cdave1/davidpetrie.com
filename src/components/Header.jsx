@@ -17,7 +17,7 @@ class SiteHeader extends React.Component {
 
     render() {
         return (
-            <div style={{'backgroundColor': '#3a3335', 'padding-top': '15px', 'padding-bottom': '15px'}}>
+            <div style={{'backgroundColor': '#212121', 'padding-top': '15px', 'padding-bottom': '15px'}}>
             <Container fluid>
                 <Container>
                     <Menu inverted secondary stackable>

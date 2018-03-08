@@ -89,6 +89,23 @@
   font-family: 'Nunito Sans', sans-serif; 
 }
 
+p {
+  line-height: 1.8;
+  font-size: 1.0em;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Nunito Sans', sans-serif;
+  line-height: 150%;
+  font-weight: 900
+}
+
+h1.ui.header {
+ font-family: 'Nunito Sans', sans-serif;
+ line-height: 2.5em;
+ font-weight: 900
+}
+
 .blogText {
   font-size: 1.2em;
   margin-left: 1.0em;
@@ -103,9 +120,18 @@
   display: block;
 }
 
-p {
-  line-height: 1.8;
-  font-size: 1.0em;
+.introHeader {
+  padding: 5.0em 0 5.0em 0;
+}
+
+.introHeader h1 {
+  color: #666;
+  text-align: center;
+  font-weight: 400;
+}
+
+.introHeader a {
+  text-decoration: underline;
 }
 
 .bgImg {
@@ -121,26 +147,53 @@ p {
 .bgImgHeader {
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
-  padding: 100px;
+  padding-top: 80px;
+  padding-bottom: 80px;
   position: relative;
   display: flex;
   z-index: 1;
 }
 
+.backgroundTableCell {
+  background-color: '#000';
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: cover;
+  border: 2px solid #fff;
+  height: 400px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.backgroundTableCellText {
+  position: absolute !important;
+  padding: 30px !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  color: white !important;
+}
+
+.backgroundTableCellText h1 {
+  text-transform: uppercase;
+  font-size: 2.0em;
+  line-height: 1.5em;
+  padding: 0px;
+  margin: 0px;
+  font-weight: 900;
+  color: white;
+  text-shadow: 2px 2px 1px #000;
+}
+
+.backgroundTableCellText h3 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+  color: white;
+  text-shadow: 2px 2px 1px #000;
+}
+
 .blogText p a {
   text-decoration: underline;
-}
-
-h1, h2, h3, h4, h5 {
-  font-family: 'Nunito Sans', sans-serif;
-  line-height: 150%;
-  font-weight: 900
-}
-
-h1.ui.header {
- font-family: 'Nunito Sans', sans-serif;
- line-height: 2.5em;
- font-weight: 900
 }
 
 .fat {

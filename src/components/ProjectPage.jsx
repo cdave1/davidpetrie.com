@@ -56,7 +56,7 @@ export default class ProjectPage extends React.Component {
 
         return (
             <HomeWrapper title={project.title}>
-                <Container fluid style={{backgroundImage: "url(" + headerImage.src + ")", 
+                <div style={{backgroundImage: "url(" + headerImage.src + ")", 
                 backgroundColor: '#000',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center', 
@@ -78,7 +78,7 @@ export default class ProjectPage extends React.Component {
                             {project.tags && project.tags.map((tag) => <Label basic color='blue'>{tag}</Label>)}
                         </Segment>
                     </div>
-                </Container>
+                </div>
 
                 <Container>
                     <Segment basic>
@@ -94,8 +94,8 @@ export default class ProjectPage extends React.Component {
                         <List relaxed>
                         {links.map((link, i) => 
                             <List.Item href={link.url}>
-                                <List.Icon name={link.icon} size='large' verticalAlign='middle' />
-                                <List.Content>
+                                <List.Icon name={link.icon} size='large' />
+                                <List.Content verticalAlign='middle'>
                                     {link.url}
                                 </List.Content>
                             </List.Item>                          
@@ -104,7 +104,7 @@ export default class ProjectPage extends React.Component {
 
                         <Divider />
 
-                        <p><ReactMarkdown source={project.readme} /></p>
+                        <p><ReactMarkdown escapeHtml={false} source={project.readme} /></p>
 
                         <div className='projectGallery'>
                             <Gallery
@@ -117,8 +117,6 @@ export default class ProjectPage extends React.Component {
                         </div>
 
                         <Divider hidden />
-                        
-                        {project.tags && project.tags.map((tag) => <Label color="blue">{tag}</Label>)}
                     </Segment>
                 </Container>
             </HomeWrapper>

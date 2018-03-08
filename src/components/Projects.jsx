@@ -56,6 +56,9 @@ export default class Projects extends React.Component {
                     if (project.mediumURL) {
                         links.push({icon: 'medium', text: "Medium", url: project.mediumURL});
                     }
+                    if (project.productHuntURL) {
+                        links.push({icon: 'product hunt', text: "Product Hunt", url: project.productHuntURL});
+                    }
                     if (project.twitter) {
                         links.push({icon: 'twitter', text: "Twitter", url: project.twitter});
                     }
@@ -63,7 +66,7 @@ export default class Projects extends React.Component {
                     var dateString = moment(project.startDate).year() + "" + (project.endDate ? ((moment(project.endDate).year() !== moment(project.startDate).year()) ? " - " + moment(project.endDate).year() : "") : " - present");
 
                     return (
-                        <Container key={index}>
+                        <div key={index}>
                             <Segment.Group  basic>
                                 <Segment style={{cursor: 'pointer'}} onClick={this.onClickProject.bind(this, project)} basic padded>
                                     <h1 style={{fontSize: '2.0em', lineHeight: '1.0em', padding: '0px', margin: '0px', marginBottom: '0.5em', fontWeight: '900'}}>
@@ -78,23 +81,28 @@ export default class Projects extends React.Component {
                                 </Segment>
 
                                 <Segment padded>
-                                    <List horizontal stackable>
+                                    <List horizontal>
                                     {links.map((link, i) => 
                                         <List.Item href={link.url}>
-                                        <List.Icon verticalAlign='top' name={link.icon} />
-                                        <List.Content>
-                                            {link.text || link.url}
-                                        </List.Content>
-                                        </List.Item>                          
+                                            <List.Icon verticalAlign='top' name={link.icon} />
+                                            <List.Content >
+                                                {link.text || link.url}
+                                            </List.Content>
+                                        </List.Item>
                                     )}
                                     </List>
                                 </Segment>
 
                                 <Segment padded>
                                     {project.readme ? 
+                                        project.readme.length > 1000 ?
                                         <div>
-                                            <ReactMarkdown source={project.readme} />
-                                        </div> : null
+                                            <ReactMarkdown source={_.split(project.readme, " ").slice(0, 250).join(" ") + " ... ([See full article](" + "/project/" + sanitize(project.title) + "))"} />
+                                        </div> : 
+                                        <div>
+                                            <ReactMarkdown escapeHtml={false} source={project.readme} />
+                                        </div>
+                                        : null
                                     }
                                     <div style={{
                                         display: "block",
@@ -119,7 +127,7 @@ export default class Projects extends React.Component {
                             </Segment.Group>
                             
                             <div style={{clear: 'both', display: 'block', height: '50px'}} />
-                        </Container>
+                        </div>
                     )
                 })}
             </div>

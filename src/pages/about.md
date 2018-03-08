@@ -6,9 +6,9 @@ title: About Me
 
 # About Me
 
-I live and work in Wellington, New Zealand.
+My name is David Petrie and I live and work in Wellington, New Zealand.  I am primarily a software engineer who happens to get involved in startups from time to time.
 
-I am founder of DreamEngine, a product that allows people to automatically access and use advanced technical skills.  My general hypothesis is that we're on the cusp of being able to build highly advanced software automation tools that are far more powerful than the tools we're currently used to.  These new tools will massively increase the productivity of the average person.
+Currently, I am founder of DreamEngine, a product that allows people to automatically access and use advanced technical skills.  My general hypothesis is that we're on the cusp of being able to build highly advanced software automation tools that are far more powerful than the tools we're currently used to.  These new tools will massively increase the productivity of the average person.
 
 # Contact
 

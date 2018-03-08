@@ -4,11 +4,11 @@ date: "2018-01-25"
 title: Projects Archive
 ---
 
-# Projects (2000 to 2009)
+# Project Archive
 
-This is a list of some personal projects I've worked on between 2000 and 2009.  Before Github, I never kept a comprehensive project log so a lot of this was written retrospectively.
+This is a list of projects I worked on between 2000 and 2009.
 
-My <a href="http://github.com/cdave1">github profile</a> has become something of a defacto project log now since 2009.
+The projects range in scope from small open source libraries, to full blown companies.  I wouldn't call this an exhaustive list: many of these projects were done "on the side" while I had a day job.
 
 ---
 
@@ -27,7 +27,7 @@ A WYSIWIG interface builder for OpenGL and OpenGLES games.  Part of the [HDK Gam
 
 ## FTGLES
 
-FTGLES is a C++ library for rendering truetype and opentype fonts on mobile operating systems with OpenGL ES 1.1. It's a port of <a href="http://sourceforge.net/projects/ftgl/">FTGL</a>.
+FTGLES is a C++ library for rendering truetype and opentype fonts on mobile operating systems with OpenGL ES 1.1. It's a port of <a href="http://sourceforge.net/projects/ftgl/">FTGL</a>.  I still maintain FTGLES.
 
 The code includes several demo iPhone applications.
 * [FTGLES on github](http://github.com/cdave1/ftgles)
@@ -46,10 +46,11 @@ An optimized version of freetype2 ready to go for both iOS and Android.
 
 * [Github](http://github.com/cdave1/multitouchview)
 
-Multi Touch Screen is an Objective-c++ extension to the EAGLView. It was adapted from TouchScreen in the <a href="http://www.oolongengine.com/">Oolong Engine</a>. Its main task is to store Cocoa multi touch input in a buffer with the expectation that some other thread will repeatedly collect data from the buffer. This is mainly useful for apps that want to synchronize user input with rendering.
+The library is an Objective-C++ extension to the EAGLView that handles multi touch info for games.  Also see [Multi Touch Screen](http://github.com/cdave1/multitouchscreen), an older version of this library.
 
-Also see [Multi Touch Screen](http://github.com/cdave1/multitouchscreen), an older version of this library.
+Our fingers are extremely nimble and precise, but mobile phone games often run at low frame rates (30fps).  Your game needs to handle multi-touch input in such a way that no input gets lost. A player can tap a screen multiple times, with multiple fingers, in the time it takes for the game to render a single frame.  If the app ignores this input, it can make the app feel sluggish and unresponsive.
 
+The main task of this library is to record a history of all input data since the last frame, so that you have a full record of what the user actually did, and thus can make the game react accordingly.
 
 ## Distributed Game Of Life
 
@@ -78,6 +79,8 @@ I wrote it in PHP and python, with the data aspect served by a distributed netwo
 
 ## NewsToday and SportNow
 
+(Demos/githubs/etc unavailable!)
+
 NewsToday (previously found at www.newstoday.co.nz) and SportNow (sportnow.co.nz) were digg-like news website aimed at New Zealanders. Mostly written in python with a php front end, using Totara.
 
 These sites were way ahead of their time for NZ.  It's taken until 2017 for New Zealanders to really take to a site like reddit in any significant numbers. 
@@ -88,6 +91,8 @@ These sites were way ahead of their time for NZ.  It's taken until 2017 for New 
 * [Github](https://github.com/cdave1/blogbot)
 
 * [Example of trained data in the "sport" category](https://github.com/cdave1/blogbot/blob/master/bayesCats/sport.txt)
+
+Machine learning for automatically tagging and categorizing media content.
 
 To seed content for NewsToday and SportNow, I wrote a crawler that would trawl through a large list of news sites and bloggers to find interesting articles.  However, I needed to correctly categorise and "tag" the content so it would appear in the right category on the site.  To do this, I made a foray into machine learning.  I wrote a fairly rudimentary [Bayesian linear regression](https://en.wikipedia.org/wiki/Bayesian_linear_regression) system.  The training data was made up of old labelled words (examples of labels: "politics", "science", "auckland", "economics" etc) that mapped to specific category.  Each article was split into a corpus of words, and each word scored as to how often it would appear in a other articles in the same category.  This information was then stored in an index, so new articles could be tested against high scoring words in each category.
 
@@ -107,7 +112,7 @@ Two versions of tetris written in C++ using directx.  Scared me off directx but 
 
 ## Totara
 
-Totara is a framework I wrote to allow me to quickly put php-based websites together. It had all the things you need to do it &#8211; user management, an ORM layer, eCommerce libraries, security and more. It went through 4 versions over the years, and I used it to power a lot of the sites listed here. It's been superseded by <a href="http://www.rubyonrails.org/">other</a> <a href="http://www.djangoproject.com/">web-app</a> <a href="http://cakephp.org/">frameworks</a>  that now have significant contributors in wider programmer community.
+Totara is a framework I wrote to allow me to quickly put web apps together. It had all the things you need to do it &#8211; user management, an ORM layer, eCommerce libraries, security and more. It went through 4 versions over the years, and I used it to power a lot of the sites listed here. It's been superseded by <a href="http://www.rubyonrails.org/">other</a> <a href="http://www.djangoproject.com/">web-app</a> <a href="http://cakephp.org/">frameworks</a>  that now have significant contributors in wider programmer community.
 
 
 ## nachos &#8211; Operating System
@@ -187,7 +192,7 @@ A ridiculous get-rich-quick scheme. You could buy keywords on the website for $1
 
 ## www.bandyboo.com
 
-Sort of like a cross between Goodreads and Netflix, BandyBoo was a DVD/Games/CD listing and sharing service that never really got off the ground. It uses the Amazon API. You could build up your collection and then share them with other people.
+Bandyboo was a service for sharing your movies and games with your friends or trusted strangers.  It was sort of like a cross between Goodreads and Netflix.  People were weirded out by the concept and thus it never really got off the ground. Why do you even need a site to share your DVDs with friends?
 
 <a href="/archive/bb.jpg"><img src="/archive/bb.jpg" width="500px" /></a>
 
@@ -224,7 +229,7 @@ A content marketing blog I ran in 2005.
 
 * [Sad looking Wayback Machine snapshot from 2005](http://web.archive.org/web/20050313000408/http://www.comet.co.nz:80/)
 
-Comet was an online DVD Rental concept, Netflix for New Zealanders. I couldn't get the financials to work, so I shut it down after a successful but very unprofitable beta test.
+Comet was an online DVD Rental concept, Netflix for New Zealanders. I couldn't get the financials to work - I would need at least 100k customers to be profitable.  I ran a succesful beta test but ultimately shut the service down to focus on Moviehouse.
 
 <a href="/archive/comet.jpg"><img src="/archive/comet.jpg" width="500px" /></a>
 
@@ -233,12 +238,18 @@ Comet was an online DVD Rental concept, Netflix for New Zealanders. I couldn't g
 
 * [2006 Archive](http://web.archive.org/web/20070220222524/http://www.webdepot.co.nz)
 
-WebDepot was a rapid website design and development company I started at university and ran on the side for a number of years.  Whoever owns this domain now is not me.
+WebDepot was a rapid website design and development company I started at university and ran on the side for a number of years.  Whoever owns this domain now is not me!
 
 
 ## UniTutor
 
-Unitutor was a tutor-student matching business a friend and I ran for two years while at university.  We started with one subject (Computer Science) and moved to cover a rapidly growing number of subjects with around 50 tutors in total.
+Unitutor was a tutor-student matching business a friend and I ran for two years while at university (2002).  We started with one subject at Canterbury University (Computer Science) and moved to cover a rapidly growing number of subjects with around 50 tutors in total.
+
+Tutor matching services are [notoriously difficult businesses to run](https://techcrunch.com/2013/09/08/tutorspree-shut-down/).  We tried to take a cut from all activity between students and tutors.  Tutors had to use our platform for booking and managing their tutoring slots.  Students would book tutors for the subjects they wanted tutoring in.  Once a tutoring session had finished, the student would pay us, we'd extract our cut -- I think it was around 10-15% -- and then pay the tutor.
+
+The main difficulty we found was that value of the actual tutoring FAR exceeded the value of our service.  A rigid slot-booking system didn't really gel well with rapidly changing daily life of university students.  Tutors and students would work this out pretty quickly, and they'd just ignore our booking system and plan everything over email or mobile phone.  Then the students would directly pay the tutors in cash.  We couldn't meaningfully justify extracting a "cut" from the tutor's services, because we didn't really add any value other than the intro between the tutor and the student.  Even if we did add value, we didn't control the payments, because this was 2002 and there weren't any payment providers that wanted to deal with us.  And even if we could make all of this work, NZ's long summer break would kill all revenue for four months!  Looking back, I'm amazed it made any money at all.
+
+Evidently "UniTutor" is a popular name and another NZ-based tutoring company started up a couple of years ago with exactly the same name.
 
 <a href="/archive/unitutor.gif"><img src="/archive/unitutor.gif" /></a>
 
