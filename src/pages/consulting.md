@@ -59,13 +59,9 @@ I can do full stack software engineering, as long as I am supported by a solid p
 
 * AWS EC2, S3, Cloudfront, Lambda, etc.
 
-### Mobile Apps
-
 In addition to this, I have a lot of experience in building apps for mobile phones.  From 2008 to 2014 I more or less worked exclusively on apps for iOS and Android.  As of 2018, I'm a lot more comfortable on iOS than Android.
 
-### C++ Software Development
-
-I've also been developing in C++ for the last decade.  My work on [Ocean](/project/ocean) involved a significant amount of C++ development for a proprietary library that could talk to multiple iOS devices over USB.
+I've also been developing in C++ for the last decade. Many of these projects are covered on the [projects page](/projects).
 
 ---
 
@@ -83,32 +79,31 @@ Prior to this I managed a remote team of software engineers, artists, and tester
 
 ## Graphical Tools and Libraries with C++ and OpenGL
  
-For much of my career I've produced graphical tools and apps.
+For much of my career I've produced graphical tools and apps.  Some examples:
+* [Dream Engine](/project/dream_engine/)
+* [GigaDraw](/project/dream_engine/)
+* [Algorithmic Design Engine](/project/algorithmic_design_engine/)
+* [difont (OpenGL font rendering)](/project/difont/)
+* [FTGLES](/project/ftgles/)
 
 ### Mobile Phone Game Engines
 
 With so much uncertainty about whether a mobile game will succeed or not, it is probably best to experiment with a tool like Unity first.  However, Unity is a broad brush and has many drawbacks. Many [mobile game companies prefer to use their own engine](https://www.quora.com/What-3D-engine-does-the-Clash-of-Clans-mobile-game-use/answer/Leon-Kitain) because it allows them to completely customise their development process.
 
-Check my write up on cdk, a mobile game engine I wrote that was used in multiple games, for both iOS and Android, with millions of downloads.  I've also open sourced my hdk.
-
-
-### Build Open Source Libraries
-
-Open source libraries are a fantastic way for software companies to expand the reach and adoption of an API.  This is crucial if the company needs.
-
+I've developer three mobile phone game engines.  My first engine, known as HDK v1, was purely for iOS and has been [open sourced here](https://github.com/cdave1/hdk).  I worked on a second version of this engine that I need to clean up and release on github.  I later worked on the [CDK game engine](/project/cdk_game_engine/).  I worked on this engine for three years, and used in multiple games, for both iOS and Android, with millions of downloads.
 
 
 ---
 
 ## Interesting Fringe Stuff
 
-I've dabbled with the following technologies:
+I've dabbled with the following technologies.  I haven't shipped anything substantial with these technologies (yet), but I know enough that I've moved beyond the beginning tutorials:
 
 * Machine learning, particularly GANs.
 
 * Simulations in virtual environments, particularly when coupled with ML.
 
-* Getting the most out of AWS Lambda.
+* Getting the most out of AWS Lambda (see https://github.com/cdave1/serverless-helloworld).
 
 * Crypto currency stuff: ERC721 contracts (e.g. cryptokitties), and Stellar anchors.
 
@@ -118,9 +113,9 @@ I've dabbled with the following technologies:
 
 # My Rates
 
-A typical contract is for 1 month of work, but I prefer contracts that go for longer than that.  For contracts that are shorter than 1 month divide my monthly rate by the number of days you want, and add a small amount of overhead.
+I charge by the month, and a typical contract is for 1 month of work.  I prefer contracts that go for longer than that.  For contracts that are shorter than 1 month, we'll divide my monthly rate by the number of days you want, and add a small amount of overhead.
 
-I charge by the month.  I don't charge by the hour because it creates perverse incentives for both parties.  I require a small deposit - usually no more than a third of the total - before beginning work.
+I require a small deposit - usually no more than a third of the total - before beginning work.
 
 ### Working Remote and Travel
 

@@ -8,7 +8,7 @@ title: About Me
 
 My name is David Petrie and I live and work in Wellington, New Zealand.  I am primarily a software engineer who happens to get involved in startups from time to time.
 
-Currently, I am founder of DreamEngine, a product that allows people to automatically access and use advanced technical skills.  My general hypothesis is that we're on the cusp of being able to build highly advanced software automation tools that are far more powerful than the tools we're currently used to.  These new tools will massively increase the productivity of the average person.
+Currently, I am founder of DreamEngine.  DreamEngine is a marketplace for selling automation tools, starting with graphic design tools.  a product that allows people to automatically access and use advanced technical skills.  My general hypothesis is that we're on the cusp of being able to build highly advanced software automation tools that are far more powerful than the tools we're currently used to.  These new tools will massively increase the productivity of the average person.
 
 # Contact
 
@@ -16,15 +16,20 @@ Currently, I am founder of DreamEngine, a product that allows people to automati
 
 * [Twitter](https://twitter.com/davidcpetrie)
 
+
+# Social Media
+
 * [Github](https://github.com/cdave1)
 
 * [Medium](https://medium.com/@david.petrie)
 
 * [Facebook](https://facebook.com/david.petrie.nz)
 
+* [LinkedIn](https://www.linkedin.com/in/davidcpetrie)
+
 # Career Highlights
 
-In descending chronological order:
+Prior to DreamEngine, in descending chronological order:
 
 * I worked on a VR app called [Vast](http://www.vastvr.com), a tool for crafting 3D objects and environments directly in VR. 
 
@@ -51,6 +56,22 @@ In descending chronological order:
 * In my first year of university, right after the dotcom crash in 2000, I started a website called "Daily Business Review".  It was like ["Arts and Letters Daily"](http://www.aldaily.com), but for tech news.  For whatever reason, it attracted a lot of cease-and-desist letters. [Here's an archive!](/archive/dbr/index.html)
 
 # Press
+
+Press coverage of projects I've worked on:
+
+* https://www.producthunt.com/posts/ocean-2
+* http://www.zdnet.com/article/ocean-the-linux-web-server-that-fits-in-your-pocket/
+* http://thenextweb.com/insider/2016/01/15/ocean-is-an-amazing-battery-powered-wireless-server-that-fits-in-your-pocket/
+* http://www.ibtimes.co.uk/ocean-meet-full-blown-wireless-web-server-thats-size-mobile-phone-fits-into-your-pocket-1538141
+* http://www.heise.de/newsticker/meldung/Ocean-Ein-winziger-Linux-Server-fuer-unterwegs-3074472.html
+* http://www.slashgear.com/ocean-is-a-phone-size-linux-server-that-runs-on-batteries-15423305/
+* http://www.coolthings.com/ocean-pocket-linux-server/
+* http://www.geeky-gadgets.com/ocean-wireless-server-is-pocket-sized-and-powerful-15-01-2016/
+* http://computerhoy.com/noticias/hardware/ocean-servidor-linux-portatil-llevar-bolsillo-39191
+* http://derstandard.at/2000029332311/Ocean-Mini-Linux-Server-zum-Mitnehmen
+* http://www.xataka.com/otros-dispositivos/ocean-es-un-servidor-del-tamano-de-un-iphone-inalambrico-y-que-sirve-como-bateria-portatil
+* http://linuxgizmos.com/pocket-sized-linux-server-doubles-as-a-smartphone-power-pack/
+* http://betalist.com/startups/ocean/
 
 # This Website
 
