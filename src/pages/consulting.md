@@ -90,14 +90,13 @@ For much of my career I've produced graphical tools and apps.  Some examples:
 
 With so much uncertainty about whether a mobile game will succeed or not, it is probably best to experiment with a tool like Unity first.  However, Unity is a broad brush and has many drawbacks. Many [mobile game companies prefer to use their own engine](https://www.quora.com/What-3D-engine-does-the-Clash-of-Clans-mobile-game-use/answer/Leon-Kitain) because it allows them to completely customise their development process.
 
-I've developer three mobile phone game engines.  My first engine, known as HDK v1, was purely for iOS and has been [open sourced here](https://github.com/cdave1/hdk).  I worked on a second version of this engine that I need to clean up and release on github.  I later worked on the [CDK game engine](/project/cdk_game_engine/).  I worked on this engine for three years, and used in multiple games, for both iOS and Android, with millions of downloads.
-
+I've developer three mobile phone game engines.  My first engine, known as HDK v1, was initially written to support the game [Smashed](/project/smashed) and has been [open sourced here](https://github.com/cdave1/hdk).  I worked on a second version of this engine that I need to clean up and release on github.  I later worked on the [CDK game engine](/project/cdk_game_engine/) for three years, using it in multiple games for both iOS and Android, with millions of downloads.
 
 ---
 
 ## Interesting Fringe Stuff
 
-I've dabbled with the following technologies.  I haven't shipped anything substantial with these technologies (yet), but I know enough that I've moved beyond the beginning tutorials:
+I've dabbled with the following technologies.  I haven't shipped anything substantial with these technologies (yet), but I know enough to be dangerous:
 
 * Machine learning, particularly GANs.
 
