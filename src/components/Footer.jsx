@@ -16,6 +16,7 @@ class SiteFooter extends React.Component {
                         <List.Item name='Projects' href='/projects/'>Projects</List.Item>
                         <List.Item name='Reading' href='/reading/'>Reading</List.Item>
                         <List.Item name='Consulting' href='/consulting/'>Consulting</List.Item>
+                        <List.Item name='Contact' href='/contact/'>Contact</List.Item>
                     </List>
                     <Divider hidden />
                     <p>&copy; David Petrie 2018</p>
