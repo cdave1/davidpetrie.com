@@ -14,7 +14,7 @@ export default class ProjectPage extends React.Component {
             <Wrapper title="Projects">
                 <div className="blogText">
                 <h1>Projects</h1>
-                <p><a href="/projects/archive/">See my project archive for older (pre 2010) stuff</a></p>
+                <p><a href="/projects/archive/">Older (pre 2010) projects can be found here</a></p>
 
                 <p>This is a selected portfolio of interesting products, startups, and open source software, that I've created over the last decade.   My <a href="http://github.com/cdave1">github profile</a> also has additional software and engineering projects on it.</p>
                 <Projects />
