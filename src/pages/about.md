@@ -49,6 +49,57 @@ Prior to DreamEngine, in descending chronological order:
 
 * In my first year of university, right after the dotcom crash in 2000, I started a website called "Daily Business Review".  It was like ["Arts and Letters Daily"](http://www.aldaily.com), but for tech news.  For whatever reason, it attracted a lot of cease-and-desist letters. [Here's an archive!](/archive/dbr/index.html)
 
+
+# Interests
+
+<ul>
+<li>Automation Tools
+    <ul>
+    <li>I'm specifically interested in how to create software that can radically increase the productivity of the average person.  Software engineers have had access to these kinds of tools for a long time, via APIs or package installers like npm.  What would an 'npm for everyone' actually look like?
+    <li>Research on <a href="https://github.com/cdave1/AutomateConstruction">automating construction processes</a>.
+    <li>Procedural generation.
+    </ul>
+<li>Simulation 
+    <ul>
+    <li>Simulate an entire city, or at least a small portion of it, then test different configurations of, say, the road layout to see how it might alter traffic flow.
+    </ul>
+<li> Generative and procedural artwork.
+<li> Architecture
+<li> Typography
+    <ul><li>See various font rendering libraries on my projects page.</ul>
+<li> Health and fitness
+    <ul>
+    <li>It's a bit of a fad, but I do intermittent fasting and I think I'll do it for the rest of my life.  I get all my calories between 7am and 1pm.
+    <li>I row (current goal is to do 2000m in less than 6 minutes, currently barely breaking 7).
+    <li>I lift weights and throw kettlebells around.
+    <li>Bicycle, occasional running.
+    </ul>
+<li> Crypto currenices
+    <ul>
+    <li>Ethereum
+    <li>Stellar
+    </ul>
+<li> Real time 3D graphics
+<li> Game engines
+<li> History
+    <ul><li> Currently interested in the decline and fall of the Roman Empire and the period of "late antiquity" that followed it.</ul>
+<li> Software engineering issues
+    <ul><li> Better ways to interview software engineers
+    <li> Agile: is it still relevant?
+    <li> Why are back-end developers dying out more quickly than DBAs did in the late 2000s?
+    </ul>
+<li> Cell biology
+    <ul><li>The question of whether eukaryotes are unique to earth, or not</ul>
+<li> Machine Learning
+    <ul>
+    <li>GANS, or <a href="https://en.wikipedia.org/wiki/Generative_adversarial_network">Generative adversarial networks</a>
+    <li>Genetic programming
+    </ul>
+<li> Music
+<li> Languages
+</ul>
+
+
 # Press/Media
 
 Press and media coverage of projects I've worked on:

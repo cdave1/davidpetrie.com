@@ -26,7 +26,7 @@ class SiteHeader extends React.Component {
                             <Menu.Item name='About' href='/about/' />
                             <Menu.Item name='Projects' href='/projects/' />
                             <Menu.Item name='Reading' href='/reading/' />
-                            <Menu.Item fitted><Button basic color='blue' href='/consulting/' content="Consulting" /></Menu.Item>
+                            <Menu.Item name="Consulting" href='/consulting/' />
                             <Menu.Item name='Contact' href='/contact/' />
                             <Menu.Item icon='twitter' href='https://www.twitter.com/davidcpetrie' />
                             <Menu.Item icon='github' href='https://github.com/cdave1' />

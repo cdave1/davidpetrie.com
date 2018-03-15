@@ -12,14 +12,6 @@ var books = {
             "link": "https://www.amazon.com/Pre-Suasion-Revolutionary-Way-Influence-Persuade-ebook/dp/B01A6DJD7Q"
         },
         {
-            "title": "The First Tycoon: The Epic Life of Cornelius Vanderbilt",
-            "author": "T. J. Stiles",
-            "link": "https://www.amazon.com/Tycoon-Cornelius-Vanderbilt-Stiles-Hardcover/dp/B00DWWAO2C",
-            "notes": "Previously abandoned, picking up again."
-        }
-    ],
-    "Upcoming" : [
-        {
             "title": "Scum of the Earth",
             "author": "Arthur Koestler",
             "link": "https://www.amazon.com/Scum-Earth-Arthur-Koestler-ebook/dp/B009ZH6VC0"
@@ -29,7 +21,9 @@ var books = {
             "author": "Aldous Huxley",
             "link": "https://www.amazon.com/Brave-New-World-Aldous-Huxley-ebook/dp/B0748M1VKH",
             "notes": "Last read in high school.  This edition has a great intro by Margeret Atwood."
-        },
+        }
+    ],
+    "Upcoming" : [
         {
             "title": "Life on the Edge: The Coming Age of Quantum Biology",
             "author": "Johnjoe McFadden, Jim Al-Khalili",
@@ -42,6 +36,11 @@ var books = {
         }
     ],
     "2018": [
+        {
+            "title": "The First Tycoon: The Epic Life of Cornelius Vanderbilt",
+            "author": "T. J. Stiles",
+            "link": "https://www.amazon.com/Tycoon-Cornelius-Vanderbilt-Stiles-Hardcover/dp/B00DWWAO2C"
+        },
         {
             title: "Shoe Dog",
             author: "Phil Knight",
