@@ -56,23 +56,23 @@ Prior to DreamEngine, in descending chronological order:
 <li>Automation Tools
     <ul>
     <li>I'm specifically interested in how to create software that can radically increase the productivity of the average person.  Software engineers have had access to these kinds of tools for a long time, via APIs or package installers like npm.  What would an 'npm for everyone' actually look like?
-    <li>Research on <a href="https://github.com/cdave1/AutomateConstruction">automating construction processes</a>.
-    <li>Procedural generation.
+    <li>Research on <a href="https://github.com/cdave1/AutomateConstruction">automating construction processes</a>
+    <li>Procedural generation
     </ul>
 <li>Simulation 
     <ul>
-    <li>Simulate an entire city, or at least a small portion of it, then test different configurations of, say, the road layout to see how it might alter traffic flow.
+    <li>Simulate an entire city, or at least a small portion of it, then test different configurations of, say, the road layout to see how it might alter traffic flow
     </ul>
-<li> Generative and procedural artwork.
+<li> Generative and procedural artwork
 <li> Architecture
 <li> Typography
-    <ul><li>See various font rendering libraries on my projects page.</ul>
+    <ul><li>See various font rendering libraries on my projects page</ul>
 <li> Health and fitness
     <ul>
-    <li>It's a bit of a fad, but I do intermittent fasting and I think I'll do it for the rest of my life.  I get all my calories between 7am and 1pm.
-    <li>I row (current goal is to do 2000m in less than 6 minutes, currently barely breaking 7).
-    <li>I lift weights and throw kettlebells around.
-    <li>Bicycle, occasional running.
+    <li>It's a bit of a fad, but I do intermittent fasting and I think I'll do it for the rest of my life.  I get all my calories between 7am and 1pm
+    <li>I row (current goal is to do 2000m in less than 6 minutes, currently barely breaking 7)
+    <li>I lift weights and throw kettlebells around
+    <li>Bicycle, occasional running
     </ul>
 <li> Crypto currenices
     <ul>
@@ -82,7 +82,7 @@ Prior to DreamEngine, in descending chronological order:
 <li> Real time 3D graphics
 <li> Game engines
 <li> History
-    <ul><li> Currently interested in the decline and fall of the Roman Empire and the period of "late antiquity" that followed it.</ul>
+    <ul><li> Currently interested in the decline and fall of the Roman Empire and the period of "late antiquity" that followed it</ul>
 <li> Software engineering issues
     <ul><li> Better ways to interview software engineers
     <li> Agile: is it still relevant?
