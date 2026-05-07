@@ -32,7 +32,6 @@ public/
 .cache/
 .DS_Store
 yarn-error.log
-static/images/
 /raw_images/
 
 /semantic/
