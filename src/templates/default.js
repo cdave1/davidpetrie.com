@@ -1,9 +1,7 @@
 import React from 'react'
 import get from 'lodash/get'
 
-import PageWrapper from '../Components/Wrapper.jsx';
-
-import { Container, Segment, Header, Image, Icon, Divider, Label } from 'semantic-ui-react'
+import PageWrapper from '../components/Wrapper.jsx';
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -12,11 +10,11 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <PageWrapper title={`${post.frontmatter.title} | ${siteTitle}`}>
-        <Segment basic>
-        <div className='blogText' dangerouslySetInnerHTML={{ __html: post.html }} />
-        <Divider />
-        <Label>{post.frontmatter.date}</Label>
-        </Segment>
+        <article className="markdown-content">
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          <hr />
+          <time>{post.frontmatter.date}</time>
+        </article>
       </PageWrapper>
     )
   }

@@ -6,7 +6,7 @@ title: Ethics and Disclaimers
 
 # Ethics and Disclaimers
 
-This article specifically relates to work my [consulting work](/consulting/).
+This article specifically relates to my professional work.
 
 ### Errors and Bugs
 

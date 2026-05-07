@@ -1,5 +1,5 @@
 import React from 'react'
-import ProjectPage from '../Components/ProjectPage.jsx';
+import ProjectPage from '../components/ProjectPage.jsx';
 
 class ProjectTemplate extends React.Component {
     render() {

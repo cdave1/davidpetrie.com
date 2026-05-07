@@ -1,7 +1,4 @@
 import React from 'react'
-import Gallery from 'react-grid-gallery';
-
-import { Header, Divider, Segment } from 'semantic-ui-react'
 import PageWrapper from '../components/Wrapper';
 
 var books = {
@@ -71,7 +68,7 @@ var books = {
             link: "https://www.amazon.com/Perennial-Seller-Making-Marketing-Lasts/dp/0143109014"
         },
         {
-            title: "Adults In The Room: My Battle With Europe’s Deep Establishment",
+            title: "Adults In The Room: My Battle With Europe's Deep Establishment",
             author: "Yanis Varoufakis",
             link: "https://www.amazon.com/Adults-Room-Battle-Europes-Establishment-ebook/dp/B01ICK4IWK"
         },
@@ -267,7 +264,7 @@ var books = {
             "link": "https://www.amazon.com/gp/product/0520250125/ref=od_aui_detailpages03?ie=UTF8&psc=1"
         },
         {
-            "title": "Incompleteness: The Proof and Paradox of Kurt Gödel (Great Discoveries)",
+            "title": "Incompleteness: The Proof and Paradox of Kurt Godel (Great Discoveries)",
             "author": "Rebecca Goldstein",
             "link": "https://www.amazon.com/gp/product/0393327604/ref=od_aui_detailpages03?ie=UTF8&psc=1"
         },
@@ -507,79 +504,63 @@ exports.data = {
 
 
 export default class Reading extends React.Component {
-    constructor () {
-        super()
-    }
-
     bookLink(item, index) {
-        var notes = null;
-        if (item.notes) {
-            notes = (
-                <span>
-                {item.notes}
-                </span>
-            );
-        }
-        return ( 
-            <Segment basic>
-                <Header size="small" as="h4">
+        return (
+            <div className="book-item" key={index}>
+                <h4>
                     {index + 1}. {item.link && item.link.length > 0 ? <a href={item.link}>{item.title}</a> : item.title} by {item.author}
-                </Header>
-                {notes && <p>
-                    {notes}
-                </p>}
-            </Segment>
+                </h4>
+                {item.notes && <p>{item.notes}</p>}
+            </div>
         )
     }
-   
-    render () {
+
+    render() {
         return (
             <PageWrapper title="Reading List">
-            <div className="blogText">
                 <h1>2018 Reading List</h1>
 
                 <p>My goal for 2018 is to get back to my cadence of roughly one book per week. I have a backlog of books by Vaclav Smil and Carlotta Perez that I've been ignoring from 2015. After that, I want to read more history and less fiction.  I'm looking forward to reading more of Peter Brown's work: the period of late antiquity is just so damn interesting.</p>
 
-                <Segment color="orange">
-                    <h1>Currently Reading:</h1>
-                    {books['Current'].map((item, index) => { return this.bookLink(item, index) })}
-                </Segment>
-                
-                <Segment color="yellow">
-                    <h1>Upcoming:</h1>
+                <div className="book-section">
+                    <h2>Currently Reading</h2>
+                    {books['Current'].map((item, index) => this.bookLink(item, index))}
+                </div>
 
-                    {books['Upcoming'].map((item, index) => { return this.bookLink(item, index) })}
-                </Segment>
-                
-                <Segment color="green">
-                    <h1>Finished:</h1>
+                <div className="book-section">
+                    <h2>Upcoming</h2>
+                    {books['Upcoming'].map((item, index) => this.bookLink(item, index))}
+                </div>
 
-                    {books['2018'].map((item, index) => { return this.bookLink(item, index) })}
-                </Segment>
+                <div className="book-section">
+                    <h2>2018</h2>
+                    {books['2018'].map((item, index) => this.bookLink(item, index))}
+                </div>
 
-                <Divider />
+                <hr />
 
                 <h1>2017 Reading List</h1>
 
                 <p>My reading list for 2017 is spartan in comparison to 2016, and looks downright cheap and nasty compared to <a href="https://www.waggish.org/2017/david-auerbachs-books-of-the-year-2017/">David Auerbach's</a>. Auerbach is the reader we should all aspire to be.</p>
-                
+
                 <p>Both the quality and quantity of my reading dipped in 2017 as work took precedence over everything else.  For whatever reason, I was also more ruthless about abandoning books that didn't click.  A good example of an abandoned book is <a href="https://www.goodreads.com/book/show/16240761-the-son">The Son</a> by Philipp Meyer, for which I got 15% through before I moved on to something else.  I guess I abandoned 20-30 books this year in a similar fashion, not counting Kindle samples.</p>
 
                 <p>Peter Brown's <a href="https://www.amazon.com/Through-Eye-Needle-Christianity-350-550-ebook/dp/B009EYPOCC">"Through the Eye of a Needle"</a> was the undisputed highlight of 2017 for me.  However, I think I might be done with science fiction -- for now.  I was a latecomer to the genre several years ago, but I really feel like I've read all of the genre's "greatest hits" by now.  I don't follow SF fandoms so I'm not up to date with newer authors.</p>
-                
-                <Segment>
-                    {books['2017'].map((item, index) => { return this.bookLink(item, index) })}
-                </Segment>
 
-                <Divider />
+                <div className="book-section">
+                    <h2>2017</h2>
+                    {books['2017'].map((item, index) => this.bookLink(item, index))}
+                </div>
+
+                <hr />
 
                 <h1>2016 Reading List</h1>
 
-                <Segment>
-                    {books['2016'].map((item, index) => { return this.bookLink(item, index) })}
-                </Segment>
-            </div>
+                <div className="book-section">
+                    <h2>2016</h2>
+                    {books['2016'].map((item, index) => this.bookLink(item, index))}
+                </div>
             </PageWrapper>
         )
-  }
+    }
 }

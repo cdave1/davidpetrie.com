@@ -1,20 +1,15 @@
 import React from 'react'
-import { Container } from 'semantic-ui-react'
 import SiteHeader from './Header';
 import SiteFooter from './Footer';
 
 export default class PageWrapper extends React.Component {
-    constructor () {
-        super()
-    }
-
-    render () {
+    render() {
         return (
             <div>
                 <SiteHeader />
-                <Container>
+                <main className="site-container page-content">
                     {this.props.children}
-                </Container>
+                </main>
                 <SiteFooter />
             </div>
         )
