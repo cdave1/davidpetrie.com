@@ -13,12 +13,16 @@
     "react-helmet": "^5.2.0"
   },
   "devDependencies": {
-    "prettier": "^1.5.2"
+    "prettier": "^1.5.2",
+    "wrangler": "^4.88.0"
   },
   "keywords": [
     "gatsby"
   ],
   "license": "MIT",
   "main": "n/a",
-  "scripts": {}
+  "scripts": {
+    "deploy": "npx gatsby build && wrangler deploy",
+    "preview": "npx gatsby build && wrangler dev"
+  }
 }
