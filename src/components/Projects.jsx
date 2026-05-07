@@ -2,7 +2,7 @@ import React from 'react'
 import _ from 'lodash';
 import moment from 'moment';
 
-const ReactMarkdown = require('react-markdown');
+const { marked } = require('marked');
 
 import projectData from '../data/projects.json';
 
@@ -52,9 +52,9 @@ export default class Projects extends React.Component {
 
                             {project.readme ?
                                 project.readme.length > 1000 ?
-                                    <ReactMarkdown source={_.split(project.readme, " ").slice(0, 250).join(" ") + " ... ([See full article](" + "/project/" + sanitize(project.title) + "))"} />
+                                    <div dangerouslySetInnerHTML={{ __html: marked(_.split(project.readme, " ").slice(0, 250).join(" ") + " ... ([See full article](" + "/project/" + sanitize(project.title) + "))") }} />
                                     :
-                                    <ReactMarkdown escapeHtml={false} source={project.readme} />
+                                    <div dangerouslySetInnerHTML={{ __html: marked(project.readme) }} />
                                 : null
                             }
 

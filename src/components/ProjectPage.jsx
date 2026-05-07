@@ -2,7 +2,7 @@ import React from 'react'
 import _ from 'lodash';
 import moment from 'moment';
 
-const ReactMarkdown = require('react-markdown');
+const { marked } = require('marked');
 
 import projectData from '../data/projects.json';
 import HomeWrapper from '../components/HomeWrapper.jsx';
@@ -65,7 +65,7 @@ export default class ProjectPage extends React.Component {
 
                     <hr />
 
-                    <ReactMarkdown escapeHtml={false} source={project.readme} />
+                    {project.readme && <div dangerouslySetInnerHTML={{ __html: marked(project.readme) }} />}
 
                     <div className="project-images">
                         {images.map((image, i) =>

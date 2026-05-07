@@ -9,8 +9,8 @@
     "gatsby-plugin-react-helmet": "^2.0.3",
     "gatsby-source-filesystem": "^1.5.15",
     "gatsby-transformer-remark": "^1.7.30",
-    "react-helmet": "^5.2.0",
-    "react-markdown": "^3.2.0"
+    "marked": "^4.3.0",
+    "react-helmet": "^5.2.0"
   },
   "devDependencies": {
     "prettier": "^1.5.2"
