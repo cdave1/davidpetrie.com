@@ -1,10 +1,13 @@
 import React from 'react'
 import HomeWrapper from '../components/HomeWrapper';
+import Seo from '../components/Seo.jsx';
+
+export const Head = () => <Seo />;
 
 export default class Index extends React.Component {
     render() {
         return (
-            <HomeWrapper title="David Petrie">
+            <HomeWrapper>
                 <div className="site-container page-content">
                     <section className="home-intro">
                         <p>

@@ -1,5 +1,8 @@
 import React from 'react'
 import PageWrapper from '../components/Wrapper';
+import Seo from '../components/Seo.jsx';
+
+export const Head = () => <Seo title="Reading List" />;
 
 var books = {
     "Current" : [
@@ -517,7 +520,7 @@ export default class Reading extends React.Component {
 
     render() {
         return (
-            <PageWrapper title="Reading List">
+            <PageWrapper>
                 <h1>2018 Reading List</h1>
 
                 <p>My goal for 2018 is to get back to my cadence of roughly one book per week. I have a backlog of books by Vaclav Smil and Carlotta Perez that I've been ignoring from 2015. After that, I want to read more history and less fiction.  I'm looking forward to reading more of Peter Brown's work: the period of late antiquity is just so damn interesting.</p>

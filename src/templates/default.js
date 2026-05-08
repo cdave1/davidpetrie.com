@@ -1,41 +1,42 @@
-import React from 'react'
-import get from 'lodash/get'
+import React from 'react';
+import { graphql } from 'gatsby';
 
 import PageWrapper from '../components/Wrapper.jsx';
+import Seo from '../components/Seo.jsx';
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+export default function BlogPostTemplate({ data }) {
+    const post = data.markdownRemark;
 
     return (
-      <PageWrapper title={`${post.frontmatter.title} | ${siteTitle}`}>
-        <article className="markdown-content">
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
-          <hr />
-          <time>{post.frontmatter.date}</time>
-        </article>
-      </PageWrapper>
-    )
-  }
+        <PageWrapper>
+            <article className="markdown-content">
+                <h1>{post.frontmatter.title}</h1>
+                <div dangerouslySetInnerHTML={{ __html: post.html }} />
+                <hr />
+                <time>{post.frontmatter.date}</time>
+            </article>
+        </PageWrapper>
+    );
 }
 
-export default BlogPostTemplate
+export const Head = ({ data }) => (
+    <Seo title={data.markdownRemark.frontmatter.title} />
+);
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
-    site {
-      siteMetadata {
-        title
-      }
+    query BlogPostByPath($path: String!) {
+        site {
+            siteMetadata {
+                title
+            }
+        }
+        markdownRemark(frontmatter: { path: { eq: $path } }) {
+            id
+            html
+            frontmatter {
+                title
+                date(formatString: "MMMM DD, YYYY")
+            }
+        }
     }
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      id
-      html
-      frontmatter {
-        title
-        date(formatString: "MMMM DD, YYYY")
-      }
-    }
-  }
-`
+`;

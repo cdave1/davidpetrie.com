@@ -1,26 +1,14 @@
-import React from 'react'
+import React from 'react';
 import ProjectPage from '../components/ProjectPage.jsx';
+import Seo from '../components/Seo.jsx';
 
-class ProjectTemplate extends React.Component {
-    render() {
-        if (this.props.pageResources) {
-            const project = this.props.pageResources.json.pathContext.project
-
-            return (
-                <ProjectPage project={project} />
-            )
-        } else if (this.props.pathContext) {
-            // Bug fix: this path is different under 'gatbsy build'
-            const project = this.props.pathContext.project
-
-            return (
-                <ProjectPage project={project} />
-            )
-        } else {
-            console.log("THIS IS THE PROPS", this.props);
-            return (<div />)
-        }
-    }
+export default function ProjectTemplate({ pageContext }) {
+    return <ProjectPage project={pageContext.project} />;
 }
 
-export default ProjectTemplate
+export const Head = ({ pageContext }) => (
+    <Seo
+        title={pageContext.project.title}
+        description={pageContext.project.description}
+    />
+);

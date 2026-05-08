@@ -1,17 +1,15 @@
-import React from 'react'
+import React from 'react';
 import SiteHeader from './Header';
 import SiteFooter from './Footer';
 
-export default class HomeWrapper extends React.Component {
-    render() {
-        return (
-            <div>
-                <SiteHeader />
-                <main>
-                    {this.props.children}
-                </main>
-                <SiteFooter />
-            </div>
-        )
-    }
+export default function HomeWrapper({ children }) {
+    return (
+        <div>
+            <SiteHeader />
+            <main>
+                {children}
+            </main>
+            <SiteFooter />
+        </div>
+    );
 }

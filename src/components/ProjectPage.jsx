@@ -1,82 +1,89 @@
-import React from 'react'
+import React from 'react';
 import _ from 'lodash';
 import moment from 'moment';
 
 const { marked } = require('marked');
 
-import projectData from '../data/projects.json';
-import HomeWrapper from '../components/HomeWrapper.jsx';
+import HomeWrapper from './HomeWrapper.jsx';
 
-export default class ProjectPage extends React.Component {
-    componentWillMount() {
-        projectData.projects = _.orderBy(projectData.projects, ['startDate'], ['desc']);
-    }
+export default function ProjectPage({ project }) {
+    const images = project.images.map((image) => ({
+        src: '/images/' + image.file.path,
+        thumbnail: '/images/' + image.thumbnails.croppedLarge.path,
+        caption: image.caption,
+        isHeaderImage: project.headerImageId === image.id,
+    }));
 
-    render() {
-        const project = this.props.project;
-        var images = project.images.map(image => ({
-            src: "/images/" + image.file.path,
-            thumbnail: "/images/" + image.thumbnails.croppedLarge.path,
-            caption: image.caption,
-            isHeaderImage: project.headerImageId === image.id
-        }));
+    const links = [];
+    if (project.websiteURL) links.push({ label: 'Website', url: project.websiteURL });
+    if (project.githubURL) links.push({ label: 'GitHub', url: project.githubURL });
+    if (project.mediumURL) links.push({ label: 'Medium', url: project.mediumURL });
+    if (project.twitter) links.push({ label: 'Twitter', url: project.twitter });
 
-        var links = [];
-        if (project.websiteURL) links.push({ label: 'Website', url: project.websiteURL });
-        if (project.githubURL) links.push({ label: 'GitHub', url: project.githubURL });
-        if (project.mediumURL) links.push({ label: 'Medium', url: project.mediumURL });
-        if (project.twitter) links.push({ label: 'Twitter', url: project.twitter });
+    const headerImage = _.find(images, 'isHeaderImage') || images[_.random(0, images.length - 1, false)];
 
-        var headerImage = _.find(images, "isHeaderImage") || images[_.random(0, images.length - 1, false)];
+    const dateString =
+        moment(project.startDate).year() +
+        '' +
+        (project.endDate
+            ? moment(project.endDate).year() !== moment(project.startDate).year()
+                ? ' - ' + moment(project.endDate).year()
+                : ''
+            : ' - present');
 
-        var dateString = moment(project.startDate).year() + "" + (project.endDate ? ((moment(project.endDate).year() !== moment(project.startDate).year()) ? " - " + moment(project.endDate).year() : "") : " - present");
+    return (
+        <HomeWrapper title={project.title}>
+            <img
+                className="project-hero"
+                src={headerImage.src}
+                alt={project.title}
+                loading="lazy"
+            />
 
-        return (
-            <HomeWrapper title={project.title}>
-                <img
-                    className="project-hero"
-                    src={headerImage.src}
-                    alt={project.title}
-                    loading="lazy"
-                />
-
-                <div className="site-container page-content">
-                    <div className="project-header">
-                        <h1>{project.title}</h1>
-                        {project.description &&
-                            <p className="project-description">{project.description}</p>
-                        }
-                        <span className="project-meta-date">{dateString}</span>
-                    </div>
-
-                    {project.tags &&
-                        <ul className="project-tags">
-                            {project.tags.map((tag, i) => <li key={i} className="tag">{tag}</li>)}
-                        </ul>
-                    }
-
-                    {links.length > 0 &&
-                        <ul className="project-links">
-                            {links.map((link, i) =>
-                                <li key={i}><a href={link.url}>{link.label}: {link.url}</a></li>
-                            )}
-                        </ul>
-                    }
-
-                    <hr />
-
-                    {project.readme && <div dangerouslySetInnerHTML={{ __html: marked(project.readme) }} />}
-
-                    <div className="project-images">
-                        {images.map((image, i) =>
-                            <figure key={i}>
-                                <img src={image.src} alt={image.caption || project.title} loading="lazy" />
-                                {image.caption && <figcaption>{image.caption}</figcaption>}
-                            </figure>
-                        )}
-                    </div>
+            <div className="site-container page-content">
+                <div className="project-header">
+                    <h1>{project.title}</h1>
+                    {project.description && (
+                        <p className="project-description">{project.description}</p>
+                    )}
+                    <span className="project-meta-date">{dateString}</span>
                 </div>
-            </HomeWrapper>
-        )
-    }
+
+                {project.tags && (
+                    <ul className="project-tags">
+                        {project.tags.map((tag, i) => (
+                            <li key={i} className="tag">{tag}</li>
+                        ))}
+                    </ul>
+                )}
+
+                {links.length > 0 && (
+                    <ul className="project-links">
+                        {links.map((link, i) => (
+                            <li key={i}><a href={link.url}>{link.label}: {link.url}</a></li>
+                        ))}
+                    </ul>
+                )}
+
+                <hr />
+
+                {project.readme && (
+                    <div dangerouslySetInnerHTML={{ __html: marked(project.readme) }} />
+                )}
+
+                <div className="project-images">
+                    {images.map((image, i) => (
+                        <figure key={i}>
+                            <img
+                                src={image.src}
+                                alt={image.caption || project.title}
+                                loading="lazy"
+                            />
+                            {image.caption && <figcaption>{image.caption}</figcaption>}
+                        </figure>
+                    ))}
+                </div>
+            </div>
+        </HomeWrapper>
+    );
 }

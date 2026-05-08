@@ -1,6 +1,8 @@
 module.exports = {
     siteMetadata: {
         title: `David Petrie`,
+        description: `David Petrie - Software Engineer`,
+        siteUrl: `https://davidpetrie.com`,
     },
     pathPrefix: '/',
     plugins: [
@@ -8,10 +10,9 @@ module.exports = {
             resolve: `gatsby-source-filesystem`,
             options: {
                 path: `${__dirname}/src/pages`,
-                name: "markdown-pages",
+                name: `markdown-pages`,
             },
         },
         `gatsby-transformer-remark`,
-        `gatsby-plugin-react-helmet`
     ],
 }
