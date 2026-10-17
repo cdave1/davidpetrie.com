@@ -1,5 +1,5 @@
 // Builds the site, serves public/ at http://localhost:8000 and rebuilds the pages whenever
-// something under src/ changes. Restart it after changing static/.
+// something under src/ changes. Restart it after changing static/. Includes the design lab at /lab/.
 //
 //   node scripts/dev.mjs
 
@@ -19,12 +19,12 @@ const types = {
     '.webp': 'image/webp', '.webm': 'video/webm', '.mp4': 'video/mp4', '.ico': 'image/x-icon', '.pdf': 'application/pdf',
 };
 
-await build();
+await build({ lab: true });
 
 let timer;
 fs.watch(path.join(root, 'src'), { recursive: true }, () => {
     clearTimeout(timer);
-    timer = setTimeout(() => build({ clean: false, copy: false }).catch((error) => console.error(error.message)), 150);
+    timer = setTimeout(() => build({ clean: false, copy: false, lab: true }).catch((error) => console.error(error.message)), 150);
 });
 
 http.createServer((req, res) => {
@@ -36,4 +36,4 @@ http.createServer((req, res) => {
     if (!found) file = path.join(out, '404.html');
     res.writeHead(found ? 200 : 404, { 'Content-Type': types[path.extname(file).toLowerCase()] || 'application/octet-stream' });
     fs.createReadStream(file).pipe(res);
-}).listen(port, () => console.log(`Serving public/ at http://localhost:${port}`));
+}).listen(port, () => console.log(`Serving public/ at http://localhost:${port}  (design lab: http://localhost:${port}/lab/)`));

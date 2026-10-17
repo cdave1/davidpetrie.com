@@ -1,16 +1,23 @@
 /* davidpetrie.com
    Direction: the pinned poster (tasteskill v2, seed 1216197087).
-   One navy field runs the page; pink does everything else. One face, Schibsted Grotesk. */
+   Palette: Graphite and orange (tasteskill library). A graphite field runs the page, light ink
+   for the words, orange only on the actions; the press band and footer are light fields.
+   One face, Schibsted Grotesk. */
 
 /* ---------- tokens ---------- */
 
 :root {
-  --bg: #1a2039;
-  --surface: #212846;
-  --ink: #f9a3c0;
-  --muted: #b9879c;
-  --accent: #f9a3c0;
-  --accent-ink: #1a2039;
+  --bg: #18191b;
+  --surface: #222427;
+  --ink: #eff0f1;
+  --muted: #9c9ea3;
+  --accent: #ff4a1f;
+  --accent-ink: #18191b;
+  --field: #eff0f1;
+  --field-ink: #18191b;
+  --two-field: #ff4a1f;
+  --two-a: #0a0a0a;
+  --two-b: #ffffff;
   --scrim: rgba(0, 0, 0, 0.55);
 
   --font: 'Schibsted Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -131,13 +138,7 @@ a {
 .button:active { transform: scale(0.97); }
 
 @media (hover: hover) and (pointer: fine) {
-  .button:hover { background: #ffc4d7; text-decoration: none; }
-}
-
-.button--inverse { background: var(--bg); color: var(--ink); }
-
-@media (hover: hover) and (pointer: fine) {
-  .button--inverse:hover { background: #0f1426; }
+  .button:hover { background: color-mix(in srgb, var(--accent) 78%, white); text-decoration: none; }
 }
 
 .caption {
@@ -195,173 +196,73 @@ a {
   pointer-events: none;
 }
 
-.hero__name {
-  position: sticky;
-  top: 0;
-  height: 100vh; /* taste-skill-ignore: fallback for 100svh below */
-  height: 100svh;
-  font-size: var(--step-display);
-  line-height: 0.85;
-  letter-spacing: -0.05em;
-}
+/* ---------- home: masthead, the name stacked in two inks ---------- */
+/* tasteskill hero "Stacked name, two inks": one flat field and no picture, the name on two lines
+   in two inks, small furniture along the top, the sentence in the bottom-right corner. */
 
-.hero__half {
-  position: absolute;
-  display: block;
-  overflow: hidden;
-  padding-bottom: 0.08em;
-}
-
-.hero__half > span { display: block; }
-
-.hero__half--first { top: var(--margin); left: var(--margin); }
-.hero__half--last { bottom: var(--margin); right: var(--margin); }
-
-.hero__screen {
+.masthead {
   position: relative;
   height: 100vh; /* taste-skill-ignore: fallback for 100svh below */
   height: 100svh;
   min-height: 34rem;
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-template-rows: minmax(0, 1fr);
-  background: var(--surface);
+  background: var(--two-field);
+  color: var(--two-a);
 }
 
-.hero__panel {
-  grid-column: 1 / 10;
-  grid-row: 1;
-  display: grid;
-  grid-template-columns: repeat(9, minmax(0, 1fr));
-  column-gap: var(--gutter);
-  padding-left: var(--margin);
-  align-content: start;
+.masthead__top {
+  position: absolute;
+  inset: 24px var(--margin) auto var(--margin);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: var(--step-small);
+  font-weight: 600;
 }
 
-.hero__copy {
-  grid-column: 3 / 8;
-  margin-top: 44vh;
-  margin-top: 44svh;
+.masthead__top ul { display: flex; align-items: center; gap: 1.5rem; list-style: none; }
+
+.masthead .button {
+  min-height: 40px;
+  padding: 0 1em;
+  font-size: var(--step-small);
+  background: var(--two-a);
+  color: var(--two-b);
 }
 
-.hero__lede {
+@media (hover: hover) and (pointer: fine) {
+  .masthead .button:hover { background: color-mix(in srgb, var(--two-a) 78%, white); }
+}
+
+.masthead__name {
+  position: absolute;
+  left: var(--margin);
+  top: 17%;
+  font-size: clamp(44px, 6.75vw, 100px);
+  line-height: 0.82;
+  letter-spacing: -0.045em;
+}
+
+.masthead__line { display: block; overflow: hidden; padding: 0.12em 0 0.08em; margin: -0.12em 0 -0.08em; }
+.masthead__line > span { display: block; }
+.masthead__line:first-child { color: var(--two-a); }
+.masthead__line:last-child { color: var(--two-b); }
+
+.masthead__lede {
+  position: absolute;
+  right: var(--margin);
+  bottom: 40px;
+  max-width: 28ch;
+  margin: 0;
+  text-align: right;
   font-size: var(--step-lead);
   line-height: 1.3;
-  max-width: 34ch;
-  margin-bottom: 1.6rem;
+  color: var(--two-a);
 }
-
-.hero__links {
-  grid-column: 8 / 10;
-  grid-row: 1;
-  align-self: start;
-  justify-self: end;
-  margin-top: 44vh;
-  margin-top: 44svh;
-  padding-right: var(--gutter);
-  list-style: none;
-  text-align: right;
-  font-size: var(--step-body);
-  font-weight: 600;
-  line-height: 1.9;
-}
-
-.hero__menu { display: none; }
-
-.hero__photo {
-  grid-column: 10 / 13;
-  grid-row: 1;
-  margin: 0;
-  height: calc(100% - var(--step-display) * 0.85 - var(--margin) * 2 - 1rem);
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.hero__photo img {
-  flex: 1 1 auto;
-  min-height: 0;
-  width: 100%;
-  object-fit: cover;
-  object-position: 78% 72%;
-  background: var(--bg);
-}
-
-.hero__photo .caption { margin: 0.5rem 0 0; padding-left: 0.25rem; }
-
-.hero__intro {
-  position: relative;
-  min-height: 100vh; /* taste-skill-ignore: fallback for 100svh below */
-  min-height: 100svh;
-  padding-top: 18vh;
-  padding-top: 18svh;
-  padding-bottom: 6vh;
-  align-content: start;
-}
-
-.hero__statement {
-  grid-column: 4 / 10;
-  font-size: var(--step-statement);
-  line-height: 1.15;
-  letter-spacing: -0.025em;
-  font-weight: 600;
-  margin-bottom: clamp(2rem, 6vh, 4rem);
-}
-
-.hero__past {
-  grid-column: 4 / 10;
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  column-gap: var(--gutter);
-  align-items: start;
-}
-
-.hero__past figure { margin: 0; }
-.hero__past img { width: 100%; height: auto; object-fit: cover; background: var(--surface); }
-.hero__past .wide { grid-column: 1 / 5; }
-.hero__past .wide img { aspect-ratio: 16 / 10; object-position: 0 0; }
-.hero__past .tall { grid-column: 5 / 7; margin-top: 18%; }
-.hero__past .tall img { aspect-ratio: 4 / 5; }
 
 @media (max-width: 760px) {
-  .hero__pin { bottom: auto; height: 100svh; }
-  .hero__name { position: absolute; inset: 0; height: auto; }
-  .hero__half--first { top: 16px; left: 16px; }
-  .hero__half--last { bottom: 16px; right: 16px; }
-  .hero__screen {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    height: 100svh;
-    min-height: 36rem;
-    padding: calc(15vw + 28px) 0 calc(15vw + 28px);
-  }
-  .hero__panel { display: contents; }
-  .hero__photo { order: 1; flex: 1 1 auto; height: auto; min-height: 0; margin: 0; }
-  .hero__photo img { object-position: 50% 75%; }
-  .hero__photo .caption { padding-left: 16px; }
-  .hero__copy { order: 2; margin: 0; padding: 0 16px; }
-  .hero__lede { font-size: var(--step-lead); margin-bottom: 1rem; }
-  .hero__links { display: none; }
-  .hero__menu {
-    display: block;
-    position: absolute;
-    top: 20px;
-    right: 16px;
-    z-index: 4;
-    font-weight: 600;
-    text-decoration-color: currentColor;
-  }
-  .hero__intro { min-height: 0; padding: 4.5rem 0 0; }
-  .hero__statement { grid-column: 1 / -1; font-size: 1.5rem; }
-  .hero__past { grid-column: 1 / -1; }
-  .hero__past .wide { grid-column: 1 / 5; }
-  .hero__past .tall { grid-column: 4 / 7; margin-top: -22%; }
-}
-
-@media (min-width: 761px) and (max-width: 1100px) {
-  .hero__pin { bottom: auto; height: 100svh; }
-  .hero__statement, .hero__past { grid-column: 2 / 12; }
+  .masthead__top { inset: 20px 16px auto 16px; }
+  .masthead__name { left: 16px; top: 20%; font-size: 9vw; }
+  .masthead__lede { left: 16px; right: 16px; bottom: 24px; text-align: left; max-width: none; }
 }
 
 /* ---------- home: now, kotari as a mosaic of its products ---------- */
@@ -875,8 +776,8 @@ a {
   min-height: 100vh; /* taste-skill-ignore: fallback for 100svh below */
   min-height: 100svh;
   overflow: hidden;
-  background: var(--accent);
-  color: var(--accent-ink);
+  background: var(--field);
+  color: var(--field-ink);
   display: flex;
   flex-direction: column;
 }
@@ -1265,7 +1166,7 @@ a {
 /* ---------- motion ---------- */
 
 @media (prefers-reduced-motion: no-preference) {
-  .js .hero__half > span {
+  .js .masthead__line > span {
     transform: translateY(105%);
     animation: line-up 900ms var(--ease-out) forwards;
     animation-delay: calc(var(--i, 0) * 120ms + 150ms);
@@ -1276,11 +1177,6 @@ a {
     transform: translateY(18px);
     animation: rise var(--t-reveal) var(--ease-out) forwards;
     animation-delay: calc(var(--i, 0) * 90ms + 420ms);
-  }
-
-  .js .hero__photo img {
-    transform: scale(1.12);
-    animation: settle 1600ms var(--ease-soft) forwards;
   }
 
   .js [data-reveal] {

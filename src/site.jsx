@@ -14,6 +14,7 @@ import Reading from './pages/reading';
 import NotFound from './pages/404';
 import MarkdownPage from './templates/default';
 import ProjectPage from './components/ProjectPage';
+import { heroes, paletteCss, headScript, LabBar, barScript, LabIndex, labIndexCss } from './lab';
 
 const DEFAULT_TITLE = 'David Petrie - New Zealand based Software Engineer';
 const DEFAULT_DESCRIPTION = 'David Petrie - Software Engineer';
@@ -72,7 +73,7 @@ function pages(root) {
     return list;
 }
 
-function document({ title, description, body, assets }) {
+function document({ title, description, body, assets, head = '', tail = '' }) {
     return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,17 +87,34 @@ function document({ title, description, body, assets }) {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;800&display=swap">
 <link rel="stylesheet" href="${assets.css}">
-<script src="${assets.js}" defer></script>
+<script src="${assets.js}" defer></script>${head}
 </head>
 <body>
-${body}
+${body}${tail}
 </body>
 </html>
 `;
 }
 
-export function renderSite({ root, assets }) {
-    return pages(root).map((page) => {
+// The lab: /lab/ and one page per hero layout, the palette chosen with ?palette=.
+function labPages(assets) {
+    const head = `\n<link rel="stylesheet" href="${assets.labCss}">\n<style>${paletteCss}</style>\n<script>${headScript}</script>\n<meta name="robots" content="noindex">`;
+    const list = [{ url: '/lab/', title: 'Lab', element: <LabIndex />, head: head.replace(paletteCss, paletteCss + labIndexCss) }];
+    for (const hero of heroes) {
+        list.push({
+            url: `/lab/${hero.id}/`,
+            title: `Lab: ${hero.name}`,
+            element: <Index hero={hero.render()} />,
+            head,
+            tail: '\n' + renderToStaticMarkup(<LabBar current={hero.id} />) + `\n<script>${barScript}</script>`,
+        });
+    }
+    return list;
+}
+
+export function renderSite({ root, assets, lab = false }) {
+    return [...pages(root), ...(lab ? labPages(assets) : [])].map((page) => {
+        if (page.redirect) return { url: page.url, file: fileFor(page.url), html: redirectPage(page.redirect) };
         // React leaves `muted` off server-rendered video; every video here is a silent loop.
         const body = renderToStaticMarkup(page.element).replace(/<video(?![^>]*\bmuted\b)/g, '<video muted=""');
         return { url: page.url, file: fileFor(page.url), html: document({ ...page, body, assets }) };

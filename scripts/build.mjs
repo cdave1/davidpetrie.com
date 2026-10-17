@@ -2,7 +2,8 @@
 // and the contents of static/. React is only used here, to render the pages; none is sent to
 // the browser.
 //
-//   node scripts/build.mjs
+//   node scripts/build.mjs          the site
+//   node scripts/build.mjs --lab    the site plus the design lab at /lab/ (never deployed)
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -33,15 +34,15 @@ function copyStatic(from, to) {
     }
 }
 
-export async function build({ clean = true, copy = true } = {}) {
+export async function build({ clean = true, copy = true, lab = false } = {}) {
     const started = Date.now();
 
-    if (clean) fs.rmSync(out, { recursive: true, force: true });
+    if (clean) fs.rmSync(out, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
     fs.mkdirSync(out, { recursive: true });
     if (copy) copyStatic(path.join(root, 'static'), out);
 
     // The stylesheet and the browser script, minified and named by their contents.
-    for (const old of fs.readdirSync(out).filter((f) => /^(styles|site)\.[0-9a-f]{10}\.(css|js)$/.test(f))) {
+    for (const old of fs.readdirSync(out).filter((f) => /^(styles|site|lab)\.[0-9a-f]{10}\.(css|js)$/.test(f))) {
         fs.rmSync(path.join(out, old));
     }
     const [css, js] = await Promise.all([
@@ -54,6 +55,11 @@ export async function build({ clean = true, copy = true } = {}) {
     };
     fs.writeFileSync(path.join(out, assets.css), css.outputFiles[0].contents);
     fs.writeFileSync(path.join(out, assets.js), js.outputFiles[0].contents);
+    if (lab) {
+        const labCss = await esbuild.build({ entryPoints: [path.join(root, 'src/lab/lab.css')], bundle: true, minify: true, write: false, logLevel: 'error' });
+        assets.labCss = '/' + hashed('lab', 'css', labCss.outputFiles[0].contents);
+        fs.writeFileSync(path.join(out, assets.labCss), labCss.outputFiles[0].contents);
+    }
 
     // The page renderer: the JSX components compiled for Node, then run.
     const renderer = path.join(work, `site.${Date.now()}.mjs`);
@@ -75,7 +81,7 @@ export async function build({ clean = true, copy = true } = {}) {
         fs.rmSync(renderer, { force: true });
     }
 
-    const pages = site.renderSite({ root, assets });
+    const pages = site.renderSite({ root, assets, lab });
     for (const page of pages) {
         const file = path.join(out, page.file);
         fs.mkdirSync(path.dirname(file), { recursive: true });
@@ -87,7 +93,7 @@ export async function build({ clean = true, copy = true } = {}) {
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1]).href) {
-    build().catch((error) => {
+    build({ lab: process.argv.includes('--lab') }).catch((error) => {
         console.error(error);
         process.exit(1);
     });

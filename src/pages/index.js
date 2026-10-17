@@ -13,10 +13,11 @@ import credits from '../data/credits';
 const selected = ['Dream Engine', 'Vast', 'Ocean', 'PlayCoMo', 'FTGLES'];
 const frames = { Vast: 'Vast00004.png', Ocean: 'img_0526.jpg', FTGLES: 'unicode.png' };
 
-export default function Index() {
+// `hero` swaps the first screen (the lab tries other layouts); the site uses the default.
+export default function Index({ hero }) {
     return (
-        <HomeWrapper credits={[credits.bigscreen, credits.plan, credits.solidus, credits.haeckel, credits.eakins, credits.cableCar]}>
-            <Hero />
+        <HomeWrapper credits={[credits.bigscreen, credits.cableCar]}>
+            {hero || <Hero />}
             <Now />
             <Bigscreen />
             <ProjectIndex titles={selected} frames={frames} heading="Before Bigscreen" id="before">
