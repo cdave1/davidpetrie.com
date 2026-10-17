@@ -10,6 +10,7 @@ import { marked } from 'marked';
 import projects, { projectPath } from './data/helpers';
 import Index from './pages/index';
 import ProjectsPage from './pages/projects';
+import AiProjectsPage from './pages/aiProjects';
 import Reading from './pages/reading';
 import NotFound from './pages/404';
 import MarkdownPage from './templates/default';
@@ -40,13 +41,38 @@ function readMarkdown(file) {
 const formatDate = (date) =>
     new Date(date + 'T00:00:00Z').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 
+// The 2000 to 2009 list, shown under the other projects. Its headings drop one level so they sit
+// under the section's own heading.
+function archiveHtml(root) {
+    const { html } = readMarkdown(path.join(root, 'src/content/archive.md'));
+    return html.replace(/<(\/?)h4/g, '<$1h5').replace(/<(\/?)h2/g, '<$1h3');
+}
+
+const redirectPage = (to) => `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Moved</title>
+<meta http-equiv="refresh" content="0; url=${to}">
+<link rel="canonical" href="${to}">
+<meta name="robots" content="noindex">
+</head>
+<body>
+<p>This page has moved to <a href="${to}">${to}</a>.</p>
+</body>
+</html>
+`;
+
 // A URL path to the file that serves it: /about/ → about/index.html, /404.html → 404.html.
 const fileFor = (url) => (url.endsWith('.html') ? url.slice(1) : path.join(url.slice(1), 'index.html'));
 
 function pages(root) {
     const list = [
         { url: '/', element: <Index /> },
-        { url: '/projects/', title: 'Projects', element: <ProjectsPage /> },
+        { url: '/ai-projects/', title: 'AI Projects', element: <AiProjectsPage /> },
+        { url: '/projects/', title: 'Pre AI Projects', element: <ProjectsPage archiveHtml={archiveHtml(root)} /> },
+        // The 2000 to 2009 archive used to be its own page; it is now the last section of /projects/.
+        { url: '/projects/archive/', redirect: '/projects/#2000-2009' },
         { url: '/reading/', title: 'Reading List', element: <Reading /> },
         { url: '/404.html', title: 'Page Not Found', element: <NotFound /> },
         { url: '/404/', title: 'Page Not Found', element: <NotFound /> },
@@ -116,7 +142,10 @@ export function renderSite({ root, assets, lab = false }) {
     return [...pages(root), ...(lab ? labPages(assets) : [])].map((page) => {
         if (page.redirect) return { url: page.url, file: fileFor(page.url), html: redirectPage(page.redirect) };
         // React leaves `muted` off server-rendered video; every video here is a silent loop.
-        const body = renderToStaticMarkup(page.element).replace(/<video(?![^>]*\bmuted\b)/g, '<video muted=""');
+        let body = renderToStaticMarkup(page.element).replace(/<video(?![^>]*\bmuted\b)/g, '<video muted=""');
+        // Mark the current page in the site bar.
+        body = body.replace(/<nav aria-label="Main">[\s\S]*?<\/nav>/, (nav) =>
+            nav.replace(`<a href="${page.url}">`, `<a href="${page.url}" aria-current="page">`));
         return { url: page.url, file: fileFor(page.url), html: document({ ...page, body, assets }) };
     });
 }

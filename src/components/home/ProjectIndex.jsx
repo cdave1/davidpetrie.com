@@ -53,7 +53,7 @@ export default function ProjectIndex({ titles, frames = {}, heading = 'Everythin
                 </ol>
                 {children || (
                     <p className="index__more">
-                        <a className="text-link" href="/projects/archive/">Older work, 2000 to 2009</a>
+                        <a className="text-link" href="/projects/#2000-2009">Older work, 2000 to 2009</a>
                     </p>
                 )}
             </div>

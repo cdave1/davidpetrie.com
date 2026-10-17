@@ -1,11 +1,3 @@
----
-path: "/projects/archive/"
-date: "2018-01-25"
-title: Projects Archive
----
-
-# Project Archive
-
 This is a list of projects I worked on between 2000 and 2009.
 
 The projects range in scope from small open source libraries, to full blown companies.  I wouldn't call this an exhaustive list: many of these projects were done "on the side" while I had a day job.

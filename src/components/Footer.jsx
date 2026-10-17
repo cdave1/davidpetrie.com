@@ -11,10 +11,9 @@ export default function SiteFooter({ credits = [], short = false }) {
                     <a className="button button--inverse" href="mailto:me@davidpetrie.com">Email me</a>
                 </div>
                 <ul className="site-footer__links" aria-label="Pages">
-                    <li><a href="/projects/">Projects</a></li>
+                    <li><a href="/ai-projects/">AI Projects</a></li>
+                    <li><a href="/projects/">Pre AI Projects</a></li>
                     <li><a href="/about/">About</a></li>
-                    <li><a href="/reading/">Reading</a></li>
-                    <li><a href="/projects/archive/">Archive</a></li>
                 </ul>
             </div>
             <div className="site-footer__legal">

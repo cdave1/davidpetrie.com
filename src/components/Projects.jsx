@@ -11,10 +11,11 @@ const excerpt = (project) => {
     );
 };
 
-export default function Projects() {
+// `only` keeps just the named projects; `exclude` drops the named ones.
+export default function Projects({ only, exclude = [] }) {
     return (
         <ol className="entries">
-            {projects.map((project) => {
+            {projects.filter((project) => (only ? only.includes(project.title) : !exclude.includes(project.title))).map((project) => {
                 const strip = project.images.slice(0, 4);
                 const text = excerpt(project);
                 return (

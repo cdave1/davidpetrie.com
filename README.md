@@ -33,7 +33,7 @@ The static output is written to `public/`.
 
 | Path | What it is |
 |---|---|
-| `src/pages/*.js` | The home, projects, reading and 404 pages |
+| `src/pages/*.js` | The home, AI projects, pre AI projects, reading and 404 pages |
 | `src/pages/*.md` | Markdown pages; the `path` in each file's front matter is its URL |
 | `src/data/projects.json` | Every project; each gets a page at `/project/<name>/` |
 | `src/components/` | Shared page parts |

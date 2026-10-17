@@ -178,22 +178,12 @@ a {
   font-weight: 600;
 }
 
-.site-bar__links .button { min-height: 44px; padding: 0 1.1em; }
+.site-bar__links a { display: inline-flex; align-items: center; min-height: 44px; }
+.site-bar__links a[aria-current='page'] { color: var(--accent); }
 
 @media (max-width: 640px) {
-  .site-bar__links li:not(:last-child) { display: none; }
-}
-
-/* ---------- home: hero, the name split to corners ---------- */
-
-.hero { position: relative; }
-
-/* The pin spans the hero exactly, so the name releases when the intro ends. */
-.hero__pin {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  pointer-events: none;
+  .site-bar { flex-wrap: wrap; row-gap: 0; }
+  .site-bar__links { font-size: var(--step-small); }
 }
 
 /* ---------- home: masthead, the name stacked in two inks ---------- */
@@ -1229,3 +1219,18 @@ a {
 }
 
 .shelf__body > .shelf__label:first-child { margin-top: 0; }
+
+/* ---------- pre AI projects: the 2000 to 2009 list under the others ---------- */
+
+.archive { margin-top: var(--section); }
+
+.archive__head { padding: 0 var(--margin) clamp(2rem, 5vh, 3rem); }
+
+.archive__head h2 { font-size: var(--step-head); letter-spacing: -0.045em; }
+
+.prose h5 {
+  font-size: var(--step-body);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 2.5rem 0 0.5rem;
+}

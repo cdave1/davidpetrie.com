@@ -22,8 +22,7 @@ export default function Index({ hero }) {
             <Bigscreen />
             <ProjectIndex titles={selected} frames={frames} heading="Before Bigscreen" id="before">
                 <p className="index__more">
-                    <a className="text-link" href="/projects/">All projects</a>
-                    <a className="text-link" href="/projects/archive/">Older work, 2000 to 2009</a>
+                    <a className="text-link" href="/projects/">All the pre AI projects, 2000 to 2018</a>
                 </p>
             </ProjectIndex>
             <Press />

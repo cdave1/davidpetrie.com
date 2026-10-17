@@ -143,3 +143,8 @@ Note: I no longer use these services; this is just more proof that I'm a real pe
 * [Facebook](https://facebook.com/david.petrie.nz)
 
 * [LinkedIn](https://www.linkedin.com/in/davidcpetrie)
+
+
+# Reading
+
+I once kept a reading list, [here it is](/reading/).
