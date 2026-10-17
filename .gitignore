@@ -25,11 +25,9 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
-.gatsby-context.js
 .sass-cache/
 public/
-
-.cache/
+.build/
 .DS_Store
 yarn-error.log
 /raw_images/
@@ -42,3 +40,6 @@ yarn-error.log
 !.dev.vars.example
 .env*
 !.env.example
+
+# tasteskill working files (direction sheet, notes, inspector screenshots)
+.taste-skill/

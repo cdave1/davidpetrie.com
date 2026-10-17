@@ -1,6 +1,6 @@
-import _ from 'lodash';
 import data from './projects.json';
 
-const projects = _.orderBy(data.projects, ['startDate'], ['desc']);
+// Newest first.
+const projects = [...data.projects].sort((a, b) => b.startDate.localeCompare(a.startDate));
 
 export default projects;

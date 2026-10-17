@@ -1,17 +1,18 @@
 import React from 'react';
 import PageWrapper from '../components/Wrapper';
-import Seo from '../components/Seo.jsx';
+import ProjectIndex from '../components/home/ProjectIndex';
 
-export const Head = () => <Seo title="Page Not Found" />;
-
-export default class NotFound extends React.Component {
-    render() {
-        return (
-            <PageWrapper>
-                <div className="not-found">
-                    <h1>404 - Page Not Found</h1>
-                </div>
-            </PageWrapper>
-        );
-    }
+export default function NotFound() {
+    return (
+        <PageWrapper>
+            <header className="page-head lost">
+                <h1 data-rise>Nothing here</h1>
+                <p data-rise style={{ '--i': 1 }}>
+                    This page has moved or never existed. Everything I have made is listed below, or go
+                    back to <a className="text-link" href="/">the home page</a>.
+                </p>
+            </header>
+            <ProjectIndex />
+        </PageWrapper>
+    );
 }

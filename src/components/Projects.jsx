@@ -1,92 +1,63 @@
 import React from 'react';
-import _ from 'lodash';
-import moment from 'moment';
+import { marked } from 'marked';
+import projects, { imageSrc, projectLinks, projectPath, yearRange } from '../data/helpers';
 
-const { marked } = require('marked');
-
-import projects from '../data/projects';
-
-const sanitize = (s) => s.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+const excerpt = (project) => {
+    if (!project.readme) return null;
+    if (project.readme.length <= 700) return project.readme;
+    return (
+        project.readme.split(' ').slice(0, 110).join(' ') +
+        ' … ([Read the rest](' + projectPath(project) + '))'
+    );
+};
 
 export default function Projects() {
     return (
-        <div>
-            {projects.map((project, index) => {
-                const images = project.images.slice(0, 5).map((image) => ({
-                    src: '/images/' + image.file.path,
-                    thumbnail: '/images/' + image.thumbnails.croppedSmall.path,
-                    caption: image.caption,
-                }));
-
-                const links = [];
-                links.push({ text: 'Main Article', url: '/project/' + sanitize(project.title) });
-                if (project.websiteURL) links.push({ text: 'Website', url: project.websiteURL });
-                if (project.githubURL) links.push({ text: project.title + ' on GitHub', url: project.githubURL });
-                if (project.mediumURL) links.push({ text: 'Medium', url: project.mediumURL });
-                if (project.productHuntURL) links.push({ text: 'Product Hunt', url: project.productHuntURL });
-                if (project.twitter) links.push({ text: 'Twitter', url: project.twitter });
-
-                const dateString =
-                    moment(project.startDate).year() +
-                    '' +
-                    (project.endDate
-                        ? moment(project.endDate).year() !== moment(project.startDate).year()
-                            ? ' - ' + moment(project.endDate).year()
-                            : ''
-                        : ' - present');
-
+        <ol className="entries">
+            {projects.map((project) => {
+                const strip = project.images.slice(0, 4);
+                const text = excerpt(project);
                 return (
-                    <div className="project-list-item" key={index}>
-                        <h2><a href={'/project/' + sanitize(project.title)}>{project.title}</a></h2>
-                        {project.description && (
-                            <p className="project-description">{project.description}</p>
-                        )}
+                    <li className="entry" key={project.id}>
+                        <div className="entry__row" data-reveal>
+                            <span className="entry__years">{yearRange(project)}</span>
+                            <h2 className="entry__title">
+                                <a href={projectPath(project)}>{project.title}</a>
+                            </h2>
+                            {project.description && <span className="entry__fact">{project.description}</span>}
+                        </div>
 
-                        <ul className="project-list-links">
-                            {links.map((link, i) => (
-                                <li key={i}><a href={link.url}>{link.text || link.url}</a></li>
-                            ))}
-                        </ul>
-
-                        {project.readme ? (
-                            project.readme.length > 1000 ? (
-                                <div
-                                    dangerouslySetInnerHTML={{
-                                        __html: marked(
-                                            _.split(project.readme, ' ').slice(0, 250).join(' ') +
-                                                ' ... ([See full article](/project/' +
-                                                sanitize(project.title) +
-                                                '))'
-                                        ),
-                                    }}
-                                />
-                            ) : (
-                                <div
-                                    dangerouslySetInnerHTML={{ __html: marked(project.readme) }}
-                                />
-                            )
-                        ) : null}
-
-                        <div className="project-list-images">
-                            {images.map((image, i) => (
-                                <img
-                                    key={i}
-                                    src={image.thumbnail}
-                                    alt={image.caption || project.title}
-                                    loading="lazy"
-                                />
+                        <div className="grid entry__split">
+                        <div className="entry__strip">
+                            {strip.map((image, i) => (
+                                <a key={image.id} href={projectPath(project)} tabIndex={-1} data-reveal style={{ '--i': i }}>
+                                    <img
+                                        src={encodeURI('/images/' + image.thumbnails.default.path)}
+                                        width={Math.round(image.thumbnails.default.size.w)}
+                                        height={Math.round(image.thumbnails.default.size.h)}
+                                        alt={image.caption || project.title + ' picture ' + (i + 1)}
+                                        loading="lazy"
+                                    />
+                                </a>
                             ))}
                         </div>
 
-                        <div className="project-list-meta">
-                            <span className="tag">{dateString}</span>
-                            {project.tags && project.tags.map((tag, i) => (
-                                <span className="tag" key={i}>{tag}</span>
-                            ))}
+                        <div className="entry__body">
+                            <ul className="entry__links">
+                                <li><a href={projectPath(project)}>The full story</a></li>
+                                {projectLinks(project).map((link) => (
+                                    <li key={link.url}><a href={link.url}>{link.label}</a></li>
+                                ))}
+                            </ul>
+                            {text && <div className="entry__text" dangerouslySetInnerHTML={{ __html: marked(text) }} />}
+                            {project.tags && project.tags.length > 0 && (
+                                <p className="entry__tags">{project.tags.join(', ')}</p>
+                            )}
                         </div>
-                    </div>
+                        </div>
+                    </li>
                 );
             })}
-        </div>
+        </ol>
     );
 }

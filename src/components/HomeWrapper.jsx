@@ -1,15 +1,12 @@
 import React from 'react';
-import SiteHeader from './Header';
 import SiteFooter from './Footer';
 
-export default function HomeWrapper({ children }) {
+// The home page carries its own navigation inside the hero.
+export default function HomeWrapper({ children, credits }) {
     return (
-        <div>
-            <SiteHeader />
-            <main>
-                {children}
-            </main>
-            <SiteFooter />
-        </div>
+        <>
+            <main>{children}</main>
+            <SiteFooter credits={credits} />
+        </>
     );
 }

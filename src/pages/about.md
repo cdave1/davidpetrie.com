@@ -10,7 +10,7 @@ title: About Me
 
 My name is David Petrie and I live and work in Wellington, New Zealand.  I am primarily a software engineer who happens to get involved in startups from time to time.
 
-Currently, I am founder of DreamEngine.  DreamEngine is a marketplace for selling software automation tools, starting with graphic design tools.  My general hypothesis is that we're on the cusp of being able to build highly advanced software automation tools that are far more powerful than the anything currently available.
+Currently, I am founder of [kotari](https://kotari.ai).  We build alternative harnesses for AI agents: products for people, and open source tools for developers.
 
 # Contact
 
@@ -25,7 +25,11 @@ Currently, I am founder of DreamEngine.  DreamEngine is a marketplace for sellin
 
 # Career Highlights
 
-Prior to DreamEngine, in descending chronological order:
+Prior to kotari, in descending chronological order:
+
+* From April 2018 to August 2026 I worked at [Bigscreen](https://www.bigscreenvr.com), on almost every project and release.  On the Bigscreen app: the Go and Quest releases, DRM, the cinema, TV and video player releases, multiplayer systems for watching video together in VR, Remote Desktop, the virtual browser, the social product, build systems, CI/CD and internal tools, and all of the server infrastructure.  On Bigscreen Beyond: the face scanning product end to end, factory automation for personalized cushions, and the shipping and logistics systems.  I was an early adopter of AI tools, and shipped Bigscreen's first "vibe-coded" UI in 2025.  [More about Bigscreen](/project/bigscreen).
+
+* In 2017 I founded [DreamEngine](/project/dream_engine), a marketplace for selling software automation tools, starting with graphic design tools.  My hypothesis was that we were on the cusp of being able to build software automation tools far more powerful than anything available at the time.
 
 * I worked on a VR app called [Vast](http://www.vastvr.com), a tool for crafting 3D objects and environments directly in VR. 
 
@@ -139,7 +143,3 @@ Note: I no longer use these services; this is just more proof that I'm a real pe
 * [Facebook](https://facebook.com/david.petrie.nz)
 
 * [LinkedIn](https://www.linkedin.com/in/davidcpetrie)
-
-# This Website
-
-This website is written using React and Markdown and built with [GatsbyJS](https://www.gatsbyjs.org).  The public github repository is [available here](https://github.com/cdave1/davidpetrie.com).

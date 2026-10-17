@@ -1,8 +1,6 @@
-import React from 'react'
+import React from 'react';
 import PageWrapper from '../components/Wrapper';
-import Seo from '../components/Seo.jsx';
-
-export const Head = () => <Seo title="Reading List" />;
+import credits from '../data/credits';
 
 var books = {
     "Current" : [
@@ -456,7 +454,7 @@ var books = {
         {
             "title": "Tools of Titans",
             "author": "Tim Feriss",
-            "link": "https://www.amazon.com/Tools-Titans-Billionaires-World-Class-Performers-ebook/dp/B01LF32ZNU"
+            "link": "https://www.amazon.com/Tools-Titans-Billionaires-World-Class-Performers-ebook/dp/B01LF32ZNU" // taste-skill-ignore: a book URL
         },
         {
             "title": "Hitch-22: A Memoir (AUDIOBOOK)",
@@ -501,69 +499,81 @@ var books = {
 };
 
 
-exports.data = {
-  title: 'Reading List'
-};
+export default function Reading() {
+    return (
+        <PageWrapper credits={[credits.davidPlate, credits.tesla, credits.blueMarble, credits.haeckel]}>
+            <header className="page-head">
+                <h1 data-rise>Reading</h1>
+                <p>What I have read since 2016, newest first, with a note where a book earned one.</p>
+            </header>
 
+            <Shelf year="2018" pictures={[
+                { src: '/found/plate-with-the-battle-of-david-and.jpg', w: 1280, h: 1600, caption: 'Silver plate made in Constantinople, 629–30. Late antiquity, Peter Brown’s period.', alt: 'A Byzantine silver plate showing David fighting Goliath' },
+            ]} intro={[
+                <p key="a">My goal for 2018 is to get back to my cadence of roughly one book per week. I have a backlog of books by Vaclav Smil and Carlotta Perez that I've been ignoring from 2015. After that, I want to read more history and less fiction. I'm looking forward to reading more of Peter Brown's work: the period of late antiquity is just so damn interesting.</p>,
+            ]}>
+                <Group label="Reading now" items={books['Current']} />
+                <Group label="Up next" items={books['Upcoming']} />
+                <Group label="Finished" items={books['2018']} />
+            </Shelf>
 
-export default class Reading extends React.Component {
-    bookLink(item, index) {
-        return (
-            <div className="book-item" key={index}>
-                <h4>
-                    {index + 1}. {item.link && item.link.length > 0 ? <a href={item.link}>{item.title}</a> : item.title} by {item.author}
-                </h4>
-                {item.notes && <p>{item.notes}</p>}
+            <Shelf year="2017" pictures={[
+                { src: '/found/nikola-tesla-by-sarony-c1898.jpg', w: 1209, h: 1547, caption: 'Nikola Tesla, about 1898, photographed by Napoleon Sarony. For W. Bernard Carlson’s biography.', alt: 'Portrait photograph of Nikola Tesla in a dark suit' },
+            ]} intro={[
+                <p key="a">My reading list for 2017 is spartan in comparison to 2016, and looks downright cheap and nasty compared to <a className="text-link" href="https://www.waggish.org/2017/david-auerbachs-books-of-the-year-2017/">David Auerbach's</a>. Auerbach is the reader we should all aspire to be.</p>,
+                <p key="b">Both the quality and quantity of my reading dipped in 2017 as work took precedence over everything else. For whatever reason, I was also more ruthless about abandoning books that didn't click. A good example of an abandoned book is <a className="text-link" href="https://www.goodreads.com/book/show/16240761-the-son">The Son</a> by Philipp Meyer, for which I got 15% through before I moved on to something else. I guess I abandoned 20-30 books this year in a similar fashion, not counting Kindle samples.</p>,
+                <p key="c">Peter Brown's <a className="text-link" href="https://www.amazon.com/Through-Eye-Needle-Christianity-350-550-ebook/dp/B009EYPOCC">Through the Eye of a Needle</a> was the undisputed highlight of 2017 for me. However, I think I might be done with science fiction, for now. I was a latecomer to the genre several years ago, but I really feel like I've read all of the genre's greatest hits by now. I don't follow SF fandoms so I'm not up to date with newer authors.</p>,
+            ]}>
+                <Group items={books['2017']} />
+            </Shelf>
+
+            <Shelf year="2016" pictures={[
+                { src: '/found/the-blue-marble.jpg', w: 1920, h: 1921, caption: 'The Earth from Apollo 17, 1972. For Buckminster Fuller’s Operating Manual for Spaceship Earth.', alt: 'The whole Earth seen from space, Africa and Antarctica under white cloud' },
+                { src: '/found/haeckel-discomedusae-8.jpg', w: 1115, h: 1600, caption: 'Ernst Haeckel’s jellyfish, 1904. For Nick Lane’s The Vital Question.', alt: 'Ernst Haeckel’s plate of jellyfish with long red tentacles' },
+            ]}>
+                <Group items={books['2016']} />
+            </Shelf>
+        </PageWrapper>
+    );
+}
+
+function Shelf({ year, intro, pictures = [], children }) {
+    return (
+        <section className="grid shelf" aria-labelledby={'y' + year}>
+            <div className="shelf__side">
+                <h2 className="shelf__year" id={'y' + year}>{year}</h2>
+                <div className="shelf__pictures">
+                    {pictures.map((picture, i) => (
+                        <figure key={picture.src} data-reveal="shutter" style={{ '--i': i }}>
+                            <img src={picture.src} width={picture.w} height={picture.h} alt={picture.alt} loading="lazy" />
+                            <figcaption className="caption">{picture.caption}</figcaption>
+                        </figure>
+                    ))}
+                </div>
             </div>
-        )
-    }
+            <div className="shelf__body">
+                {intro && <div className="shelf__intro">{intro}</div>}
+                {children}
+            </div>
+        </section>
+    );
+}
 
-    render() {
-        return (
-            <PageWrapper>
-                <h1>2018 Reading List</h1>
-
-                <p>My goal for 2018 is to get back to my cadence of roughly one book per week. I have a backlog of books by Vaclav Smil and Carlotta Perez that I've been ignoring from 2015. After that, I want to read more history and less fiction.  I'm looking forward to reading more of Peter Brown's work: the period of late antiquity is just so damn interesting.</p>
-
-                <div className="book-section">
-                    <h2>Currently Reading</h2>
-                    {books['Current'].map((item, index) => this.bookLink(item, index))}
-                </div>
-
-                <div className="book-section">
-                    <h2>Upcoming</h2>
-                    {books['Upcoming'].map((item, index) => this.bookLink(item, index))}
-                </div>
-
-                <div className="book-section">
-                    <h2>2018</h2>
-                    {books['2018'].map((item, index) => this.bookLink(item, index))}
-                </div>
-
-                <hr />
-
-                <h1>2017 Reading List</h1>
-
-                <p>My reading list for 2017 is spartan in comparison to 2016, and looks downright cheap and nasty compared to <a href="https://www.waggish.org/2017/david-auerbachs-books-of-the-year-2017/">David Auerbach's</a>. Auerbach is the reader we should all aspire to be.</p>
-
-                <p>Both the quality and quantity of my reading dipped in 2017 as work took precedence over everything else.  For whatever reason, I was also more ruthless about abandoning books that didn't click.  A good example of an abandoned book is <a href="https://www.goodreads.com/book/show/16240761-the-son">The Son</a> by Philipp Meyer, for which I got 15% through before I moved on to something else.  I guess I abandoned 20-30 books this year in a similar fashion, not counting Kindle samples.</p>
-
-                <p>Peter Brown's <a href="https://www.amazon.com/Through-Eye-Needle-Christianity-350-550-ebook/dp/B009EYPOCC">"Through the Eye of a Needle"</a> was the undisputed highlight of 2017 for me.  However, I think I might be done with science fiction -- for now.  I was a latecomer to the genre several years ago, but I really feel like I've read all of the genre's "greatest hits" by now.  I don't follow SF fandoms so I'm not up to date with newer authors.</p>
-
-                <div className="book-section">
-                    <h2>2017</h2>
-                    {books['2017'].map((item, index) => this.bookLink(item, index))}
-                </div>
-
-                <hr />
-
-                <h1>2016 Reading List</h1>
-
-                <div className="book-section">
-                    <h2>2016</h2>
-                    {books['2016'].map((item, index) => this.bookLink(item, index))}
-                </div>
-            </PageWrapper>
-        )
-    }
+function Group({ label, items }) {
+    return (
+        <>
+            {label && <h3 className="shelf__label">{label}</h3>}
+            <ul className="shelf__list">
+                {items.map((item, i) => (
+                    <li className="shelf__book" key={item.title + i} data-reveal style={{ '--i': i % 6 }}>
+                        <span className="shelf__title">
+                            {item.link ? <a href={item.link}>{item.title}</a> : item.title}
+                        </span>
+                        <span className="shelf__author">{item.author}</span>
+                        {item.notes && <p className="shelf__note">{item.notes}</p>}
+                    </li>
+                ))}
+            </ul>
+        </>
+    );
 }

@@ -1,21 +1,37 @@
 import React from 'react';
 
-class SiteFooter extends React.Component {
-    render() {
-        return (
-            <footer className="site-footer">
-                <div className="site-footer-inner">
-                    <ul className="footer-links">
-                        <li><a href="/about/">About</a></li>
-                        <li><a href="/projects/">Projects</a></li>
-                        <li><a href="/reading/">Reading</a></li>
-                        <li><a href="/contact/">Contact</a></li>
-                    </ul>
-                    <p>&copy; David Petrie {new Date().getFullYear()}</p>
+export default function SiteFooter({ credits = [], short = false }) {
+    return (
+        <footer className={'site-footer' + (short ? ' site-footer--short' : '')} id="site-footer">
+            <div className="grid site-footer__top">
+                <p className="site-footer__invite" data-reveal>
+                    Bring me a<br />new idea
+                </p>
+                <div className="site-footer__cta" data-reveal style={{ '--i': 1 }}>
+                    <a className="button button--inverse" href="mailto:me@davidpetrie.com">Email me</a>
                 </div>
-            </footer>
-        );
-    }
+                <ul className="site-footer__links" aria-label="Pages">
+                    <li><a href="/projects/">Projects</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/reading/">Reading</a></li>
+                    <li><a href="/projects/archive/">Archive</a></li>
+                </ul>
+            </div>
+            <div className="site-footer__legal">
+                <p>&copy; David Petrie {new Date().getFullYear()}</p>
+                {credits.length > 0 && (
+                    <p>
+                        Pictures and footage not my own:{' '}
+                        {credits.map((c, i) => (
+                            <React.Fragment key={c.url}>
+                                <a href={c.url}>“{c.title}”</a> by {c.creator}, <a href={c.licenceUrl}>{c.licence}</a>, via {c.source}
+                                {i < credits.length - 1 ? '; ' : '.'}
+                            </React.Fragment>
+                        ))}
+                    </p>
+                )}
+            </div>
+            <p className="site-footer__mark" aria-hidden="true">David Petrie</p>
+        </footer>
+    );
 }
-
-export default SiteFooter;

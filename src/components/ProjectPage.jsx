@@ -1,81 +1,59 @@
 import React from 'react';
-import _ from 'lodash';
-import moment from 'moment';
-
-const { marked } = require('marked');
-
-import HomeWrapper from './HomeWrapper.jsx';
+import PageWrapper from './Wrapper.jsx';
+import projects, { headerImage, imageSrc, projectLinks, projectPath, yearRange } from '../data/helpers';
+import credits from '../data/credits';
+import { marked } from 'marked';
 
 export default function ProjectPage({ project }) {
-    const images = project.images.map((image) => ({
-        src: '/images/' + image.file.path,
-        thumbnail: '/images/' + image.thumbnails.croppedLarge.path,
-        caption: image.caption,
-        isHeaderImage: project.headerImageId === image.id,
-    }));
+    const header = headerImage(project);
+    const small = header.file.size.w < 1400;
+    const links = projectLinks(project);
+    const gallery = project.images.filter((image) => image.id !== header.id);
 
-    const links = [];
-    if (project.websiteURL) links.push({ label: 'Website', url: project.websiteURL });
-    if (project.githubURL) links.push({ label: 'GitHub', url: project.githubURL });
-    if (project.mediumURL) links.push({ label: 'Medium', url: project.mediumURL });
-    if (project.twitter) links.push({ label: 'Twitter', url: project.twitter });
-
-    const headerImage = _.find(images, 'isHeaderImage') || images[_.random(0, images.length - 1, false)];
-
-    const dateString =
-        moment(project.startDate).year() +
-        '' +
-        (project.endDate
-            ? moment(project.endDate).year() !== moment(project.startDate).year()
-                ? ' - ' + moment(project.endDate).year()
-                : ''
-            : ' - present');
+    const index = projects.findIndex((p) => p.id === project.id);
+    const next = projects[(index + 1) % projects.length];
 
     return (
-        <HomeWrapper title={project.title}>
-            <img
-                className="project-hero"
-                src={headerImage.src}
-                alt={project.title}
-                loading="lazy"
-            />
+        <PageWrapper credits={project.title === 'Bigscreen' ? [credits.bigscreen] : undefined}>
+            <div className="row-line">
+                <span className="row-line__years">{yearRange(project)}</span>
+                <h1 className="row-line__title">{project.title}</h1>
+                {project.description && <span className="row-line__fact">{project.description}</span>}
+            </div>
 
-            <div className="site-container page-content">
-                <div className="project-header">
-                    <h1>{project.title}</h1>
-                    {project.description && (
-                        <p className="project-description">{project.description}</p>
-                    )}
-                    <span className="project-meta-date">{dateString}</span>
-                </div>
+            <figure className={'project-plate' + (small ? ' project-plate--small' : '')}>
+                <img
+                    src={imageSrc(header)}
+                    width={header.file.size.w}
+                    height={header.file.size.h}
+                    alt={header.caption || project.title}
+                    fetchpriority="high"
+                />
+            </figure>
 
-                {project.tags && (
-                    <ul className="project-tags">
-                        {project.tags.map((tag, i) => (
-                            <li key={i} className="tag">{tag}</li>
-                        ))}
-                    </ul>
-                )}
-
-                {links.length > 0 && (
-                    <ul className="project-links">
-                        {links.map((link, i) => (
-                            <li key={i}><a href={link.url}>{link.label}: {link.url}</a></li>
-                        ))}
-                    </ul>
-                )}
-
-                <hr />
-
+            <div className="grid project-facts">
+                <ul className="project-facts__meta">
+                    {links.map((link) => (
+                        <li key={link.url}><a href={link.url}>{link.label}</a></li>
+                    ))}
+                    {project.tags && project.tags.length > 0 && <li>{project.tags.join(', ')}</li>}
+                </ul>
                 {project.readme && (
-                    <div dangerouslySetInnerHTML={{ __html: marked(project.readme) }} />
+                    <div
+                        className="prose project-facts__readme"
+                        dangerouslySetInnerHTML={{ __html: marked(project.readme) }}
+                    />
                 )}
+            </div>
 
-                <div className="project-images">
-                    {images.map((image, i) => (
-                        <figure key={i}>
+            {gallery.length > 0 && (
+                <div className="gallery" aria-label={'Pictures of ' + project.title}>
+                    {gallery.map((image, i) => (
+                        <figure key={image.id} data-reveal style={{ '--i': i % 2 }}>
                             <img
-                                src={image.src}
+                                src={imageSrc(image)}
+                                width={image.file.size.w}
+                                height={image.file.size.h}
                                 alt={image.caption || project.title}
                                 loading="lazy"
                             />
@@ -83,7 +61,13 @@ export default function ProjectPage({ project }) {
                         </figure>
                     ))}
                 </div>
-            </div>
-        </HomeWrapper>
+            )}
+
+            <a className="next-project" href={projectPath(next)}>
+                <span className="next-project__years">{yearRange(next)}</span>
+                <strong>{next.title}</strong>
+                <span className="next-project__label">Next project</span>
+            </a>
+        </PageWrapper>
     );
 }

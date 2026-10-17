@@ -1,6 +1,481 @@
 {
     "projects": [
         {
+            "id": "efc5e196-ffa6-46d4-922a-0dcd168763c7",
+            "title": "kotari",
+            "description": "Agents in good company",
+            "startDate": "2026-09-01T00:00:00.000Z",
+            "endDate": null,
+            "websiteURL": "https://kotari.ai",
+            "githubURL": "",
+            "mediumURL": "",
+            "twitter": "",
+            "images": [
+                {
+                    "id": "4dd41974-aca3-45a5-873c-4a54509b3e56",
+                    "created": "2026-10-17T00:00:00.000Z",
+                    "type": "image/jpeg",
+                    "caption": "Shoutline, your own agentically controlled news desk",
+                    "file": {
+                        "size": {
+                            "w": 1440,
+                            "h": 1000
+                        },
+                        "path": "kotari/shoutline.jpg"
+                    },
+                    "thumbnails": {
+                        "default": {
+                            "size": {
+                                "w": 800,
+                                "h": 555
+                            },
+                            "path": "kotari/shoutline_thumb.jpg"
+                        },
+                        "croppedSmall": {
+                            "size": {
+                                "w": 800,
+                                "h": 555
+                            },
+                            "path": "kotari/shoutline_thumb.jpg"
+                        },
+                        "croppedLarge": {
+                            "size": {
+                                "w": 800,
+                                "h": 555
+                            },
+                            "path": "kotari/shoutline_thumb.jpg"
+                        }
+                    }
+                },
+                {
+                    "id": "9c08bb75-e40c-4516-a8d0-4ae646c5a1e8",
+                    "created": "2026-10-17T00:00:00.000Z",
+                    "type": "image/jpeg",
+                    "caption": "Marilyn, a personal agent platform",
+                    "file": {
+                        "size": {
+                            "w": 1440,
+                            "h": 1000
+                        },
+                        "path": "kotari/marilyn.jpg"
+                    },
+                    "thumbnails": {
+                        "default": {
+                            "size": {
+                                "w": 800,
+                                "h": 555
+                            },
+                            "path": "kotari/marilyn_thumb.jpg"
+                        },
+                        "croppedSmall": {
+                            "size": {
+                                "w": 800,
+                                "h": 555
+                            },
+                            "path": "kotari/marilyn_thumb.jpg"
+                        },
+                        "croppedLarge": {
+                            "size": {
+                                "w": 800,
+                                "h": 555
+                            },
+                            "path": "kotari/marilyn_thumb.jpg"
+                        }
+                    }
+                },
+                {
+                    "id": "09fa7ed5-8349-4c35-95cb-65e5a51b48ae",
+                    "created": "2026-10-17T00:00:00.000Z",
+                    "type": "image/jpeg",
+                    "caption": "Korimako, an open source agent library",
+                    "file": {
+                        "size": {
+                            "w": 1440,
+                            "h": 1000
+                        },
+                        "path": "kotari/korimako.jpg"
+                    },
+                    "thumbnails": {
+                        "default": {
+                            "size": {
+                                "w": 800,
+                                "h": 555
+                            },
+                            "path": "kotari/korimako_thumb.jpg"
+                        },
+                        "croppedSmall": {
+                            "size": {
+                                "w": 800,
+                                "h": 555
+                            },
+                            "path": "kotari/korimako_thumb.jpg"
+                        },
+                        "croppedLarge": {
+                            "size": {
+                                "w": 800,
+                                "h": 555
+                            },
+                            "path": "kotari/korimako_thumb.jpg"
+                        }
+                    }
+                },
+                {
+                    "id": "d4a8be4e-96c1-43c3-857e-2c6705ab402a",
+                    "created": "2026-10-17T00:00:00.000Z",
+                    "type": "image/jpeg",
+                    "caption": "Artwork from the Korimako explainer film",
+                    "file": {
+                        "size": {
+                            "w": 1536,
+                            "h": 1024
+                        },
+                        "path": "kotari/korimako-dawn.jpg"
+                    },
+                    "thumbnails": {
+                        "default": {
+                            "size": {
+                                "w": 800,
+                                "h": 533
+                            },
+                            "path": "kotari/korimako-dawn_thumb.jpg"
+                        },
+                        "croppedSmall": {
+                            "size": {
+                                "w": 800,
+                                "h": 533
+                            },
+                            "path": "kotari/korimako-dawn_thumb.jpg"
+                        },
+                        "croppedLarge": {
+                            "size": {
+                                "w": 800,
+                                "h": 533
+                            },
+                            "path": "kotari/korimako-dawn_thumb.jpg"
+                        }
+                    }
+                }
+            ],
+            "tags": [
+                "AI",
+                "agents",
+                "open source"
+            ],
+            "readme": "In September 2026 I founded kotari. We build alternative harnesses for AI agents: products for people, and open source tools for developers.\n\n* [Shoutline](https://shoutline.co): your own agentically controlled news desk.\n* [Marilyn](https://marilynhq.com): a personal agent platform.\n* [Korimako](https://korimako.xyz): an open source agent library.\n\nAll three are built around a simple idea: people and agents create more value when they work together.",
+            "headerImageId": "4dd41974-aca3-45a5-873c-4a54509b3e56"
+        },
+        {
+            "id": "dedbed5c-5f69-4fb1-8eb6-b05cd08c8008",
+            "title": "Bigscreen",
+            "description": "VR software and the Beyond headset",
+            "startDate": "2018-04-01T00:00:00.000Z",
+            "endDate": "2026-08-01T00:00:00.000Z",
+            "websiteURL": "https://www.bigscreenvr.com",
+            "githubURL": "",
+            "mediumURL": "",
+            "twitter": "",
+            "images": [
+                {
+                    "id": "222983b2-3c14-4efc-8658-7e0c178bd0eb",
+                    "created": "2026-10-17T00:00:00.000Z",
+                    "type": "image/jpeg",
+                    "caption": "Bigscreen Beyond 2, held open to show its optics, from the Bigscreen press kit",
+                    "file": {
+                        "size": {
+                            "w": 2400,
+                            "h": 1228
+                        },
+                        "path": "bigscreen/beyond-2-in-hand.jpg"
+                    },
+                    "thumbnails": {
+                        "default": {
+                            "size": {
+                                "w": 800,
+                                "h": 409
+                            },
+                            "path": "bigscreen/beyond-2-in-hand_thumb.jpg"
+                        },
+                        "croppedSmall": {
+                            "size": {
+                                "w": 800,
+                                "h": 409
+                            },
+                            "path": "bigscreen/beyond-2-in-hand_thumb.jpg"
+                        },
+                        "croppedLarge": {
+                            "size": {
+                                "w": 800,
+                                "h": 409
+                            },
+                            "path": "bigscreen/beyond-2-in-hand_thumb.jpg"
+                        }
+                    }
+                },
+                {
+                    "id": "7f30642a-bb9f-424b-bc69-da4825aab668",
+                    "created": "2026-10-17T00:00:00.000Z",
+                    "type": "image/jpeg",
+                    "caption": "Bigscreen Cinema, 2019, from bigscreenvr.com",
+                    "file": {
+                        "size": {
+                            "w": 1200,
+                            "h": 675
+                        },
+                        "path": "bigscreen/cinema.jpg"
+                    },
+                    "thumbnails": {
+                        "default": {
+                            "size": {
+                                "w": 800,
+                                "h": 450
+                            },
+                            "path": "bigscreen/cinema_thumb.jpg"
+                        },
+                        "croppedSmall": {
+                            "size": {
+                                "w": 800,
+                                "h": 450
+                            },
+                            "path": "bigscreen/cinema_thumb.jpg"
+                        },
+                        "croppedLarge": {
+                            "size": {
+                                "w": 800,
+                                "h": 450
+                            },
+                            "path": "bigscreen/cinema_thumb.jpg"
+                        }
+                    }
+                },
+                {
+                    "id": "9a545b57-faec-4c8a-aca7-e48505c87514",
+                    "created": "2026-10-17T00:00:00.000Z",
+                    "type": "image/jpeg",
+                    "caption": "Avatars sharing screens in a Bigscreen room, from bigscreenvr.com",
+                    "file": {
+                        "size": {
+                            "w": 1200,
+                            "h": 675
+                        },
+                        "path": "bigscreen/workbench.jpg"
+                    },
+                    "thumbnails": {
+                        "default": {
+                            "size": {
+                                "w": 800,
+                                "h": 450
+                            },
+                            "path": "bigscreen/workbench_thumb.jpg"
+                        },
+                        "croppedSmall": {
+                            "size": {
+                                "w": 800,
+                                "h": 450
+                            },
+                            "path": "bigscreen/workbench_thumb.jpg"
+                        },
+                        "croppedLarge": {
+                            "size": {
+                                "w": 800,
+                                "h": 450
+                            },
+                            "path": "bigscreen/workbench_thumb.jpg"
+                        }
+                    }
+                },
+                {
+                    "id": "486e6ce9-5474-4593-87b3-de963b2637bf",
+                    "created": "2026-10-17T00:00:00.000Z",
+                    "type": "image/jpeg",
+                    "caption": "A Beyond custom-fit cushion, from the Bigscreen press kit",
+                    "file": {
+                        "size": {
+                            "w": 960,
+                            "h": 593
+                        },
+                        "path": "bigscreen/custom-cushion.jpg"
+                    },
+                    "thumbnails": {
+                        "default": {
+                            "size": {
+                                "w": 800,
+                                "h": 494
+                            },
+                            "path": "bigscreen/custom-cushion_thumb.jpg"
+                        },
+                        "croppedSmall": {
+                            "size": {
+                                "w": 800,
+                                "h": 494
+                            },
+                            "path": "bigscreen/custom-cushion_thumb.jpg"
+                        },
+                        "croppedLarge": {
+                            "size": {
+                                "w": 800,
+                                "h": 494
+                            },
+                            "path": "bigscreen/custom-cushion_thumb.jpg"
+                        }
+                    }
+                },
+                {
+                    "id": "3e76b831-8122-4ea5-a63b-f7e5e2a2ed7c",
+                    "created": "2026-10-17T00:00:00.000Z",
+                    "type": "image/jpeg",
+                    "caption": "The hardware decision, 2020, from bigscreenvr.com",
+                    "file": {
+                        "size": {
+                            "w": 1200,
+                            "h": 900
+                        },
+                        "path": "bigscreen/factory-2020.jpg"
+                    },
+                    "thumbnails": {
+                        "default": {
+                            "size": {
+                                "w": 800,
+                                "h": 600
+                            },
+                            "path": "bigscreen/factory-2020_thumb.jpg"
+                        },
+                        "croppedSmall": {
+                            "size": {
+                                "w": 800,
+                                "h": 600
+                            },
+                            "path": "bigscreen/factory-2020_thumb.jpg"
+                        },
+                        "croppedLarge": {
+                            "size": {
+                                "w": 800,
+                                "h": 600
+                            },
+                            "path": "bigscreen/factory-2020_thumb.jpg"
+                        }
+                    }
+                },
+                {
+                    "id": "742ece13-58f0-477f-be85-3b537aa65037",
+                    "created": "2026-10-17T00:00:00.000Z",
+                    "type": "image/jpeg",
+                    "caption": "Bigscreen Beyond 2 in a clear shell, from the Bigscreen press kit",
+                    "file": {
+                        "size": {
+                            "w": 1333,
+                            "h": 2000
+                        },
+                        "path": "bigscreen/clear-shell-on-black.jpg"
+                    },
+                    "thumbnails": {
+                        "default": {
+                            "size": {
+                                "w": 533,
+                                "h": 800
+                            },
+                            "path": "bigscreen/clear-shell-on-black_thumb.jpg"
+                        },
+                        "croppedSmall": {
+                            "size": {
+                                "w": 533,
+                                "h": 800
+                            },
+                            "path": "bigscreen/clear-shell-on-black_thumb.jpg"
+                        },
+                        "croppedLarge": {
+                            "size": {
+                                "w": 533,
+                                "h": 800
+                            },
+                            "path": "bigscreen/clear-shell-on-black_thumb.jpg"
+                        }
+                    }
+                },
+                {
+                    "id": "52b5303e-fec7-4dbe-9a6e-29afdc8da459",
+                    "created": "2026-10-17T00:00:00.000Z",
+                    "type": "image/jpeg",
+                    "caption": "Bigscreen Beyond 2 in an orange shell, from bigscreenvr.com",
+                    "file": {
+                        "size": {
+                            "w": 1200,
+                            "h": 800
+                        },
+                        "path": "bigscreen/beyond-2-orange.jpg"
+                    },
+                    "thumbnails": {
+                        "default": {
+                            "size": {
+                                "w": 800,
+                                "h": 533
+                            },
+                            "path": "bigscreen/beyond-2-orange_thumb.jpg"
+                        },
+                        "croppedSmall": {
+                            "size": {
+                                "w": 800,
+                                "h": 533
+                            },
+                            "path": "bigscreen/beyond-2-orange_thumb.jpg"
+                        },
+                        "croppedLarge": {
+                            "size": {
+                                "w": 800,
+                                "h": 533
+                            },
+                            "path": "bigscreen/beyond-2-orange_thumb.jpg"
+                        }
+                    }
+                },
+                {
+                    "id": "81c9b072-19d8-4070-837c-4f74788fff3a",
+                    "created": "2026-10-17T00:00:00.000Z",
+                    "type": "image/jpeg",
+                    "caption": "Beyond 2 shells in three colours, from the Bigscreen press kit",
+                    "file": {
+                        "size": {
+                            "w": 960,
+                            "h": 540
+                        },
+                        "path": "bigscreen/colors.jpg"
+                    },
+                    "thumbnails": {
+                        "default": {
+                            "size": {
+                                "w": 800,
+                                "h": 450
+                            },
+                            "path": "bigscreen/colors_thumb.jpg"
+                        },
+                        "croppedSmall": {
+                            "size": {
+                                "w": 800,
+                                "h": 450
+                            },
+                            "path": "bigscreen/colors_thumb.jpg"
+                        },
+                        "croppedLarge": {
+                            "size": {
+                                "w": 800,
+                                "h": 450
+                            },
+                            "path": "bigscreen/colors_thumb.jpg"
+                        }
+                    }
+                }
+            ],
+            "tags": [
+                "VR",
+                "hardware",
+                "infrastructure",
+                "devops",
+                "automation",
+                "AI"
+            ],
+            "readme": "From April 2018 to August 2026 I worked at [Bigscreen](https://www.bigscreenvr.com), on almost every project and release.\n\n## The Bigscreen app\n\nAlmost everything, including:\n\n* The Go and Quest releases.\n* DRM systems.\n* Cinema, TV and video player product releases.\n* Multiplayer systems for shared video streaming in VR.\n* The Remote Desktop product.\n* The virtual browser.\n* The social product.\n* Build systems, internal CI/CD systems and internal tools.\n\nAll of the server infrastructure: devops, APIs, AWS, databases, Terraform, maintenance systems and more.\n\nI was an early adopter of AI tools, and shipped Bigscreen’s first “vibe-coded” UI in 2025.\n\n## Bigscreen Beyond\n\n* I championed many ideas that have been built into the product. For example, I wouldn’t shut up about heavy headsets, and I think this contributed to the hyper-focus on making the headset as light as possible.\n* The face scanning product, end to end: from the customer’s scanning app to manufacturing to shipping.\n* Factory automation: the personalized face cushion manufacturing system, and the APIs used by the stations on the personalization assembly line, with extensive in-person testing at the LA factory.\n* Logistics: shipping and logistics systems that handle personalization, with their APIs and internal frontends. They have shipped almost everything Bigscreen has produced.",
+            "headerImageId": "222983b2-3c14-4efc-8658-7e0c178bd0eb"
+        },
+        {
             "id": "24a66cf2-2c32-4c02-9581-491bb2371586",
             "title": "Algorithmic Design Engine",
             "description": "Use algorithms to create 2D vector art",
@@ -3276,7 +3751,7 @@
                 "ML"
             ],
             "startDate": "2017-08-08T07:18:39.000Z",
-            "endDate": null,
+            "endDate": "2018-01-01T00:00:00.000Z",
             "websiteURL": "https://www.dreamengine.co",
             "githubURL": "https://github.com/DreamEngineApp",
             "mediumURL": "",
@@ -11804,7 +12279,7 @@
             ],
             "headerImageId": "d4fc2a6c-ce9f-4cd7-a21a-1d31a3ae5c69",
             "startDate": "2017-04-27T05:14:30.000Z",
-            "endDate": null,
+            "endDate": "2018-01-01T00:00:00.000Z",
             "websiteURL": "https://staging.gigadraw.com",
             "githubURL": "",
             "mediumURL": "",
