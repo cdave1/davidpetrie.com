@@ -22,7 +22,7 @@ function Rail({ rail }) {
             )}
             {rail.pictures.map((picture, i) => (
                 <figure key={picture.src} data-reveal style={{ "--i": i % 3 }}>
-                    <img src={picture.src} width={picture.w} height={picture.h} alt={picture.alt} loading={i < 2 ? undefined : 'lazy'} />
+                    <img src={picture.src} width={picture.w} height={picture.h} alt={picture.alt} loading={i < 2 ? undefined : 'lazy'} style={picture.ratio ? { aspectRatio: picture.ratio } : undefined} />
                     <figcaption className="caption">{picture.caption}</figcaption>
                 </figure>
             ))}
@@ -44,9 +44,11 @@ export default function MarkdownPage({ html, title: fallback, path, date }) {
                 <div className={'grid doc' + (rail ? ' doc--rail' : '')}>
                     <div className="prose doc__text" data-rise style={{ '--i': 1 }} dangerouslySetInnerHTML={{ __html: body }} />
                     {rail && <Rail rail={rail} />}
-                    <p className="prose-date doc__date">
-                        Written <time>{date}</time>
-                    </p>
+                    {date && (
+                        <p className="prose-date doc__date">
+                            Written <time>{date}</time>
+                        </p>
+                    )}
                 </div>
             </article>
         </PageWrapper>

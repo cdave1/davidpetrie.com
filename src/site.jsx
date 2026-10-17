@@ -84,7 +84,7 @@ function pages(root) {
         list.push({
             url: meta.path,
             title: meta.title,
-            element: <MarkdownPage html={html} title={meta.title} path={meta.path} date={formatDate(meta.date)} />,
+            element: <MarkdownPage html={html} title={meta.title} path={meta.path} date={meta.date ? formatDate(meta.date) : null} />,
         });
     }
 

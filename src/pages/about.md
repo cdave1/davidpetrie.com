@@ -1,12 +1,9 @@
 ---
 path: "/about/"
-date: "2010-03-03"
 title: About Me
 ---
 
 # About Me
-
-*For a shorter overview, see the [homepage](/).*
 
 My name is David Petrie and I live and work in Wellington, New Zealand.  I am primarily a software engineer who happens to get involved in startups from time to time.
 
@@ -20,16 +17,14 @@ Currently, I am founder of [kotari](https://kotari.ai).  We build alternative ha
 
 * [Github](https://github.com/cdave1)
 
-* [Medium](https://medium.com/@david.petrie)
-
 
 # Career Highlights
 
 Prior to kotari, in descending chronological order:
 
-* From April 2018 to August 2026 I worked at [Bigscreen](https://www.bigscreenvr.com), on almost every project and release.  On the Bigscreen app: the Go and Quest releases, DRM, the cinema, TV and video player releases, multiplayer systems for watching video together in VR, Remote Desktop, the virtual browser, the social product, build systems, CI/CD and internal tools, and all of the server infrastructure.  On Bigscreen Beyond: the face scanning product end to end, factory automation for personalized cushions, and the shipping and logistics systems.  I was an early adopter of AI tools, and shipped Bigscreen's first "vibe-coded" UI in 2025.  [More about Bigscreen](/project/bigscreen).
+* From April 2018 to August 2026 I worked at [Bigscreen](https://www.bigscreenvr.com), on almost every project and release.  On the Bigscreen app: the Oculus Go and Quest releases, DRM, the cinema, TV and video player releases, multiplayer systems for watching video together in VR, Remote Desktop, the virtual browser, the social product, build systems, CI/CD and internal tools, and all of the server infrastructure.  On Bigscreen Beyond: the face scanning product end to end, factory automation for personalized cushions, and the shipping and logistics systems.  I was an early adopter of AI tools, and shipped Bigscreen's first "AI developed" UI in the Bigscreen app in early 2025.  [More about Bigscreen](/project/bigscreen).
 
-* In 2017 I founded [DreamEngine](/project/dream_engine), a marketplace for selling software automation tools, starting with graphic design tools.  My hypothesis was that we were on the cusp of being able to build software automation tools far more powerful than anything available at the time.
+* In 2017 I founded [DreamEngine](/project/dream_engine), a marketplace for selling software automation tools, starting with graphic design tools.
 
 * I worked on a VR app called [Vast](http://www.vastvr.com), a tool for crafting 3D objects and environments directly in VR. 
 
@@ -47,7 +42,7 @@ Prior to kotari, in descending chronological order:
 
 * In 2007 I became lead developer at awesome education software startup [Arlo](https://www.arlo.co). Arlo powers a training platform for a impressive number of schools and companies in New Zealand and around the world, such as Xero, Microsoft, and the University of Auckland.
 
-* From 2003 to 2007 I got into enterprise software.  I wrote financial modelling software and business applications for various companies in New Zealand, including PayGlobal ([now acquired by MYOB](https://www.myob.com/nz/enterprise/software-systems/payglobal)). I did a big consulting project for [Progressive Enterprises](http://www.progressive.co.nz), to power analytics for all their supermarkets in New Zealand. 
+* From 2003 to 2007 I wrote financial modelling software and business applications for various companies in New Zealand, including PayGlobal ([now acquired by MYOB](https://www.myob.com/nz/enterprise/software-systems/payglobal)). I did a big consulting project for [Progressive Enterprises](http://www.progressive.co.nz), to power analytics for all their supermarkets in New Zealand. 
 
 * In 2002 I started an online DVD store called [Moviehouse](/archive/mh/mhNewScreen.png) which I later sold.
 
@@ -80,29 +75,13 @@ Prior to kotari, in descending chronological order:
     <li>I lift weights and throw kettlebells around
     <li>Bicycle, occasional running
     </ul>
-<li> Crypto currenices
-    <ul>
-    <li>Ethereum
-    <li>Stellar
-    </ul>
 <li> Real time 3D graphics
 <li> Game engines
-<li> History
-    <ul><li> Currently interested in the decline and fall of the Roman Empire and the period of "late antiquity" that followed it</ul>
 <li> Software engineering issues
     <ul><li> Better ways to interview software engineers
     <li> Agile: is it still relevant?
     <li> Why are back-end developers dying out more quickly than DBAs did in the late 2000s?
     </ul>
-<li> Cell biology
-    <ul><li>The question of whether eukaryotes are unique to earth, or not</ul>
-<li> Machine Learning
-    <ul>
-    <li>GANS, or <a href="https://en.wikipedia.org/wiki/Generative_adversarial_network">Generative adversarial networks</a>
-    <li>Genetic programming
-    </ul>
-<li> Music
-<li> Languages
 </ul>
 
 
@@ -143,6 +122,8 @@ Note: I no longer use these services; this is just more proof that I'm a real pe
 * [Facebook](https://facebook.com/david.petrie.nz)
 
 * [LinkedIn](https://www.linkedin.com/in/davidcpetrie)
+
+* [Medium](https://medium.com/@david.petrie)
 
 
 # Reading
