@@ -4,12 +4,6 @@ export default function SiteFooter({ credits = [], short = false }) {
     return (
         <footer className={'site-footer' + (short ? ' site-footer--short' : '')} id="site-footer">
             <div className="grid site-footer__top">
-                <p className="site-footer__invite" data-reveal>
-                    Bring me a<br />new idea
-                </p>
-                <div className="site-footer__cta" data-reveal style={{ '--i': 1 }}>
-                    <a className="button button--inverse" href="mailto:me@davidpetrie.com">Email me</a>
-                </div>
                 <ul className="site-footer__links" aria-label="Pages">
                     <li><a href="/ai-projects/">AI Projects</a></li>
                     <li><a href="/projects/">Pre AI Projects</a></li>

@@ -5,13 +5,12 @@ import Now from '../components/home/Now';
 import Bigscreen from '../components/home/Bigscreen';
 import ProjectIndex from '../components/home/ProjectIndex';
 import Press from '../components/home/Press';
-import Thinking from '../components/home/Thinking';
 import Contact from '../components/home/Contact';
 import credits from '../data/credits';
 
-// The selection from the live home page; everything else is on /projects/.
-const selected = ['Dream Engine', 'Vast', 'Ocean', 'PlayCoMo', 'FTGLES'];
-const frames = { Vast: 'Vast00004.png', Ocean: 'img_0526.jpg', FTGLES: 'unicode.png' };
+// Two earlier projects; everything else is on /projects/ (Pre AI Projects).
+const selected = ['Dream Engine', 'Ocean'];
+const frames = { Ocean: 'img_0526.jpg' };
 
 // `hero` swaps the first screen (the lab tries other layouts); the site uses the default.
 export default function Index({ hero }) {
@@ -26,7 +25,6 @@ export default function Index({ hero }) {
                 </p>
             </ProjectIndex>
             <Press />
-            <Thinking />
             <Contact />
         </HomeWrapper>
     );

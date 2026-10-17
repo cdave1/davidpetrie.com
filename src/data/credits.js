@@ -20,26 +20,12 @@ const credits = {
         source: commons,
         url: 'https://commons.wikimedia.org/wiki/File:Plan_of_the_City_of_Wellington,_Port_Nicholson,_New_Zealand_1841.jpg',
     },
-    solidus: {
-        title: 'Solidus, 337–361',
-        creator: 'a Byzantine maker',
-        ...cc0,
-        source: met,
-        url: 'https://www.metmuseum.org/art/collection/search/462705',
-    },
     haeckel: {
         title: 'Discomedusae, from Kunstformen der Natur',
         creator: 'Ernst Haeckel',
         ...pd,
         source: commons,
         url: 'https://commons.wikimedia.org/wiki/File:Haeckel_Discomedusae_8.jpg',
-    },
-    eakins: {
-        title: 'John Biglin in a Single Scull',
-        creator: 'Thomas Eakins',
-        ...cc0,
-        source: met,
-        url: 'https://www.metmuseum.org/art/collection/search/10818',
     },
     davidPlate: {
         title: 'Plate with the Battle of David and Goliath',
@@ -77,11 +63,11 @@ const credits = {
         url: 'https://commons.wikimedia.org/wiki/File:Lambton_Harbour,_Wellington,_New_Zealand_c_1840.jpg',
     },
     bigscreen: {
-        title: 'Bigscreen product, cinema and factory pictures',
+        title: 'Bigscreen product, app, cinema and factory pictures',
         creator: 'Bigscreen, Inc.',
         licence: 'all rights reserved',
         licenceUrl: 'https://www.bigscreenvr.com/press',
-        source: 'bigscreenvr.com and the Bigscreen press kit',
+        source: 'bigscreenvr.com, the Bigscreen press kit and the Bigscreen Meta Quest store page',
         url: 'https://www.bigscreenvr.com/about',
     },
 };

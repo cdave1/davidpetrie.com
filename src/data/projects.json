@@ -212,16 +212,16 @@
                     }
                 },
                 {
-                    "id": "7f30642a-bb9f-424b-bc69-da4825aab668",
+                    "id": "f10ab9dc-e5a8-495c-96b9-fcd45c1dd4f5",
                     "created": "2026-10-17T00:00:00.000Z",
                     "type": "image/jpeg",
-                    "caption": "Bigscreen Cinema, 2019, from bigscreenvr.com",
+                    "caption": "A full Bigscreen cinema, from the Bigscreen Meta Quest store page",
                     "file": {
                         "size": {
-                            "w": 1200,
-                            "h": 675
+                            "w": 1440,
+                            "h": 810
                         },
-                        "path": "bigscreen/cinema.jpg"
+                        "path": "bigscreen/theatre.jpg"
                     },
                     "thumbnails": {
                         "default": {
@@ -229,35 +229,35 @@
                                 "w": 800,
                                 "h": 450
                             },
-                            "path": "bigscreen/cinema_thumb.jpg"
+                            "path": "bigscreen/theatre_thumb.jpg"
                         },
                         "croppedSmall": {
                             "size": {
                                 "w": 800,
                                 "h": 450
                             },
-                            "path": "bigscreen/cinema_thumb.jpg"
+                            "path": "bigscreen/theatre_thumb.jpg"
                         },
                         "croppedLarge": {
                             "size": {
                                 "w": 800,
                                 "h": 450
                             },
-                            "path": "bigscreen/cinema_thumb.jpg"
+                            "path": "bigscreen/theatre_thumb.jpg"
                         }
                     }
                 },
                 {
-                    "id": "9a545b57-faec-4c8a-aca7-e48505c87514",
+                    "id": "3d183e46-c8e9-4347-9b78-19f7b2b27961",
                     "created": "2026-10-17T00:00:00.000Z",
                     "type": "image/jpeg",
-                    "caption": "Avatars sharing screens in a Bigscreen room, from bigscreenvr.com",
+                    "caption": "Watching a match together in the sports bar, from the Bigscreen Meta Quest store page",
                     "file": {
                         "size": {
-                            "w": 1200,
-                            "h": 675
+                            "w": 1440,
+                            "h": 810
                         },
-                        "path": "bigscreen/workbench.jpg"
+                        "path": "bigscreen/sports-bar.jpg"
                     },
                     "thumbnails": {
                         "default": {
@@ -265,21 +265,21 @@
                                 "w": 800,
                                 "h": 450
                             },
-                            "path": "bigscreen/workbench_thumb.jpg"
+                            "path": "bigscreen/sports-bar_thumb.jpg"
                         },
                         "croppedSmall": {
                             "size": {
                                 "w": 800,
                                 "h": 450
                             },
-                            "path": "bigscreen/workbench_thumb.jpg"
+                            "path": "bigscreen/sports-bar_thumb.jpg"
                         },
                         "croppedLarge": {
                             "size": {
                                 "w": 800,
                                 "h": 450
                             },
-                            "path": "bigscreen/workbench_thumb.jpg"
+                            "path": "bigscreen/sports-bar_thumb.jpg"
                         }
                     }
                 },
@@ -316,6 +316,114 @@
                                 "h": 494
                             },
                             "path": "bigscreen/custom-cushion_thumb.jpg"
+                        }
+                    }
+                },
+                {
+                    "id": "3b584e94-317f-47e7-a04c-a31538fcc52a",
+                    "created": "2026-10-17T00:00:00.000Z",
+                    "type": "image/jpeg",
+                    "caption": "Several screens open at once in one room, from the Bigscreen Meta Quest store page",
+                    "file": {
+                        "size": {
+                            "w": 1440,
+                            "h": 810
+                        },
+                        "path": "bigscreen/screens.jpg"
+                    },
+                    "thumbnails": {
+                        "default": {
+                            "size": {
+                                "w": 800,
+                                "h": 450
+                            },
+                            "path": "bigscreen/screens_thumb.jpg"
+                        },
+                        "croppedSmall": {
+                            "size": {
+                                "w": 800,
+                                "h": 450
+                            },
+                            "path": "bigscreen/screens_thumb.jpg"
+                        },
+                        "croppedLarge": {
+                            "size": {
+                                "w": 800,
+                                "h": 450
+                            },
+                            "path": "bigscreen/screens_thumb.jpg"
+                        }
+                    }
+                },
+                {
+                    "id": "9b5d4804-6c1b-4294-a3c3-3bd661ba2556",
+                    "created": "2026-10-17T00:00:00.000Z",
+                    "type": "image/jpeg",
+                    "caption": "The virtual browser, from the Bigscreen Meta Quest store page",
+                    "file": {
+                        "size": {
+                            "w": 1440,
+                            "h": 810
+                        },
+                        "path": "bigscreen/browser.jpg"
+                    },
+                    "thumbnails": {
+                        "default": {
+                            "size": {
+                                "w": 800,
+                                "h": 450
+                            },
+                            "path": "bigscreen/browser_thumb.jpg"
+                        },
+                        "croppedSmall": {
+                            "size": {
+                                "w": 800,
+                                "h": 450
+                            },
+                            "path": "bigscreen/browser_thumb.jpg"
+                        },
+                        "croppedLarge": {
+                            "size": {
+                                "w": 800,
+                                "h": 450
+                            },
+                            "path": "bigscreen/browser_thumb.jpg"
+                        }
+                    }
+                },
+                {
+                    "id": "156fb2c4-81e0-4507-93b7-7d5b595fbd21",
+                    "created": "2026-10-17T00:00:00.000Z",
+                    "type": "image/jpeg",
+                    "caption": "The lobby, with avatars and toys, from the Bigscreen Meta Quest store page",
+                    "file": {
+                        "size": {
+                            "w": 1440,
+                            "h": 810
+                        },
+                        "path": "bigscreen/lobby.jpg"
+                    },
+                    "thumbnails": {
+                        "default": {
+                            "size": {
+                                "w": 800,
+                                "h": 450
+                            },
+                            "path": "bigscreen/lobby_thumb.jpg"
+                        },
+                        "croppedSmall": {
+                            "size": {
+                                "w": 800,
+                                "h": 450
+                            },
+                            "path": "bigscreen/lobby_thumb.jpg"
+                        },
+                        "croppedLarge": {
+                            "size": {
+                                "w": 800,
+                                "h": 450
+                            },
+                            "path": "bigscreen/lobby_thumb.jpg"
                         }
                     }
                 },
@@ -462,6 +570,78 @@
                             "path": "bigscreen/colors_thumb.jpg"
                         }
                     }
+                },
+                {
+                    "id": "7f30642a-bb9f-424b-bc69-da4825aab668",
+                    "created": "2026-10-17T00:00:00.000Z",
+                    "type": "image/jpeg",
+                    "caption": "Bigscreen Cinema, 2019, from bigscreenvr.com",
+                    "file": {
+                        "size": {
+                            "w": 1200,
+                            "h": 675
+                        },
+                        "path": "bigscreen/cinema.jpg"
+                    },
+                    "thumbnails": {
+                        "default": {
+                            "size": {
+                                "w": 800,
+                                "h": 450
+                            },
+                            "path": "bigscreen/cinema_thumb.jpg"
+                        },
+                        "croppedSmall": {
+                            "size": {
+                                "w": 800,
+                                "h": 450
+                            },
+                            "path": "bigscreen/cinema_thumb.jpg"
+                        },
+                        "croppedLarge": {
+                            "size": {
+                                "w": 800,
+                                "h": 450
+                            },
+                            "path": "bigscreen/cinema_thumb.jpg"
+                        }
+                    }
+                },
+                {
+                    "id": "9a545b57-faec-4c8a-aca7-e48505c87514",
+                    "created": "2026-10-17T00:00:00.000Z",
+                    "type": "image/jpeg",
+                    "caption": "Avatars sharing screens in a Bigscreen room, from bigscreenvr.com",
+                    "file": {
+                        "size": {
+                            "w": 1200,
+                            "h": 675
+                        },
+                        "path": "bigscreen/workbench.jpg"
+                    },
+                    "thumbnails": {
+                        "default": {
+                            "size": {
+                                "w": 800,
+                                "h": 450
+                            },
+                            "path": "bigscreen/workbench_thumb.jpg"
+                        },
+                        "croppedSmall": {
+                            "size": {
+                                "w": 800,
+                                "h": 450
+                            },
+                            "path": "bigscreen/workbench_thumb.jpg"
+                        },
+                        "croppedLarge": {
+                            "size": {
+                                "w": 800,
+                                "h": 450
+                            },
+                            "path": "bigscreen/workbench_thumb.jpg"
+                        }
+                    }
                 }
             ],
             "tags": [
@@ -472,7 +652,7 @@
                 "automation",
                 "AI"
             ],
-            "readme": "From April 2018 to August 2026 I worked at [Bigscreen](https://www.bigscreenvr.com), on almost every project and release.\n\n## The Bigscreen app\n\nAlmost everything, including:\n\n* The Go and Quest releases.\n* DRM systems.\n* Cinema, TV and video player product releases.\n* Multiplayer systems for shared video streaming in VR.\n* The Remote Desktop product.\n* The virtual browser.\n* The social product.\n* Build systems, internal CI/CD systems and internal tools.\n\nAll of the server infrastructure: devops, APIs, AWS, databases, Terraform, maintenance systems and more.\n\nI was an early adopter of AI tools, and shipped Bigscreen’s first “vibe-coded” UI in 2025.\n\n## Bigscreen Beyond\n\n* I championed many ideas that have been built into the product. For example, I wouldn’t shut up about heavy headsets, and I think this contributed to the hyper-focus on making the headset as light as possible.\n* The face scanning product, end to end: from the customer’s scanning app to manufacturing to shipping.\n* Factory automation: the personalized face cushion manufacturing system, and the APIs used by the stations on the personalization assembly line, with extensive in-person testing at the LA factory.\n* Logistics: shipping and logistics systems that handle personalization, with their APIs and internal frontends. They have shipped almost everything Bigscreen has produced.",
+            "readme": "From April 2018 to August 2026 I worked at [Bigscreen](https://www.bigscreenvr.com), on almost every project and release.\n\n## The Bigscreen app\n\nAlmost everything, including:\n\n* The Oculus Go and Quest releases.\n* DRM systems.\n* Cinema, TV and video player product releases.\n* Multiplayer systems for shared video streaming in VR.\n* The Remote Desktop product.\n* The virtual browser.\n* The social product.\n* Build systems, internal CI/CD systems and internal tools.\n\nAll of the server infrastructure: devops, APIs, AWS, databases, Terraform, maintenance systems and more.\n\nI was an early adopter of AI tools, and shipped Bigscreen’s first “AI developed” UI in the Bigscreen app in early 2025.\n\n## Bigscreen Beyond\n\nWe started “real work” on the Bigscreen Beyond headset in 2022, but we had been talking about it for many years before then. I participated a lot in those discussions, mainly talking about the frustrations with current headsets, and that we wanted something easier to wear for long sessions. Even today, very few headsets do a good job of just letting you watch a movie for 2 hours.\n\nReducing the weight is something we talked about at length, and I like to think my annoying persistence on it is my one major contribution to how we designed the overall product. The company has had a maniacal focus on making the headset as light as possible ever since, with a motto of “every gram matters”. This is certainly true with the Beyond 2, which is 107 grams, compared to 515 grams for the Meta Quest 3.\n\nOn the Beyond 1, we decided to remove the bulky adjustment systems that other headsets had. This led to the idea of personalizing each person’s headset, which required each user to scan their face so we could get each user’s [interpupillary distance](https://en.wikipedia.org/wiki/Pupillary_distance) and then produce a rubber gasket that was perfectly molded to the contours of their face.\n\nPulling this off required a whole personalized manufacturing system. My particular contribution was designing the face scanning product and handling the shepherding of the customer’s scan through to the production and shipping of the item to them. This was end to end: from the customer’s scanning app infra, through to manufacturing to shipping, with my software doing something at every point. Very grueling to work on, and a lot of in-person testing at the LA factory.\n\nThe demands of the hyper personalization meant I had to build out a logistics and shipping system; we couldn’t use off-the-shelf software like a Shopify app. Turns out no one builds personalization software like this. This software ended up shipping almost everything Bigscreen has produced, including more than 50,000 orders to over 50 countries since 2023.",
             "headerImageId": "222983b2-3c14-4efc-8658-7e0c178bd0eb"
         },
         {
