@@ -10,7 +10,7 @@ import credits from '../data/credits';
 
 // Two earlier projects; everything else is on /projects/ (Pre AI Projects).
 const selected = ['Dream Engine', 'Ocean'];
-const frames = { Ocean: 'img_0526.jpg' };
+const frames = { Ocean: 'oceanhw00007.png' };
 
 // `hero` swaps the first screen (the lab tries other layouts); the site uses the default.
 export default function Index({ hero }) {
