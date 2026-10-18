@@ -14,6 +14,7 @@ import * as esbuild from 'esbuild';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const out = path.join(root, 'public');
 const work = path.join(root, '.build');
+const siteUrl = 'https://www.davidpetrie.com';
 
 process.env.NODE_ENV = 'production';
 
@@ -87,6 +88,19 @@ export async function build({ clean = true, copy = true, lab = false } = {}) {
         fs.mkdirSync(path.dirname(file), { recursive: true });
         fs.writeFileSync(file, page.html);
     }
+
+    const locations = pages.filter((page) => page.sitemap).map((page) =>
+        new URL(page.url, siteUrl).href.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;'));
+    fs.writeFileSync(path.join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${locations.map((url) => `  <url><loc>${url}</loc></url>`).join('\n')}
+</urlset>
+`);
+    fs.writeFileSync(path.join(out, 'robots.txt'), `User-agent: *
+Allow: /
+
+Sitemap: ${siteUrl}/sitemap.xml
+`);
 
     console.log(`Built ${pages.length} pages into public/ in ${((Date.now() - started) / 1000).toFixed(1)}s`);
     return pages;

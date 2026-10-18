@@ -29,6 +29,10 @@ npm run build
 
 The static output is written to `public/`.
 
+Every build also generates `sitemap.xml` from the page list and a `robots.txt` that
+points to it. The sitemap uses `https://www.davidpetrie.com` and includes the main
+pages and project pages, excluding 404 pages, redirects and the design lab.
+
 ## Where things are
 
 | Path | What it is |

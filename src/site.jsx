@@ -74,8 +74,8 @@ function pages(root) {
         // The 2000 to 2009 archive used to be its own page; it is now the last section of /projects/.
         { url: '/projects/archive/', redirect: '/projects/#2000-2009' },
         { url: '/reading/', title: 'Reading List', element: <Reading /> },
-        { url: '/404.html', title: 'Page Not Found', element: <NotFound /> },
-        { url: '/404/', title: 'Page Not Found', element: <NotFound /> },
+        { url: '/404.html', title: 'Page Not Found', element: <NotFound />, sitemap: false },
+        { url: '/404/', title: 'Page Not Found', element: <NotFound />, sitemap: false },
     ];
 
     const dir = path.join(root, 'src/pages');
@@ -125,12 +125,13 @@ ${body}${tail}
 // The lab: /lab/ and one page per hero layout, the palette chosen with ?palette=.
 function labPages(assets) {
     const head = `\n<link rel="stylesheet" href="${assets.labCss}">\n<style>${paletteCss}</style>\n<script>${headScript}</script>\n<meta name="robots" content="noindex">`;
-    const list = [{ url: '/lab/', title: 'Lab', element: <LabIndex />, head: head.replace(paletteCss, paletteCss + labIndexCss) }];
+    const list = [{ url: '/lab/', title: 'Lab', element: <LabIndex />, head: head.replace(paletteCss, paletteCss + labIndexCss), sitemap: false }];
     for (const hero of heroes) {
         list.push({
             url: `/lab/${hero.id}/`,
             title: `Lab: ${hero.name}`,
             element: <Index hero={hero.render()} />,
+            sitemap: false,
             head,
             tail: '\n' + renderToStaticMarkup(<LabBar current={hero.id} />) + `\n<script>${barScript}</script>`,
         });
@@ -140,12 +141,12 @@ function labPages(assets) {
 
 export function renderSite({ root, assets, lab = false }) {
     return [...pages(root), ...(lab ? labPages(assets) : [])].map((page) => {
-        if (page.redirect) return { url: page.url, file: fileFor(page.url), html: redirectPage(page.redirect) };
+        if (page.redirect) return { url: page.url, file: fileFor(page.url), html: redirectPage(page.redirect), sitemap: false };
         // React leaves `muted` off server-rendered video; every video here is a silent loop.
         let body = renderToStaticMarkup(page.element).replace(/<video(?![^>]*\bmuted\b)/g, '<video muted=""');
         // Mark the current page in the site bar.
         body = body.replace(/<nav aria-label="Main">[\s\S]*?<\/nav>/, (nav) =>
             nav.replace(`<a href="${page.url}">`, `<a href="${page.url}" aria-current="page">`));
-        return { url: page.url, file: fileFor(page.url), html: document({ ...page, body, assets }) };
+        return { url: page.url, file: fileFor(page.url), html: document({ ...page, body, assets }), sitemap: page.sitemap !== false };
     });
 }
