@@ -1043,7 +1043,7 @@
             "startDate": "2015-09-06T09:38:24.000Z",
             "endDate": "2016-04-05T12:00:00.000Z",
             "websiteURL": "https://www.vastvr.com",
-            "githubURL": "",
+            "githubURL": "https://github.com/cdave1/vastvr",
             "mediumURL": "",
             "twitter": "",
             "images": [
@@ -1782,7 +1782,7 @@
                 "3d",
                 "oculus"
             ],
-            "readme": "A VR app to help people design their own VR and AR experiences.",
+            "readme": "Vast was a VR app for designing 3D objects and environments. Underneath it was VastVR, a C++ engine used to develop virtual reality applications between 2015 and 2018.\n\nThe [open source repository](https://github.com/cdave1/vastvr) brings together VastDevKit, the engine and its tools, and VastApps, the applications and experiments built with it.\n\nRecent restoration work makes the SDK and selected desktop apps buildable on current Macs:\n\n* VastBuilder, the scene-building app.\n* VastBrowser, a launcher for rendering, geometry, piano and audio demos.\n* PhysicsHotel, an interactive physics playground.\n\nThese are development builds that load resources from the checkout rather than standalone app bundles. The historical VR, mobile and Windows targets are preserved but have not been validated.\n\nThe original engine and application code is available under the MIT license; bundled third-party code and assets retain their own licenses. See the repository's [README](https://github.com/cdave1/vastvr#readme) for build instructions and the current status.",
             "headerImageId": "c2fbf749-58be-4714-a395-a644e13151e8"
         },
         {

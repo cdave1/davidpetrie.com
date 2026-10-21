@@ -5,9 +5,7 @@ title: About Me
 
 # About Me
 
-My name is David Petrie and I live and work in Wellington, New Zealand.  I am primarily a software engineer who happens to get involved in startups from time to time.
-
-Currently, I am founder of [kotari](https://kotari.ai).  We build alternative harnesses for AI agents: products for people, and open source tools for developers.
+I am a product builder, living primarily in Wellington, New Zealand. Currently I am founder of [kotari.ai](https://kotari.ai), a company building a suite of AI products. Previously I worked at [Bigscreen VR](/project/bigscreen/) for about 8 years - technically I still am as I'm currently on sabbatical. Before that I worked on an [algorithmic design app](/project/dream_engine/) and a [VR engine](/project/vast/), and prior to that I worked in Silicon Valley on a [hardware product called Ocean](/project/ocean/). I am an alumnus of Y Combinator (W14). Other interesting projects are covered on the [projects page](/projects/).
 
 # Contact
 
