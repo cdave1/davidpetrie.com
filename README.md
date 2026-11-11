@@ -4,7 +4,8 @@ This is the public source code to my personal website, [www.davidpetrie.com](htt
 
 The site is plain static HTML. A small build script renders the pages from `src/` (React
 components, markdown pages and `src/data/projects.json`) and copies `static/` alongside them.
-React runs only at build time; the browser gets HTML, one stylesheet and one small script.
+React runs only at build time; the browser gets HTML, one stylesheet and one small script. The
+home page loads a second script for the game that plays itself in its masthead.
 
 ## Local development
 
@@ -42,7 +43,8 @@ pages and project pages, excluding 404 pages, redirects and the design lab.
 | `src/data/projects.json` | Every project; each gets a page at `/project/<name>/` |
 | `src/components/` | Shared page parts |
 | `src/styles/global.css` | All styles |
-| `src/client/site.js` | The one script sent to the browser |
+| `src/client/site.js` | The script sent to every page |
+| `src/client/arcade.js`, `src/client/invaders/` | The home page's masthead game: rules, pixel art, sounds and drawing |
 | `src/site.jsx` | The list of pages and the HTML document around each one |
 | `scripts/build.mjs` | Renders everything into `public/` |
 | `static/` | Images and files copied into `public/` as they are |

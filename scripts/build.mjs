@@ -1,6 +1,6 @@
-// Builds the site into public/: every page as plain HTML, one stylesheet, one small script,
-// and the contents of static/. React is only used here, to render the pages; none is sent to
-// the browser.
+// Builds the site into public/: every page as plain HTML, one stylesheet, one small script (and
+// a second on the home page, for the game in its masthead), and the contents of static/. React is
+// only used here, to render the pages; none is sent to the browser.
 //
 //   node scripts/build.mjs          the site
 //   node scripts/build.mjs --lab    the site plus the design lab at /lab/ (never deployed)
@@ -42,20 +42,25 @@ export async function build({ clean = true, copy = true, lab = false } = {}) {
     fs.mkdirSync(out, { recursive: true });
     if (copy) copyStatic(path.join(root, 'static'), out);
 
-    // The stylesheet and the browser script, minified and named by their contents.
-    for (const old of fs.readdirSync(out).filter((f) => /^(styles|site|lab)\.[0-9a-f]{10}\.(css|js)$/.test(f))) {
+    // The stylesheet and the browser scripts, minified and named by their contents.
+    for (const old of fs.readdirSync(out).filter((f) => /^(styles|site|arcade|lab)\.[0-9a-f]{10}\.(css|js)$/.test(f))) {
         fs.rmSync(path.join(out, old));
     }
-    const [css, js] = await Promise.all([
+    const script = (name) =>
+        esbuild.build({ entryPoints: [path.join(root, `src/client/${name}.js`)], bundle: true, minify: true, format: 'iife', target: 'es2019', write: false, logLevel: 'error' });
+    const [css, js, arcade] = await Promise.all([
         esbuild.build({ entryPoints: [path.join(root, 'src/styles/global.css')], bundle: true, minify: true, write: false, logLevel: 'error' }),
-        esbuild.build({ entryPoints: [path.join(root, 'src/client/site.js')], bundle: true, minify: true, format: 'iife', target: 'es2019', write: false, logLevel: 'error' }),
+        script('site'),
+        script('arcade'),
     ]);
     const assets = {
         css: '/' + hashed('styles', 'css', css.outputFiles[0].contents),
         js: '/' + hashed('site', 'js', js.outputFiles[0].contents),
+        arcade: '/' + hashed('arcade', 'js', arcade.outputFiles[0].contents),
     };
     fs.writeFileSync(path.join(out, assets.css), css.outputFiles[0].contents);
     fs.writeFileSync(path.join(out, assets.js), js.outputFiles[0].contents);
+    fs.writeFileSync(path.join(out, assets.arcade), arcade.outputFiles[0].contents);
     if (lab) {
         const labCss = await esbuild.build({ entryPoints: [path.join(root, 'src/lab/lab.css')], bundle: true, minify: true, write: false, logLevel: 'error' });
         assets.labCss = '/' + hashed('lab', 'css', labCss.outputFiles[0].contents);

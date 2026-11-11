@@ -68,7 +68,8 @@ const fileFor = (url) => (url.endsWith('.html') ? url.slice(1) : path.join(url.s
 
 function pages(root) {
     const list = [
-        { url: '/', element: <Index /> },
+        // The home page also loads the game that plays in its masthead.
+        { url: '/', element: <Index />, arcade: true },
         { url: '/ai-projects/', title: 'AI Projects', element: <AiProjectsPage /> },
         { url: '/projects/', title: 'Pre AI Projects', element: <ProjectsPage archiveHtml={archiveHtml(root)} /> },
         // The 2000 to 2009 archive used to be its own page; it is now the last section of /projects/.
@@ -99,7 +100,7 @@ function pages(root) {
     return list;
 }
 
-function document({ title, description, body, assets, head = '', tail = '' }) {
+function document({ title, description, body, assets, head = '', tail = '', arcade = false }) {
     return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -113,7 +114,7 @@ function document({ title, description, body, assets, head = '', tail = '' }) {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;800&display=swap">
 <link rel="stylesheet" href="${assets.css}">
-<script src="${assets.js}" defer></script>${head}
+<script src="${assets.js}" defer></script>${arcade ? `\n<script src="${assets.arcade}" defer></script>` : ''}${head}
 </head>
 <body>
 ${body}${tail}
