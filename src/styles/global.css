@@ -256,7 +256,8 @@ a {
 }
 
 /* The game that plays itself in the masthead's empty space (src/client/invaders/). The script
-   adds all of it and sets the field's position and size; the units are drawn in --two-b. */
+   adds all of it and sets the field's position and size; the units and the lettering are
+   drawn in --two-b. */
 
 .arcade {
   position: absolute;
@@ -268,35 +269,6 @@ a {
 .arcade.is-on { opacity: 1; }
 
 .arcade__screen { display: block; width: 100%; height: 100%; }
-
-.arcade__hud {
-  position: absolute;
-  inset: 0 0 auto 0;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  margin: 0;
-  font-size: var(--step-small);
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  color: var(--two-a);
-}
-
-.arcade__hud b { font-weight: 600; }
-
-.arcade__over {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  margin: 0;
-  font-size: var(--step-head);
-  font-weight: 800;
-  letter-spacing: -0.045em;
-  color: var(--two-a);
-}
-
-.arcade__over[hidden] { display: none; }
 
 .masthead__sound {
   position: absolute;

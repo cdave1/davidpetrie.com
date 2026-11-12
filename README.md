@@ -44,7 +44,7 @@ pages and project pages, excluding 404 pages, redirects and the design lab.
 | `src/components/` | Shared page parts |
 | `src/styles/global.css` | All styles |
 | `src/client/site.js` | The script sent to every page |
-| `src/client/arcade.js`, `src/client/invaders/` | The home page's masthead game: rules, pixel art, sounds and drawing |
+| `src/client/arcade.js`, `src/client/invaders/` | The home page's masthead game: rules, pixel art, lettering, sounds and drawing |
 | `src/site.jsx` | The list of pages and the HTML document around each one |
 | `scripts/build.mjs` | Renders everything into `public/` |
 | `static/` | Images and files copied into `public/` as they are |

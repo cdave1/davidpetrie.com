@@ -1,15 +1,20 @@
 // The masthead game: finds the empty part of the orange field (beside the name on wide screens,
-// under it on narrow ones), draws the game there in white and plays its sounds. It plays itself
-// until the rover is out of lives, then stops on "Game over". The rules are in game.js.
+// under it on narrow ones), draws the game and its lettering there in white and plays its sounds.
+// It plays itself until the rover is out of lives, then stops on "GAME OVER". The rules are in
+// game.js.
 //
 // Off screen it pauses. Under reduced motion it shows one still frame and makes no sound.
 
 import { Game, TICK } from './game.js';
 import { sprites } from './sprites.js';
+import { typeset, LINE } from './font.js';
 import { createSound } from './sound.js';
 
 const HI_KEY = 'arcade-hi';
-const HUD = 22; // CSS pixels kept clear at the top of the field for the score
+const HUD = 11; // dots kept clear at the top of the field for the score
+const HUD_GAP = 8; // dots between the score and the high score
+const OVER_SHARE = 0.72; // "GAME OVER" is three times the score's size if that fits in this much of the width, else twice
+const OVER_PAD = 4; // dots kept clear around it
 const START_AFTER = 1300; // ms: let the masthead's own entrance finish first
 
 function load(key) {
@@ -88,21 +93,13 @@ export default function invaders(masthead) {
     const box = document.createElement('div');
     box.className = 'arcade';
     box.setAttribute('aria-hidden', 'true');
-    box.innerHTML =
-        '<canvas class="arcade__screen"></canvas>' +
-        '<p class="arcade__hud"><span>Score <b>0</b></span><span>Hi <b>0</b></span></p>' +
-        '<p class="arcade__over" hidden>Game over</p>';
+    box.innerHTML = '<canvas class="arcade__screen"></canvas>';
     const canvas = box.querySelector('canvas');
     const ctx = canvas.getContext('2d');
-    const hud = box.querySelector('.arcade__hud');
-    const [scoreEl, hiEl] = hud.querySelectorAll('b');
-    const over = box.querySelector('.arcade__over');
 
     let game = null;
     let layout = null;
-    let font = '';
     let dpr = 1;
-    let shown = { score: -1, hi: -1 };
     let visible = true;
     let raf = 0;
     let last = 0;
@@ -110,7 +107,6 @@ export default function invaders(masthead) {
 
     function place(spot) {
         Object.assign(box.style, { left: spot.x + 'px', top: spot.y + 'px', width: spot.w * spot.dot + 'px', height: spot.h * spot.dot + 'px' });
-        hud.style.height = HUD + 'px';
     }
 
     function newGame(spot) {
@@ -119,17 +115,22 @@ export default function invaders(masthead) {
         place(spot);
         canvas.width = Math.round(spot.w * spot.dot * dpr);
         canvas.height = Math.round(spot.h * spot.dot * dpr);
-        game = new Game({ width: spot.w, height: spot.h, top: Math.ceil(HUD / spot.dot), hi: load(HI_KEY) });
-        over.hidden = true;
-        shown = { score: -1, hi: -1 };
+        game = new Game({ width: spot.w, height: spot.h, top: HUD, hi: load(HI_KEY) });
         if (sound) sound.play('bonusGone');
     }
 
     function draw() {
         const k = dpr * layout.dot;
-        const put = (sprite, x, y) => {
-            ctx.setTransform(k, 0, 0, k, Math.round(x) * k, Math.round(y) * k);
+        const put = (sprite, x, y, scale = 1) => {
+            ctx.setTransform(k * scale, 0, 0, k * scale, Math.round(x) * k, Math.round(y) * k);
             ctx.fill(pathOf(sprite));
+        };
+        // A line of lettering with its left edge at x, or centred on x. Returns its right edge.
+        const write = (text, x, y, { centred = false, scale = 1 } = {}) => {
+            const line = typeset(text);
+            const left = centred ? Math.round(x - (line.w * scale) / 2) : x;
+            for (const { glyph, x: at } of line.glyphs) put(glyph, left + at * scale, y, scale);
+            return left + line.w * scale;
         };
         ctx.setTransform(1, 0, 0, 1, 0, 0);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -146,8 +147,19 @@ export default function invaders(masthead) {
             ctx.setTransform(k, 0, 0, k, bunker.x * k, bunker.y * k);
             ctx.fill(bunker.path);
         }
+        // At the end a patch across the middle is kept clear for "GAME OVER".
+        const over = game.phase === 'over' ? typeset('GAME OVER') : null;
+        const scale = over && over.w * 3 <= game.w * OVER_SHARE ? 3 : 2;
+        const patch = over && {
+            x: Math.round((game.w - over.w * scale) / 2) - OVER_PAD,
+            y: Math.round((game.h - LINE * scale) / 2) - OVER_PAD,
+            w: over.w * scale + OVER_PAD * 2,
+            h: LINE * scale + OVER_PAD * 2,
+        };
+        const clear = (unit) => !patch || unit.x >= patch.x + patch.w || unit.x + unit.w <= patch.x || unit.y >= patch.y + patch.h || unit.y + unit.h <= patch.y;
+
         for (const inv of game.invaders) {
-            if (inv.alive && inv.shown) put(sprites[inv.type][game.march.frame], inv.x, inv.y);
+            if (inv.alive && inv.shown && clear(inv)) put(sprites[inv.type][game.march.frame], inv.x, inv.y);
         }
         if (game.bonus) put(sprites.headset[0], game.bonus.x, game.bonus.y);
         const p = game.player;
@@ -159,13 +171,7 @@ export default function invaders(masthead) {
             if (effect.kind === 'burst') put(sprites.burst[0], effect.x, effect.y);
             else if (effect.kind === 'pop') put(sprites.pop[0], effect.x, effect.y);
             else if (effect.kind === 'wreck') put(sprites.wreck[Math.floor(effect.t / 0.1) % 2], effect.x, effect.y);
-            else if (effect.kind === 'score') {
-                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-                ctx.font = font;
-                ctx.textAlign = 'center';
-                ctx.textBaseline = 'top';
-                ctx.fillText(effect.text, effect.x * layout.dot, effect.y * layout.dot);
-            }
+            else if (effect.kind === 'score') write(effect.text, effect.x, effect.y, { centred: true });
         }
 
         // Spare rovers, top right.
@@ -173,9 +179,18 @@ export default function invaders(masthead) {
         const icon = sprites.rover[0];
         for (let i = 0; i < spare; i++) put(icon, game.w - (i + 1) * (icon.w + 4), Math.floor((game.top - icon.h) / 2));
 
-        const hi = Math.max(game.hi, game.score);
-        if (shown.score !== game.score) scoreEl.textContent = shown.score = game.score;
-        if (shown.hi !== hi) hiEl.textContent = shown.hi = hi;
+        // The score and the high score, top left. On a field too narrow for both, the high score
+        // gives way to the spare rovers.
+        const line = Math.floor((game.top - LINE) / 2);
+        const hi = 'HI ' + Math.max(game.hi, game.score);
+        const hiAt = write('SCORE ' + game.score, 0, line) + HUD_GAP;
+        if (hiAt + typeset(hi).w <= game.w - spare * (icon.w + 4) - 2) write(hi, hiAt, line);
+
+        if (patch) {
+            ctx.setTransform(k, 0, 0, k, 0, 0);
+            ctx.clearRect(patch.x, patch.y, patch.w, patch.h);
+            write('GAME OVER', patch.x + OVER_PAD, patch.y + OVER_PAD, { scale });
+        }
     }
 
     function frame(now) {
@@ -192,7 +207,6 @@ export default function invaders(masthead) {
         draw();
         if (game.phase === 'over') {
             save(HI_KEY, game.hi);
-            over.hidden = false;
             return;
         }
         if (visible && !document.hidden) raf = requestAnimationFrame(frame);
@@ -211,8 +225,6 @@ export default function invaders(masthead) {
         const spot = room(masthead);
         if (!spot) return;
         masthead.prepend(box);
-        const type = getComputedStyle(hud);
-        font = `600 ${type.fontSize} ${type.fontFamily}`;
         newGame(spot);
 
         if (calm) {

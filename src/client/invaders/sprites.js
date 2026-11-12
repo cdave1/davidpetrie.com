@@ -41,7 +41,7 @@ const art = {
     ],
 };
 
-const parse = (rows) => ({
+export const parse = (rows) => ({
     w: rows[0].length,
     h: rows.length,
     dots: rows.flatMap((row, y) => Array.from(row).flatMap((c, x) => (c === '#' ? [[x, y]] : []))),
