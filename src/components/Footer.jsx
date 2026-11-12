@@ -7,6 +7,7 @@ export default function SiteFooter({ credits = [], short = false }) {
                 <ul className="site-footer__links" aria-label="Pages">
                     <li><a href="/ai-projects/">AI Projects</a></li>
                     <li><a href="/projects/">Pre AI Projects</a></li>
+                    <li><a href="/blog/">Blog</a></li>
                     <li><a href="/about/">About</a></li>
                 </ul>
             </div>

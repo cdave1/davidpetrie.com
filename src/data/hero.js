@@ -6,6 +6,7 @@ export const lede = 'Currently: founder of kotari.ai and based in Wellington, Ne
 export const links = [
     { label: 'AI Projects', href: '/ai-projects/' },
     { label: 'Pre AI Projects', href: '/projects/' },
+    { label: 'Blog', href: '/blog/' },
     { label: 'About', href: '/about/' },
 ];
 

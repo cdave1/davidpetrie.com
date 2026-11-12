@@ -40,6 +40,7 @@ pages and project pages, excluding 404 pages, redirects and the design lab.
 |---|---|
 | `src/pages/*.js` | The home, AI projects, pre AI projects, reading and 404 pages |
 | `src/pages/*.md` | Markdown pages; the `path` in each file's front matter is its URL |
+| `src/posts/*.md` | Blog posts, listed at `/blog/`. A post with a `<name>.raw.md` beside it shows that transcript next to the essay (the format is described above `readPost` in `src/site.jsx`) |
 | `src/data/projects.json` | Every project; each gets a page at `/project/<name>/` |
 | `src/components/` | Shared page parts |
 | `src/styles/global.css` | All styles |

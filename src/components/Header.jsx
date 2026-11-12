@@ -8,6 +8,7 @@ export default function SiteHeader() {
                 <ul className="site-bar__links">
                     <li data-rise style={{ '--i': 1 }}><a href="/ai-projects/">AI Projects</a></li>
                     <li data-rise style={{ '--i': 1 }}><a href="/projects/">Pre AI Projects</a></li>
+                    <li data-rise style={{ '--i': 1 }}><a href="/blog/">Blog</a></li>
                     <li data-rise style={{ '--i': 1 }}><a href="/about/">About</a></li>
                 </ul>
             </nav>
