@@ -44,7 +44,7 @@ If I reduce that to basic motivations, people want money, status, and to be more
 
 For example, you don't want to miss an emerging trend, an important piece of information, a useful new app, or an opportunity because your attention was scattered across too many things. A team working on your behalf should help you find those things and understand why they matter to you.
 
-That suggests a more ambitious purpose for ShoutLine: an AI-powered media company personalised to you, whose job is to help you become wealthier, increase your status, and become more appealing to other people.
+That suggests a more ambitious purpose for ShoutLine: [ShoutLine is an AI-powered media company personalised to you, whose job is to help you become wealthier, increase your status, and become more appealing to other people](https://shoutline.co).
 
 That's my current thinking about why someone would buy it. The news team is the mechanism; the value comes from what it helps you do.
 
