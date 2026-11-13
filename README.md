@@ -34,6 +34,10 @@ Every build also generates `sitemap.xml` from the page list and a `robots.txt` t
 points to it. The sitemap uses `https://www.davidpetrie.com` and includes the main
 pages and project pages, excluding 404 pages, redirects and the design lab.
 
+Every page also carries a canonical link to its `www` address and Open Graph tags for link
+previews (blog posts and project pages include a picture). Blog posts give their date as
+`lastmod` in the sitemap, and the 404 pages are marked `noindex`.
+
 ## Where things are
 
 | Path | What it is |

@@ -1,20 +1,20 @@
-<!-- essay 1 -->
+<!-- cut -->
 
 Um, so this is the start of Oh, this is my voice memo for the year, so why I built Shutline. Um... Like a lot of, well, yeah, I mean, the point of this essay is is, like always says, it's too bigger things out. 
 
 The purpose of writing it is to get the thoughts organised. But it's also to communicate something. Um, Um,
 
-<!-- essay 2 -->
+<!-- essay 1 -->
 
 So shout one, um, Is, um, Shetlin's an app that, Um, Packages up intelligence in such a way that it gives you control over The 1000s of slop cannons sort of aimed at you, and this is sort of pre-AI post-AI. Um, And it was sort of how it was, it was a tool built for myself. Um, mainly, um, So I could manage my own relationship with these things
 
-<!-- essay 3 -->
+<!-- essay 2 -->
 
 because the reality is on the modern internet. 
 
 Um, an individual human is basically powerless, um, to stop, um, their mind getting sort of, uh, uh, taken over by um, extremely well designed algorithms that present you sort of being content. It's endless content. Um, And for me in particular, it was, uh, it was the Twitter feed, um, wasting purchase hours, purchase time, um, just refreshing it constantly.
 
-<!-- essay 4 -->
+<!-- essay 3 -->
 
 Um, and what I wanted was the problem with doing this. Um, Okay, I'll start over. The, Excuse me, the core reason why you would want, um, an anti, Algorithm, sort of app like this is, um, you don't want to, the, the problem with, say, Twitter, Well, the problem with YouTube or the problem with, um, any of these things is that There are still things that are useful. 
 
@@ -22,17 +22,17 @@ There's information that is interesting. Um, it does surface up from time to tim
 
 What I wanted to ensure was that I was getting the good stuff and none of the bad stuff.
 
-<!-- essay 5 -->
+<!-- essay 4 -->
 
 The bad stuff being not the content that I'm missing out on. But the endless scrolling, that is the problem.
 
-<!-- essay 6-7 -->
+<!-- essay 5-6 -->
 
 Um, That's a very hard, um, 3 to navigate, um, because the, you know, whether you want to hear this or not, the reality is with, um, Algorithmic apps, um, I would suggest that the YouTube shorts Um, The YouTube short algorithm or the TikTok shorts algorithm is probably the most entertaining thing you that humans have ever made. Um, more entertaining than a video game, more entertaining than, um, you know, a live stream, you know, Twitch streamer, or live TV, maybe the only exception would be, um, maybe a sort of a really close final of a, um, of a sports game. I think that probably beats it, but the problem with that is that it's very difficult to sort of come across that. 
 
 I mean, how often does it happen? So, I mean, minute for minute, I think like, and so I think it's on demand entertainment that is better than anything that's ever been made by a factor of, you know, I don't know, how you affected this stuff. Um Uh, sorry about that.
 
-<!-- essay 8 -->
+<!-- essay 7 -->
 
 Um, So, um, So back to Shoutline. What did I... I wanted to build it. 
 
@@ -42,7 +42,7 @@ So it's like I don't need to remind myself. I've got to get off this app. It was
 
 Here, go, go see it.
 
-<!-- essay 9 -->
+<!-- essay 8 -->
 
 Um, The problem with an app like this is it does make it does reduce the dopamine. It is not a dopamine, high kind of app. 
 
@@ -50,7 +50,7 @@ It's a very utilitarian kind of idea. Um, And um, I found myself going back to T
 
 So that's a problem.
 
-<!-- essay 10 -->
+<!-- essay 9 -->
 
 I think the way to address that is to sort of turn Shoutline, shoutline sort of supposed to be agentic. It has to use, it has to use AI to sort of summarise various posts it finds to order categorise them. and so on. 
 
@@ -58,7 +58,7 @@ Um. Getting lots of distractions here. Um...
 
 Um, Shetland is an app you can probably build yourself with your Claude subscription or your open AI subscription. Um, But, um, That would just be like the daily email part. That's just one aspect of it.
 
-<!-- essay 11 -->
+<!-- essay 10 -->
 
 What I wanted to have into, the idea was, um, it's not just feeds. It's anyone telling you something. Um, Where their interests are not aligned with yours. 
 
@@ -76,7 +76,7 @@ And it's like just seemingly random. Um, this is so annoying. Whatever.
 
 I'll just put up with it.
 
-<!-- essay 12 -->
+<!-- essay 11 -->
 
 So, um... So the idea that it's an app where you um, You direct your, Your agents to sort of give summaries of topics you're interested in from sources that you provide. 
 
@@ -84,11 +84,11 @@ Um, should really be the ultimate as a personal media, uh, It's sort of like a p
 
 The app needs to, the app frontier is sort of sold as your private news team.
 
-<!-- essay 13 -->
+<!-- essay 12 -->
 
 Don't think people care about that. Um, What people want is, um, I think,
 
-<!-- essay 14 -->
+<!-- essay 13 -->
 
 You got to fit it what, it's those 4 things. 
 
@@ -96,21 +96,21 @@ You've either got to give them money, you've got to give them a chance to get la
 
 It's probably not important compared to those three. And that's what having your own private news team doesn't really do. The news team has to sell the user on those, probably those 3 things.
 
-<!-- essay 15 -->
+<!-- essay 14 -->
 
 Like, for example, you're not going to miss out on a new trend. Um, or some new piece of information or some new app or some new thing because you, you know, you just sort of your attention was so, um, divided amongst around different things.
 
-<!-- essay 16 -->
+<!-- essay 15 -->
 
 I think that's the primary thing is like it's a it's a news team where a media, It's a, it's a sort of an AI pad media. company personalised to you that whose job it is, is to make you richer, wealthier, increase your status, um, And uh, make you more appealing to the opposite sex.
 
-<!-- essay 17 -->
+<!-- essay 16 -->
 
 Like that, that's the whole purpose. That's why people buy it. People don't buy it for a news team. 
 
 They buy for what the news team gives you and it has to be sort of centred around those 3 things.
 
-<!-- essay 18 -->
+<!-- essay 17 -->
 
 I think that's a problem for the product and how it's sold right now.
 

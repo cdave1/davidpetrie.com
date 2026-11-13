@@ -7,7 +7,7 @@ import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { marked } from 'marked';
 
-import projects, { projectPath } from './data/helpers';
+import projects, { headerImage, imageSrc, projectPath } from './data/helpers';
 import Index from './pages/index';
 import ProjectsPage from './pages/projects';
 import AiProjectsPage from './pages/aiProjects';
@@ -45,8 +45,10 @@ function readMarkdown(file) {
     return { meta, html: marked.parse(text) };
 }
 
-// A blog post, src/posts/<name>.md: a note about the post, a `<!-- essay -->` line, then the essay.
-// (With no such line the whole file is the essay.) In its front matter, `notes` and `notesLabel`
+// A blog post, src/posts/<name>.md, in up to three parts, each after a line naming it:
+// `<!-- intro -->` (set on a shaded field above the essay), `<!-- essay -->`, and `<!-- note -->`
+// (how the post was written, on a shaded field below it). With no such lines the whole file is
+// the essay. In its front matter, `notes` and `notesLabel`
 // put a link under the title to the project the post is about, and `site` and `siteLabel` one to
 // the project's own website, which opens in a new tab.
 //
@@ -56,9 +58,16 @@ function readMarkdown(file) {
 // passages must cover every paragraph once, in order. The page then shows them side by side.
 function readPost(file) {
     const { meta, text } = readFile(file);
-    const [essay, note = ''] = text.split(/^<!--\s*essay\s*-->\s*$/m).reverse();
+    const sections = { essay: text };
+    const split = text.split(/^<!--\s*(intro|essay|note)\s*-->\s*$/m);
+    if (split.length > 1) {
+        if (split[0].trim()) throw new Error(`${path.basename(file)}: there is text before the first part marker`);
+        delete sections.essay;
+        for (let i = 1; i < split.length; i += 2) sections[split[i]] = split[i + 1];
+    }
+    const { intro = '', essay = '', note = '' } = sections;
     const paragraphs = marked.lexer(essay).filter((token) => token.type !== 'space').map((token) => marked.parser([token]));
-    const post = { path: meta.path, title: meta.title, description: meta.description, date: meta.date, notes: meta.notes, notesLabel: meta.notesLabel, site: meta.site, siteLabel: meta.siteLabel, note: marked.parse(note) };
+    const post = { path: meta.path, title: meta.title, description: meta.description, date: meta.date, notes: meta.notes, notesLabel: meta.notesLabel, site: meta.site, siteLabel: meta.siteLabel, image: meta.image, updated: meta.updated, intro: marked.parse(intro), note: marked.parse(note) };
 
     const transcript = file.replace(/\.md$/, '.raw.md');
     if (!fs.existsSync(transcript)) return { ...post, pairs: [{ essay: paragraphs.join('') }] };
@@ -115,8 +124,8 @@ function pages(root) {
         // The 2000 to 2009 archive used to be its own page; it is now the last section of /projects/.
         { url: '/projects/archive/', redirect: '/projects/#2000-2009' },
         { url: '/reading/', title: 'Reading List', element: <Reading /> },
-        { url: '/404.html', title: 'Page Not Found', element: <NotFound />, sitemap: false },
-        { url: '/404/', title: 'Page Not Found', element: <NotFound />, sitemap: false },
+        { url: '/404.html', title: 'Page Not Found', element: <NotFound />, sitemap: false, noindex: true },
+        { url: '/404/', title: 'Page Not Found', element: <NotFound />, sitemap: false, noindex: true },
     ];
 
     const dir = path.join(root, 'src/pages');
@@ -133,10 +142,18 @@ function pages(root) {
     const posts = fs.readdirSync(path.join(root, 'src/posts')).filter((f) => f.endsWith('.md') && !f.endsWith('.raw.md'))
         .map((name) => readPost(path.join(root, 'src/posts', name)))
         .sort((a, b) => (b.date || '').localeCompare(a.date || ''))
-        .map((post) => ({ ...post, date: post.date ? formatDate(post.date) : null }));
-    list.push({ url: '/blog/', title: 'Blog', element: <Blog posts={posts} /> });
+        .map((post) => ({ ...post, published: post.date, date: post.date ? formatDate(post.date) : null }));
+    list.push({ url: '/blog/', title: 'Blog', description: 'Essays by David Petrie.', element: <Blog posts={posts} />, lastmod: posts[0] && posts[0].published });
     for (const post of posts) {
-        list.push({ url: post.path, title: post.title, description: post.description, element: <PostPage post={post} /> });
+        list.push({
+            url: post.path,
+            title: post.title,
+            description: post.description,
+            image: post.image,
+            article: post.published,
+            lastmod: post.updated || post.published,
+            element: <PostPage post={post} />,
+        });
     }
 
     for (const project of projects) {
@@ -144,13 +161,33 @@ function pages(root) {
             url: projectPath(project) + '/',
             title: project.title,
             description: project.description,
+            image: imageSrc(headerImage(project)),
             element: <ProjectPage project={project} />,
         });
     }
     return list;
 }
 
-function document({ title, description, body, assets, head = '', tail = '', arcade = false }) {
+// What search engines and link previews read: the page's one true address, whether to index it,
+// and its title, summary and picture for a shared link.
+function shareTags({ url, title, description, image, article, noindex, siteUrl }) {
+    const address = new URL(url, siteUrl).href;
+    const tags = [
+        `<link rel="canonical" href="${escape(address)}">`,
+        noindex && '<meta name="robots" content="noindex">',
+        `<meta property="og:site_name" content="David Petrie">`,
+        `<meta property="og:type" content="${article ? 'article' : 'website'}">`,
+        `<meta property="og:url" content="${escape(address)}">`,
+        `<meta property="og:title" content="${escape(title || 'David Petrie')}">`,
+        `<meta property="og:description" content="${escape(description || DEFAULT_DESCRIPTION)}">`,
+        image && `<meta property="og:image" content="${escape(new URL(image, siteUrl).href)}">`,
+        article && `<meta property="article:published_time" content="${escape(article)}">`,
+        `<meta name="twitter:card" content="${image ? 'summary_large_image' : 'summary'}">`,
+    ];
+    return tags.filter(Boolean).join('\n');
+}
+
+function document({ title, description, body, assets, head = '', tail = '', arcade = false, ...page }) {
     return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -159,6 +196,7 @@ function document({ title, description, body, assets, head = '', tail = '', arca
 <title>${escape(title ? `${title} | David Petrie` : DEFAULT_TITLE)}</title>
 <meta name="description" content="${escape(description || DEFAULT_DESCRIPTION)}">
 <meta name="keywords" content="${KEYWORDS}">
+${shareTags({ title, description, ...page })}
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -190,7 +228,7 @@ function labPages(assets) {
     return list;
 }
 
-export function renderSite({ root, assets, lab = false }) {
+export function renderSite({ root, assets, siteUrl, lab = false }) {
     return [...pages(root), ...(lab ? labPages(assets) : [])].map((page) => {
         if (page.redirect) return { url: page.url, file: fileFor(page.url), html: redirectPage(page.redirect), sitemap: false };
         // React leaves `muted` off server-rendered video; every video here is a silent loop.
@@ -198,6 +236,7 @@ export function renderSite({ root, assets, lab = false }) {
         // Mark the current page in the site bar.
         body = body.replace(/<nav aria-label="Main">[\s\S]*?<\/nav>/, (nav) =>
             nav.replace(`<a href="${page.url}">`, `<a href="${page.url}" aria-current="page">`));
-        return { url: page.url, file: fileFor(page.url), html: document({ ...page, body, assets }), sitemap: page.sitemap !== false };
+        const html = document({ ...page, body, assets, siteUrl, noindex: page.noindex && !(page.head || '').includes('noindex') });
+        return { url: page.url, file: fileFor(page.url), html, sitemap: page.sitemap !== false, lastmod: page.lastmod };
     });
 }

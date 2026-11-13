@@ -87,18 +87,20 @@ export async function build({ clean = true, copy = true, lab = false } = {}) {
         fs.rmSync(renderer, { force: true });
     }
 
-    const pages = site.renderSite({ root, assets, lab });
+    const pages = site.renderSite({ root, assets, siteUrl, lab });
     for (const page of pages) {
         const file = path.join(out, page.file);
         fs.mkdirSync(path.dirname(file), { recursive: true });
         fs.writeFileSync(file, page.html);
     }
 
-    const locations = pages.filter((page) => page.sitemap).map((page) =>
-        new URL(page.url, siteUrl).href.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;'));
+    // Pages that know when they last changed (blog posts) say so.
+    const xml = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
+    const entries = pages.filter((page) => page.sitemap).map((page) =>
+        `  <url><loc>${xml(new URL(page.url, siteUrl).href)}</loc>${page.lastmod ? `<lastmod>${xml(page.lastmod)}</lastmod>` : ''}</url>`);
     fs.writeFileSync(path.join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${locations.map((url) => `  <url><loc>${url}</loc></url>`).join('\n')}
+${entries.join('\n')}
 </urlset>
 `);
     fs.writeFileSync(path.join(out, 'robots.txt'), `User-agent: *

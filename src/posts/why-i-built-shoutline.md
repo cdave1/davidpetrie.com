@@ -5,16 +5,15 @@ date: "2026-11-12"
 notes: "/project/kotari/"
 notesLabel: "Project notes on Shoutline"
 site: "https://shoutline.co"
+image: "/images/kotari/shoutline.jpg"
 description: "Why ShoutLine exists, what problem it solves and where it should go. Dictated as a voice memo and cleaned up by an LLM, with the raw transcript alongside."
 ---
 
-This essay is an experiment in writing by talking. I walked around the house dictating my thoughts into a voice memo, then had an LLM clean up the transcript: the ums and ahs, the false starts, the bit where I swear at my headphones.
+<!-- intro -->
 
-What you're reading is the cleaned-up version. Turn on the transcript to see what I actually said, set beside the paragraphs it became. The transcript is uncorrected, so it includes whatever the software misheard.
+ShoutLine is an AI product that functions as your own personal media/news team. It started as an email digest product, but it is evolving quickly. It's in early access at [shoutline.co](https://shoutline.co).
 
 <!-- essay -->
-
-I'm writing this partly to organise my thoughts and partly to communicate what I'm trying to build: why ShoutLine exists, what problem it solves, and where it should go.
 
 ShoutLine started as a tool I wanted for myself. I wanted more control over my relationship with the internet and the thousands of slop cannons aimed at me. That was a problem before AI, and it's still a problem now.
 
@@ -49,3 +48,9 @@ That suggests a more ambitious purpose for ShoutLine: [ShoutLine is an AI-powere
 That's my current thinking about why someone would buy it. The news team is the mechanism; the value comes from what it helps you do.
 
 I think there's a gap between that and how the product is currently presented. Closing that gap should shape both how ShoutLine is sold and what we build next.
+
+<!-- note -->
+
+This essay is an experiment in writing by talking. I walked around the house dictating my thoughts into a voice memo, then had an LLM clean up the transcript: the ums and ahs, the false starts, the bit where I swear at my headphones.
+
+What you've just read is the cleaned-up version. Turn on the transcript to see what I actually said, set beside the paragraphs it became. The transcript is uncorrected, so it includes whatever the software misheard.

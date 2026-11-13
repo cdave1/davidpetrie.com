@@ -28,18 +28,9 @@ export default function PostPage({ post }) {
                     )}
                 </header>
                 <div className="grid doc">
-                    {(post.note || paired) && (
-                        <div className="post__note" data-rise style={{ '--i': 1 }}>
-                            {post.note && <div className="prose" dangerouslySetInnerHTML={{ __html: post.note }} />}
-                            {paired && (
-                                <p className="post__mode">
-                                    <input className="post__switch sr-only" type="checkbox" id="transcript" />
-                                    <label className="post__toggle" htmlFor="transcript">
-                                        <span className="post__track" aria-hidden="true" />
-                                        Show the raw transcript
-                                    </label>
-                                </p>
-                            )}
+                    {post.intro && (
+                        <div className="post__panel post__intro" data-rise style={{ '--i': 1 }}>
+                            <div className="prose" dangerouslySetInnerHTML={{ __html: post.intro }} />
                         </div>
                     )}
                     <div className="post__pairs" data-rise style={{ '--i': 2 }}>
@@ -63,6 +54,20 @@ export default function PostPage({ post }) {
                             </div>
                         ))}
                     </div>
+                    {(post.note || paired) && (
+                        <div className="post__panel post__note">
+                            {post.note && <div className="prose" dangerouslySetInnerHTML={{ __html: post.note }} />}
+                            {paired && (
+                                <p className="post__mode">
+                                    <input className="post__switch sr-only" type="checkbox" id="transcript" />
+                                    <label className="post__toggle" htmlFor="transcript">
+                                        <span className="post__track" aria-hidden="true" />
+                                        Show the raw transcript
+                                    </label>
+                                </p>
+                            )}
+                        </div>
+                    )}
                     {post.date && (
                         <p className="prose-date doc__date">
                             Written <time>{post.date}</time>

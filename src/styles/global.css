@@ -1135,9 +1135,10 @@ a {
   stroke-width: 1.75;
 }
 
-/* The note on how the post was written, with the switch that brings in the transcript. Its
-   field runs past its text on both sides, so the text keeps the essay's left edge. */
-.post__note {
+/* The shaded fields: what the post is about, above the essay, and how it was written, with the
+   switch that brings in the transcript, below it. Each runs past its text on both sides, so the
+   text keeps the essay's left edge. */
+.post__panel {
   --pad: 1.5rem;
   grid-column: 4 / 10;
   max-width: calc(36em + var(--pad) * 2);
@@ -1146,7 +1147,8 @@ a {
   background: var(--surface);
 }
 
-.post__note .prose > :last-child { margin-bottom: 0; }
+.post__panel > :last-child, .post__panel .prose > :last-child { margin-bottom: 0; }
+.post__note { margin-top: 2.5rem; margin-bottom: 0; }
 
 .post__mode { margin: 1.5rem 0 0; }
 
@@ -1233,7 +1235,7 @@ a {
 
 @media (max-width: 760px) {
   .posts, .post__pairs { grid-column: 1 / -1; }
-  .post__note { --pad: var(--margin); grid-column: 1 / -1; }
+  .post__panel { --pad: var(--margin); grid-column: 1 / -1; }
 
   /* on a phone the two are stacked: each passage, then what it became */
   .post:has(.post__switch:checked) .pair { grid-template-columns: minmax(0, 1fr); margin-bottom: 2.5rem; }
